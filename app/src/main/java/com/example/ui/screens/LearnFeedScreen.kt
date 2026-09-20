@@ -153,9 +153,12 @@ import com.example.ui.viewmodel.AutoScrollSpeed
 import com.example.ui.viewmodel.CardDisplayMode
 import com.example.ui.viewmodel.MainViewModel
 import com.example.ui.viewmodel.SwipeDirection
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlin.coroutines.coroutineContext
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 
@@ -231,6 +234,14 @@ fun LearnFeedScreen(
         if (targetId != null && cards.isNotEmpty()) {
             val idx = cards.indexOfFirst { it.id == targetId }
             if (idx >= 0) idx else 0
+        } else if (cards.isNotEmpty()) {
+            val lastId = viewModel.lastStudiedCardId.value
+            val lastIdx = if (lastId != null) cards.indexOfFirst { it.id == lastId } else -1
+            if (lastIdx >= 0) {
+                lastIdx
+            } else {
+                BackgroundAudioPlaybackManager.currentIndex.value.coerceIn(0, cards.size - 1)
+            }
         } else 0
     }
 
@@ -286,10 +297,12 @@ fun LearnFeedScreen(
                 val targetPage = (currentCycle * cards.size) + targetIndex
                 if (targetPage != pagerState.currentPage) {
                     scope.launch {
-                        pagerState.animateScrollToPage(
-                            page = targetPage,
-                            animationSpec = tween(durationMillis = 450, easing = FastOutSlowInEasing)
-                        )
+                        try {
+                            pagerState.animateScrollToPage(
+                                page = targetPage,
+                                animationSpec = tween(durationMillis = 450, easing = FastOutSlowInEasing)
+                            )
+                        } catch (_: Exception) {}
                     }
                 }
             }
@@ -1442,7 +1455,9 @@ private fun BottomControlBarContent(
                 viewModel.markCardAsNeedsPractice(currentCard)
                 if (cards.size > 1) {
                     scope.launch {
-                        pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                        try {
+                            pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                        } catch (_: Exception) {}
                     }
                 }
             },
@@ -1498,7 +1513,9 @@ private fun BottomControlBarContent(
                 viewModel.markCardAsKnown(currentCard)
                 if (cards.size > 1) {
                     scope.launch {
-                        pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                        try {
+                            pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                        } catch (_: Exception) {}
                     }
                 }
             },
@@ -1553,93 +1570,129 @@ private fun FeedReelPagerContent(
     val learningMode by viewModel.learningMode.collectAsStateWithLifecycle()
     var autoScrollProgress by remember { mutableStateOf(0f) }
 
-    // Intelligent Auto-Scroll Loop with Audio Sync and Pager Navigation
-    LaunchedEffect(isAutoScrollEnabled, autoScrollSpeedOption, isAutoPlayAudio, cardDisplayMode, cards.size) {
+    // Fortified Intelligent Auto-Scroll Loop with Audio Sync, Pager Navigation, and Exception Immunity
+    LaunchedEffect(isAutoScrollEnabled, autoScrollSpeedOption, isAutoPlayAudio, cardDisplayMode, cards) {
         if (!isAutoScrollEnabled || cards.isEmpty()) {
             autoScrollProgress = 0f
             return@LaunchedEffect
         }
 
         while (isAutoScrollEnabled && cards.isNotEmpty()) {
-            // 1. Wait until any existing scroll or drag is completely finished so the slide is 100% placed
-            while (pagerState.isScrollInProgress) {
-                delay(80)
-            }
+            try {
+                // 1. Wait until any existing scroll or drag is completely finished so the slide is 100% placed
+                while (pagerState.isScrollInProgress) {
+                    delay(60)
+                }
 
-            val currentSettled = pagerState.settledPage
-            val safeIndex = (currentSettled % cards.size).coerceIn(0, cards.size - 1)
-            val currentCard = cards.getOrNull(safeIndex) ?: break
+                val currentSettled = pagerState.settledPage
+                val safeIndex = (currentSettled % cards.size).coerceIn(0, cards.size - 1)
+                val currentCard = cards.getOrNull(safeIndex) ?: break
 
-            // 2. Calculate reading/listening duration based on text complexity
-            val enWords = currentCard.english.split(Regex("\\s+")).filter { it.isNotBlank() }.size
-            val exWords = if (cardDisplayMode == CardDisplayMode.EXAMPLE && currentCard.example.isNotBlank()) {
-                currentCard.example.split(Regex("\\s+")).filter { it.isNotBlank() }.size
-            } else {
-                0
-            }
-            val totalWords = enWords + exWords
+                // 2. Calculate reading/listening duration based on text complexity
+                val enWords = currentCard.english.split(Regex("\\s+")).filter { it.isNotBlank() }.size
+                val exWords = if (cardDisplayMode == CardDisplayMode.EXAMPLE && currentCard.example.isNotBlank()) {
+                    currentCard.example.split(Regex("\\s+")).filter { it.isNotBlank() }.size
+                } else {
+                    0
+                }
+                val totalWords = enWords + exWords
 
-            val totalDurationMs: Long = when (autoScrollSpeedOption) {
-                AutoScrollSpeed.SPEED_1X -> (4200L + (totalWords * 380L)).coerceIn(4500L, 9000L)
-                AutoScrollSpeed.SPEED_2X -> (2600L + (totalWords * 240L)).coerceIn(2800L, 5500L)
-                AutoScrollSpeed.SPEED_3X -> (1600L + (totalWords * 150L)).coerceIn(1800L, 3400L)
-            }
+                val totalDurationMs: Long = when (autoScrollSpeedOption) {
+                    AutoScrollSpeed.SPEED_1X -> (4200L + (totalWords * 380L)).coerceIn(4500L, 9000L)
+                    AutoScrollSpeed.SPEED_2X -> (2600L + (totalWords * 240L)).coerceIn(2800L, 5500L)
+                    AutoScrollSpeed.SPEED_3X -> (1600L + (totalWords * 150L)).coerceIn(1800L, 3400L)
+                }
 
-            val stepIntervalMs = 50L
-            var elapsedMs = 0L
-            autoScrollProgress = 0f
-            var speechTriggeredForCard = false
+                val stepIntervalMs = 50L
+                var elapsedMs = 0L
+                autoScrollProgress = 0f
+                var speechTriggeredForCard = false
 
-            // 3. Smooth progress bar countdown with audio starting at ~20%-25% progress
-            while (elapsedMs < totalDurationMs && isAutoScrollEnabled) {
-                delay(stepIntervalMs)
+                // 3. Smooth progress bar countdown with audio starting at ~22% progress.
+                // Resilient to card flips, manual scrolling, or returning to a previous card.
+                while (elapsedMs < totalDurationMs && isAutoScrollEnabled) {
+                    delay(stepIntervalMs)
 
-                // If user touches or drags, hold the timer until settled
-                if (pagerState.isScrollInProgress) {
-                    elapsedMs = 0L
-                    autoScrollProgress = 0f
-                    speechTriggeredForCard = false
+                    // If user touches or drags, hold the timer until settled
+                    if (pagerState.isScrollInProgress) {
+                        elapsedMs = 0L
+                        autoScrollProgress = 0f
+                        speechTriggeredForCard = false
+                        continue
+                    }
+
+                    // If user navigated to a different card (e.g., swiped back to return to previous card),
+                    // immediately break out to restart the loop smoothly on the new card!
+                    if (pagerState.settledPage != currentSettled) {
+                        break
+                    }
+
+                    elapsedMs += stepIntervalMs
+                    val currentProgress = (elapsedMs.toFloat() / totalDurationMs.toFloat()).coerceIn(0f, 1f)
+                    autoScrollProgress = currentProgress
+
+                    // Trigger voice pronunciation precisely when progress bar reaches ~22% (between 20% and 30%)
+                    if (!speechTriggeredForCard && currentProgress >= 0.22f && isAutoPlayAudio) {
+                        speechTriggeredForCard = true
+                        val textToSpeak = if (cardDisplayMode == CardDisplayMode.EXAMPLE && currentCard.example.isNotBlank()) {
+                            if (learningMode == LearningMode.EN_TO_ES) currentCard.exampleTranslation.ifBlank { currentCard.example } else currentCard.example
+                        } else {
+                            if (learningMode == LearningMode.EN_TO_ES) currentCard.spanish else currentCard.english
+                        }
+                        viewModel.playAudio(textToSpeak, false)
+                    }
+                }
+
+                // If user moved to another card during countdown, restart immediately with new card
+                if (pagerState.settledPage != currentSettled) {
                     continue
                 }
 
-                elapsedMs += stepIntervalMs
-                val currentProgress = (elapsedMs.toFloat() / totalDurationMs.toFloat()).coerceIn(0f, 1f)
-                autoScrollProgress = currentProgress
+                // 4. If TTS audio is still speaking, wait until speech finishes
+                while (viewModel.ttsHelper.isSpeaking.value && isAutoScrollEnabled) {
+                    delay(100)
+                    if (pagerState.settledPage != currentSettled) break
+                }
 
-                // Trigger voice pronunciation precisely when progress bar reaches ~22% (between 20% and 30%)
-                if (!speechTriggeredForCard && currentProgress >= 0.22f && isAutoPlayAudio) {
-                    speechTriggeredForCard = true
-                    val textToSpeak = if (cardDisplayMode == CardDisplayMode.EXAMPLE && currentCard.example.isNotBlank()) {
-                        if (learningMode == LearningMode.EN_TO_ES) currentCard.exampleTranslation.ifBlank { currentCard.example } else currentCard.example
-                    } else {
-                        if (learningMode == LearningMode.EN_TO_ES) currentCard.spanish else currentCard.english
+                if (pagerState.settledPage != currentSettled) {
+                    continue
+                }
+
+                // 4b. Add a comfortable breathing pause (250ms) after speech ends before advancing to the next card
+                if (isAutoScrollEnabled) {
+                    delay(250)
+                }
+
+                if (pagerState.settledPage != currentSettled) {
+                    continue
+                }
+
+                // 5. Smoothly animate scroll to the exact next full card with full cancellation protection
+                if (isAutoScrollEnabled && cards.isNotEmpty()) {
+                    val targetPage = pagerState.settledPage + 1
+                    try {
+                        pagerState.animateScrollToPage(
+                            page = targetPage,
+                            animationSpec = tween(durationMillis = 480, easing = FastOutSlowInEasing)
+                        )
+                    } catch (e: CancellationException) {
+                        if (!coroutineContext.isActive) throw e
+                        // Touch, flip, or drag interrupted the animation; keep loop alive!
+                    } catch (e: Exception) {
+                        // Ignore any animation exception
                     }
-                    viewModel.playAudio(textToSpeak, false)
-                }
-            }
 
-            // 4. If TTS audio is still speaking, wait until speech finishes
-            while (viewModel.ttsHelper.isSpeaking.value && isAutoScrollEnabled) {
+                    // Wait for the slide to be 100% placed and settled
+                    while (pagerState.isScrollInProgress) {
+                        delay(50)
+                    }
+                    delay(100)
+                }
+            } catch (e: CancellationException) {
+                if (!coroutineContext.isActive) throw e
                 delay(100)
-            }
-
-            // 4b. Add a comfortable breathing pause (300ms) after speech ends before advancing to the next card
-            if (isAutoScrollEnabled) {
-                delay(300)
-            }
-
-            // 5. Smoothly animate scroll to the exact next full card (100% complete slide)
-            if (isAutoScrollEnabled && cards.isNotEmpty()) {
-                val targetPage = pagerState.settledPage + 1
-                pagerState.animateScrollToPage(
-                    page = targetPage,
-                    animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
-                )
-                // Wait for the slide to be 100% placed and settled
-                while (pagerState.isScrollInProgress) {
-                    delay(50)
-                }
-                delay(150)
+            } catch (e: Exception) {
+                delay(100)
             }
         }
     }
@@ -2139,7 +2192,9 @@ private fun FeedReelPagerContent(
                                                 )
                                                 offsetX.snapTo(0f)
                                                 if (cards.size > 1) {
-                                                    pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                                                    try {
+                                                        pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                                                    } catch (_: Exception) {}
                                                 }
                                             } else if (offsetX.value < -swipeThresholdPx) {
                                                 viewModel.markCardAsNeedsPractice(card)
@@ -2149,7 +2204,9 @@ private fun FeedReelPagerContent(
                                                 )
                                                 offsetX.snapTo(0f)
                                                 if (cards.size > 1) {
-                                                    pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                                                    try {
+                                                        pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                                                    } catch (_: Exception) {}
                                                 }
                                             } else {
                                                 offsetX.animateTo(
