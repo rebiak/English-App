@@ -1241,45 +1241,78 @@ private fun QuizModeView(
 
                         // Selected list info badge
                         Surface(
-                            shape = RoundedCornerShape(14.dp),
+                            shape = RoundedCornerShape(16.dp),
                             color = MaterialTheme.colorScheme.background,
-                            modifier = Modifier.fillMaxWidth()
+                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("quiz_selected_target_card")
                         ) {
                             Row(
-                                modifier = Modifier.padding(12.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceBetween
+                                modifier = Modifier.padding(14.dp),
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    val icon = if (selectedGroup == "ALL" && (isWholeFolderSelected || selectedCategory == "All")) "🌟" else if (selectedFolder != null && isWholeFolderSelected) "📁" else getCategoryIcon(selectedCategory)
-                                    Text(text = icon, fontSize = 18.sp)
-                                    Spacer(modifier = Modifier.width(8.dp))
-                                    Column {
-                                        Text(
-                                            text = targetTitle,
-                                            fontWeight = FontWeight.Bold,
-                                            fontSize = 14.sp,
-                                            maxLines = 1,
-                                            overflow = TextOverflow.Ellipsis
-                                        )
-                                        Text(
-                                            text = targetSubtitle,
-                                            fontSize = 12.sp,
-                                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                                        )
+                                val icon = if (selectedGroup == "ALL" && (isWholeFolderSelected || selectedCategory == "All")) "🌟" else if (selectedFolder != null && isWholeFolderSelected) "📁" else getCategoryIcon(selectedCategory)
+                                Surface(
+                                    shape = RoundedCornerShape(12.dp),
+                                    color = PrimaryIndigo.copy(alpha = 0.12f),
+                                    modifier = Modifier.size(42.dp)
+                                ) {
+                                    Box(contentAlignment = Alignment.Center) {
+                                        Text(text = icon, fontSize = 22.sp)
                                     }
                                 }
-                                Surface(
-                                    shape = RoundedCornerShape(8.dp),
-                                    color = MasteredGreen.copy(alpha = 0.15f)
+
+                                Spacer(modifier = Modifier.width(12.dp))
+
+                                Column(
+                                    modifier = Modifier.weight(1f),
+                                    verticalArrangement = Arrangement.Center
                                 ) {
                                     Text(
-                                        text = if (isSpanish) "Listo" else "Ready",
-                                        color = MasteredGreen,
+                                        text = targetTitle,
                                         fontWeight = FontWeight.Bold,
-                                        fontSize = 11.sp,
-                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                        fontSize = 15.sp,
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis
                                     )
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = targetSubtitle,
+                                        fontSize = 12.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        lineHeight = 16.sp
+                                    )
+                                }
+
+                                Spacer(modifier = Modifier.width(10.dp))
+
+                                Surface(
+                                    shape = RoundedCornerShape(20.dp),
+                                    color = MasteredGreen.copy(alpha = 0.16f),
+                                    border = BorderStroke(1.dp, MasteredGreen.copy(alpha = 0.4f))
+                                ) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Check,
+                                            contentDescription = null,
+                                            tint = MasteredGreen,
+                                            modifier = Modifier.size(13.dp)
+                                        )
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Text(
+                                            text = if (isSpanish) "Listo" else "Ready",
+                                            color = MasteredGreen,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 11.5.sp,
+                                            maxLines = 1,
+                                            softWrap = false
+                                        )
+                                    }
                                 }
                             }
                         }

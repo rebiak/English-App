@@ -2521,44 +2521,62 @@ private fun Level1FoldersOverview(
                         ) {
                             Text(text = getCategoryIcon(cat), fontSize = 18.sp)
                             Spacer(modifier = Modifier.width(10.dp))
-                            Column {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        text = cat,
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.onSurface
-                                    )
-                                    if (isMastered100) {
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Surface(
-                                            shape = RoundedCornerShape(12.dp),
-                                            color = MasteredGreen.copy(alpha = 0.15f)
-                                        ) {
-                                            Text(
-                                                text = if (isSpanish) "✓ 100% Dominada" else "✓ 100% Mastered",
-                                                fontSize = 9.5.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                color = MasteredGreen,
-                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                            )
-                                        }
-                                    }
-                                }
-                                Row(verticalAlignment = Alignment.CenterVertically) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    text = cat,
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                                Spacer(modifier = Modifier.height(3.dp))
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
                                     Text(
                                         text = if (isSpanish) "$count palabras" else "$count words",
                                         fontSize = 11.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
-                                    if (count > 0) {
-                                        Text(text = " • ", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                        Text(
-                                            text = "$listMastery% ${if (isSpanish) "dominado" else "mastered"}",
-                                            fontSize = 11.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            color = if (listMastery >= 75) MasteredGreen else PrimaryIndigo
-                                        )
+                                    if (isMastered100) {
+                                        Surface(
+                                            shape = RoundedCornerShape(12.dp),
+                                            color = MasteredGreen.copy(alpha = 0.15f),
+                                            border = BorderStroke(1.dp, MasteredGreen.copy(alpha = 0.35f))
+                                        ) {
+                                            Row(
+                                                verticalAlignment = Alignment.CenterVertically,
+                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                            ) {
+                                                Icon(
+                                                    imageVector = Icons.Default.Check,
+                                                    contentDescription = null,
+                                                    tint = MasteredGreen,
+                                                    modifier = Modifier.size(10.dp)
+                                                )
+                                                Spacer(modifier = Modifier.width(3.dp))
+                                                Text(
+                                                    text = if (isSpanish) "100% Dominada" else "100% Mastered",
+                                                    fontSize = 9.5.sp,
+                                                    fontWeight = FontWeight.Bold,
+                                                    color = MasteredGreen,
+                                                    maxLines = 1,
+                                                    softWrap = false
+                                                )
+                                            }
+                                        }
+                                    } else {
+                                        if (count > 0) {
+                                            Text(text = "•", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                            Text(
+                                                text = "$listMastery% ${if (isSpanish) "dominado" else "mastered"}",
+                                                fontSize = 11.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = if (listMastery >= 75) MasteredGreen else PrimaryIndigo
+                                            )
+                                        }
                                     }
                                 }
                             }
@@ -4033,58 +4051,79 @@ private fun Level2FolderListsView(
                         ) {
                             Text(text = getCategoryIcon(cat), fontSize = 20.sp)
                             Spacer(modifier = Modifier.width(10.dp))
-                            Column {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        text = cat,
-                                        fontSize = 13.5.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.onSurface
-                                    )
-                                    if (isMastered100) {
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Surface(
-                                            shape = RoundedCornerShape(12.dp),
-                                            color = MasteredGreen.copy(alpha = 0.15f)
-                                        ) {
-                                            Text(
-                                                text = if (isSpanish) "✓ 100% Dominada" else "✓ 100% Mastered",
-                                                fontSize = 9.5.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                color = MasteredGreen,
-                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                            )
-                                        }
-                                    } else if (isLastStudied) {
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Surface(
-                                            shape = RoundedCornerShape(12.dp),
-                                            color = PrimaryIndigo.copy(alpha = 0.15f)
-                                        ) {
-                                            Text(
-                                                text = if (isSpanish) "⚡ Última" else "⚡ Last",
-                                                fontSize = 9.5.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                color = PrimaryIndigo,
-                                                modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
-                                            )
-                                        }
-                                    }
-                                }
-                                Row(verticalAlignment = Alignment.CenterVertically) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    text = cat,
+                                    fontSize = 13.5.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                                Spacer(modifier = Modifier.height(3.dp))
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
                                     Text(
                                         text = if (isSpanish) "$count palabras" else "$count words",
                                         fontSize = 11.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
-                                    if (count > 0) {
-                                        Text(text = " • ", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                        Text(
-                                            text = "$listMastery% ${if (isSpanish) "dominado" else "mastered"}",
-                                            fontSize = 11.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            color = if (listMastery >= 75) MasteredGreen else PrimaryIndigo
-                                        )
+                                    if (isMastered100) {
+                                        Surface(
+                                            shape = RoundedCornerShape(12.dp),
+                                            color = MasteredGreen.copy(alpha = 0.15f),
+                                            border = BorderStroke(1.dp, MasteredGreen.copy(alpha = 0.35f))
+                                        ) {
+                                            Row(
+                                                verticalAlignment = Alignment.CenterVertically,
+                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                            ) {
+                                                Icon(
+                                                    imageVector = Icons.Default.Check,
+                                                    contentDescription = null,
+                                                    tint = MasteredGreen,
+                                                    modifier = Modifier.size(10.dp)
+                                                )
+                                                Spacer(modifier = Modifier.width(3.dp))
+                                                Text(
+                                                    text = if (isSpanish) "100% Dominada" else "100% Mastered",
+                                                    fontSize = 9.5.sp,
+                                                    fontWeight = FontWeight.Bold,
+                                                    color = MasteredGreen,
+                                                    maxLines = 1,
+                                                    softWrap = false
+                                                )
+                                            }
+                                        }
+                                    } else {
+                                        if (count > 0) {
+                                            Text(text = "•", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                            Text(
+                                                text = "$listMastery% ${if (isSpanish) "dominado" else "mastered"}",
+                                                fontSize = 11.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = if (listMastery >= 75) MasteredGreen else PrimaryIndigo
+                                            )
+                                        }
+                                        if (isLastStudied) {
+                                            Surface(
+                                                shape = RoundedCornerShape(12.dp),
+                                                color = PrimaryIndigo.copy(alpha = 0.15f),
+                                                border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.3f))
+                                            ) {
+                                                Text(
+                                                    text = if (isSpanish) "⚡ Última" else "⚡ Last",
+                                                    fontSize = 9.5.sp,
+                                                    fontWeight = FontWeight.Bold,
+                                                    color = PrimaryIndigo,
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
                                     }
                                 }
                             }
