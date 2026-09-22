@@ -8,7 +8,7 @@ object Booklet1Part4 {
         // LIST 28
         // ==========================================
         createCard("⏳", "Almost never", "Casi nunca", "I almost never eat meat.", "Casi nunca como carne.", "Phrase", 28),
-        createCard("❌", "By mistake", "Por error", "I took your bag by mistake.", "Tomé tu bolso por error.", "Phrase", 28),
+        createCard("🤦", "By mistake", "Por error", "I took your bag by mistake.", "Tomé tu bolso por error.", "Phrase", 28),
         createCard("🏛️", "Century", "Siglo", "This church was built in the 18th century.", "Esta iglesia fue construida en el siglo XVIII.", "Word", 28),
         createCard("📋", "Condition", "Condición", "The car is in very good condition.", "El auto está en muy buena condición.", "Word", 28),
         createCard("💯", "Definitely", "Definitivamente", "I will definitely come to your party.", "Definitivamente iré a tu fiesta.", "Word", 28),
@@ -21,12 +21,12 @@ object Booklet1Part4 {
         createCard("🔄", "Many times", "Muchas veces", "I visited that museum many times.", "Visité ese museo muchas veces.", "Phrase", 28),
         createCard("📈", "More and more", "Cada vez más", "I like English more and more.", "Me gusta el inglés cada vez más.", "Phrase", 28),
         createCard("👩", "Mother", "Madre", "My mother cooks delicious food.", "Mi madre cocina comida deliciosa.", "Word", 28),
-        createCard("🚫", "Neither", "Tampoco / Ninguno", "Neither of the two books is mine.", "Ninguno de los dos libros es mío.", "Word", 28),
+        createCard("🙅", "Neither", "Tampoco / Ninguno", "Neither of the two books is mine.", "Ninguno de los dos libros es mío.", "Word", 28),
         createCard("📄", "Paper", "Papel", "I need a blank sheet of paper.", "Necesito una hoja de papel en blanco.", "Word", 28),
         createCard("🎲", "Probably", "Probablemente", "He will probably arrive at six.", "Él probablemente llegará a las seis.", "Word", 28),
         createCard("⭐", "Quality", "Calidad", "This jacket has very high quality.", "Esta chaqueta tiene muy alta calidad.", "Word", 28),
         createCard("⚡", "Quickly", "Rápidamente", "Run quickly to catch the bus.", "Corre rápidamente para alcanzar el autobús.", "Word", 28),
-        createCard("💬", "Reaction", "Reacción", "Her happy reaction made me smile.", "Su reacción feliz me hizo sonreír.", "Word", 28),
+        createCard("⚡", "Reaction", "Reacción", "Her happy reaction made me smile.", "Su reacción feliz me hizo sonreír.", "Word", 28),
         createCard("🤝", "Relationship", "Relación", "They have a great friendship relationship.", "Ellos tienen una gran relación de amistad.", "Word", 28),
         createCard("🛣️", "Road", "Carretera / Camino", "This old road goes to the beach.", "Esta carretera vieja va a la playa.", "Word", 28),
         createCard("👥", "Same", "Mismo", "We bought the same red shoes.", "Compramos los mismos zapatos rojos.", "Word", 28),
@@ -37,9 +37,9 @@ object Booklet1Part4 {
         // LIST 29
         // ==========================================
         createCard("💪", "Ability", "Habilidad, capacidad", "She has the ability to speak three languages.", "Ella tiene la habilidad de hablar tres idiomas.", "Word", 29),
-        createCard("🚫", "Absence", "Ausencia", "His absence was noticed during the meeting.", "Su ausencia fue notada durante la reunión.", "Word", 29),
+        createCard("🕳️", "Absence", "Ausencia", "His absence was noticed during the meeting.", "Su ausencia fue notada durante la reunión.", "Word", 29),
         createCard("🛤️", "Along", "A lo largo de", "We walked along the quiet beach.", "Caminamos a lo largo de la playa tranquila.", "Word", 29),
-        createCard("💬", "Answer", "Respuesta, contestación", "Do you know the answer to this question?", "¿Sabes la respuesta a esta pregunta?", "Word", 29),
+        createCard("🗣️", "Answer", "Respuesta, contestación", "Do you know the answer to this question?", "¿Sabes la respuesta a esta pregunta?", "Word", 29),
         createCard("✨", "Appearance", "Apariencia, aspecto", "His clean appearance made a good impression.", "Su apariencia limpia causó una buena impresión.", "Word", 29),
         createCard("🏖️", "Beach", "Playa", "We spent all afternoon at the beach.", "Pasamos toda la tarde en la playa.", "Word", 29),
         createCard("🔵", "Blue", "Azul", "The ocean has a deep blue color.", "El océano tiene un color azul profundo.", "Word", 29),
@@ -47,7 +47,7 @@ object Booklet1Part4 {
         createCard("📦", "Case", "Caso", "In this case, we need to be careful.", "En este caso, debemos tener cuidado.", "Word", 29),
         createCard("⛪", "Church", "Iglesia", "The old church is in the town center.", "La iglesia antigua está en el centro del pueblo.", "Word", 29),
         createCard("⚠️", "Danger", "Peligro", "The sign warned us of falling rocks danger.", "La señal nos advirtió del peligro de caída de rocas.", "Word", 29),
-        createCard("💻", "Desk", "Escritorio, mesa de trabajo", "My laptop is on the wooden desk.", "Mi portátil está sobre el escritorio de madera.", "Word", 29),
+        createCard("🖥️", "Desk", "Escritorio, mesa de trabajo", "My laptop is on the wooden desk.", "Mi portátil está sobre el escritorio de madera.", "Word", 29),
         createCard("🔄", "Difference", "Diferencia", "Can you spot the difference between them?", "¿Puedes notar la diferencia entre ellos?", "Word", 29),
         createCard("🧹", "Floor", "Suelo, piso", "Please wipe the kitchen floor.", "Por favor limpia el suelo de la cocina.", "Word", 29),
         createCard("🏥", "Hospital", "Hospital", "She works as a nurse in the hospital.", "Ella trabaja como enfermera en el hospital.", "Word", 29),
@@ -56,10 +56,10 @@ object Booklet1Part4 {
         createCard("📰", "News", "Noticias", "I watched the evening news on TV.", "Vi las noticias de la tarde en la televisión.", "Word", 29),
         createCard("🧭", "North", "Norte", "Birds fly south from the cold north in winter.", "Las aves vuelan al sur desde el frío norte en invierno.", "Word", 29),
         createCard("👴", "Old", "Viejo, antiguo", "My grandfather lives in an old house.", "Mi abuelo vive en una casa antigua.", "Word", 29),
-        createCard("👍", "Possible", "Posible", "Is it possible to finish this today?", "¿Es posible terminar esto hoy?", "Word", 29),
+        createCard("✨", "Possible", "Posible", "Is it possible to finish this today?", "¿Es posible terminar esto hoy?", "Word", 29),
         createCard("☁️", "Soft", "Suave, blando", "This pillow is very soft and comfortable.", "Esta almohada es muy suave y cómoda.", "Word", 29),
         createCard("🤝", "To agree", "Estar de acuerdo", "I agree with your proposal completely.", "Estoy totalmente de acuerdo con tu propuesta.", "Word", 29),
-        createCard("❓", "To ask", "Preguntar, pedir", "Do not hesitate to ask for help.", "No dudes en pedir ayuda.", "Word", 29),
+        createCard("🙋", "To ask", "Preguntar, pedir", "Do not hesitate to ask for help.", "No dudes en pedir ayuda.", "Word", 29),
         createCard("🎾", "To catch", "Atrapar, coger", "Try to catch the ball with both hands.", "Intenta atrapar la pelota con ambas manos.", "Word", 29),
 
         // ==========================================
@@ -108,7 +108,7 @@ object Booklet1Part4 {
         createCard("🧩", "Difficult", "Difícil, complicado", "Solving this riddle was quite difficult.", "Resolver este acertijo fue bastante difícil.", "Word", 31),
         createCard("🚪", "Door", "Puerta", "Please lock the front door when you leave.", "Por favor echa el cerrojo a la puerta principal cuando salgas.", "Word", 31),
         createCard("🌅", "Early", "Temprano", "Waking up early gives you extra time.", "Despertarse temprano te da tiempo extra.", "Word", 31),
-        createCard("🟢", "Easy", "Fácil, sencillo", "This recipe is quick and easy to make.", "Esta receta es rápida y fácil de preparar.", "Word", 31),
+        createCard("👌", "Easy", "Fácil, sencillo", "This recipe is quick and easy to make.", "Esta receta es rápida y fácil de preparar.", "Word", 31),
         createCard("😊", "Face", "Cara, rostro", "A bright smile lit up her face.", "Una sonrisa radiante iluminó su rostro.", "Word", 31),
         createCard("👨", "Father", "Padre, papá", "My father taught me how to ride a bike.", "Mi padre me enseñó a montar en bicicleta.", "Word", 31),
         createCard("🔥", "Fire", "Fuego, incendio", "We sat around the campfire singing songs.", "Nos sentamos alrededor de la fogata cantando canciones.", "Word", 31),
@@ -123,7 +123,7 @@ object Booklet1Part4 {
         // ==========================================
         // LIST 32
         // ==========================================
-        createCard("🏢", "Apartment", "Apartamento, piso", "Their cozy apartment is located downtown.", "Su acogedor apartamento está situado en el centro.", "Word", 32),
+        createCard("🏬", "Apartment", "Apartamento, piso", "Their cozy apartment is located downtown.", "Su acogedor apartamento está situado en el centro.", "Word", 32),
         createCard("🍺", "Beer", "Cerveza", "They shared a craft beer after work.", "Compartieron una cerveza artesanal después del trabajo.", "Word", 32),
         createCard("🐘", "Big", "Grande, enorme", "He packed his luggage into a big suitcase.", "Empacó su equipaje en una maleta grande.", "Word", 32),
         createCard("⛵", "Boat", "Barco, bote", "The small wooden boat sailed across the bay.", "El pequeño bote de madera navegó por la bahía.", "Word", 32),
@@ -140,7 +140,7 @@ object Booklet1Part4 {
         createCard("🌍", "Country", "País, campo", "Every country has rich cultural traditions.", "Cada país tiene ricas tradiciones culturales.", "Word", 32),
         createCard("🐄", "Cow", "Vaca", "The peaceful cow grazed in the green pasture.", "La vaca pacífica pastaba en el pastizal verde.", "Word", 32),
         createCard("☀️", "Day", "Día", "Have a wonderful and productive day.", "Que tengas un día maravilloso y productivo.", "Word", 32),
-        createCard("💻", "Desk", "Escritorio", "Place your notebook neatly on the desk.", "Coloca tu cuaderno ordenadamente sobre el escritorio.", "Word", 32),
+        createCard("🖥️", "Desk", "Escritorio", "Place your notebook neatly on the desk.", "Coloca tu cuaderno ordenadamente sobre el escritorio.", "Word", 32),
         createCard("🐕", "Dog", "Perro", "The loyal dog wagged its tail happily.", "El perro leal movió la cola con alegría.", "Word", 32),
         createCard("⬇️", "Down", "Abajo, hacia abajo", "Walk down the hill to reach the river.", "Camina colina abajo para llegar al río.", "Word", 32),
         createCard("🏜️", "Dry", "Seco", "Hang the wet clothes outside so they become dry.", "Cuelga la ropa mojada afuera para que se seque.", "Word", 32),
@@ -154,7 +154,7 @@ object Booklet1Part4 {
         // ==========================================
         createCard("🍎", "Apple", "Manzana", "She picked a ripe red apple from the tree.", "Ella recogió una manzana roja madura del árbol.", "Word", 33),
         createCard("💪", "Arm", "Brazo", "He carried the heavy box under his arm.", "Llevaba la pesada caja bajo el brazo.", "Word", 33),
-        createCard("❌", "Bad", "Malo, desagradable", "A bad mood can be fixed with good music.", "Un mal humor se puede arreglar con buena música.", "Word", 33),
+        createCard("👎", "Bad", "Malo, desagradable", "A bad mood can be fixed with good music.", "Un mal humor se puede arreglar con buena música.", "Word", 33),
         createCard("🛏️", "Bed", "Cama", "Nothing beats sleeping in your own bed.", "Nada supera dormir en tu propia cama.", "Word", 33),
         createCard("📦", "Box", "Caja", "The cardboard box contained vintage books.", "La caja de cartón contenía libros antiguos.", "Word", 33),
         createCard("🎂", "Cake", "Tarta, pastel", "They decorated the birthday cake with candles.", "Decoraron el pastel de cumpleaños con velas.", "Word", 33),
@@ -200,7 +200,7 @@ object Booklet1Part4 {
         createCard("👜", "Bag", "Bolso, bolsa", "She carried a stylish leather shoulder bag.", "Llevaba un elegante bolso de cuero al hombro.", "Word", 34),
         createCard("🚽", "Bathroom", "Cuarto de baño", "The bathroom is equipped with fresh towels.", "El cuarto de baño está equipado con toallas limpias.", "Word", 34),
         createCard("😍", "Beautiful", "Hermoso, bello", "We watched a beautiful golden sunset.", "Vimos una hermosa puesta de sol dorada.", "Word", 34),
-        createCard("❓", "Because", "Porque, a causa de", "I love learning because knowledge opens doors.", "Me encanta aprender porque el conocimiento abre puertas.", "Word", 34),
+        createCard("💬", "Because", "Porque, a causa de", "I love learning because knowledge opens doors.", "Me encanta aprender porque el conocimiento abre puertas.", "Word", 34),
         createCard("⏳", "Before", "Antes, antes de", "Review your notes thoroughly before the exam.", "Revisa tus notas a fondo antes del examen.", "Word", 34),
         createCard("🌱", "Beginner", "Principiante, novato", "This beginner course builds solid grammar roots.", "Este curso para principiantes construye raíces gramaticales sólidas.", "Word", 34),
         createCard("📦", "Behind", "Detrás de", "The secret garden is hidden behind the wall.", "El jardín secreto está escondido detrás de la pared.", "Word", 34),
@@ -225,9 +225,9 @@ object Booklet1Part4 {
         createCard("😡", "Angry", "Enojado, indignado", "Staying calm is better than reacting when angry.", "Mantener la calma es mejor que reaccionar cuando se está enojado.", "Word", 35),
         createCard("🐾", "Animal", "Animal, criatura", "Dolphins are recognized as very intelligent animals.", "Los delfines son reconocidos como animales muy inteligentes.", "Word", 35),
         createCard("🔄", "Another", "Otro, otra más", "Let us explore another exciting opportunity.", "Exploremos otra oportunidad emocionante.", "Word", 35),
-        createCard("💬", "Answer", "Respuesta, responder", "She gave a thoughtful answer to the question.", "Ella dio una respuesta reflexiva a la pregunta.", "Word", 35),
+        createCard("🗣️", "Answer", "Respuesta, responder", "She gave a thoughtful answer to the question.", "Ella dio una respuesta reflexiva a la pregunta.", "Word", 35),
         createCard("🕒", "Anytime", "En cualquier momento", "Feel free to reach out anytime for assistance.", "No dudes en comunicarte en cualquier momento para recibir ayuda.", "Word", 35),
-        createCard("🏢", "Apartment", "Apartamento, departamento", "The sunny apartment overlooks a green city park.", "El luminoso apartamento da a un parque urbano verde.", "Word", 35),
+        createCard("🏬", "Apartment", "Apartamento, departamento", "The sunny apartment overlooks a green city park.", "El luminoso apartamento da a un parque urbano verde.", "Word", 35),
         createCard("✨", "Appearance", "Aspecto, presencia", "A confident appearance boosts professional presence.", "Un aspecto seguro potencia la presencia profesional.", "Word", 35),
         createCard("🍎", "Apple", "Manzana", "An apple a day supports radiant healthy living.", "Una manzana al día apoya una vida radiante y saludable.", "Word", 35),
         createCard("🌍", "Area", "Área, superficie", "This botanical area houses rare exotic flowers.", "Esta área botánica alberga raras flores exóticas.", "Word", 35),
@@ -239,7 +239,7 @@ object Booklet1Part4 {
         // ==========================================
         // LIST 36
         // ==========================================
-        createCard("❓", "Ask", "Preguntar, solicitar", "Never hesitate to ask for thoughtful guidance.", "Nunca dudes en pedir una guía reflexiva.", "Word", 36),
+        createCard("🙋", "Ask", "Preguntar, solicitar", "Never hesitate to ask for thoughtful guidance.", "Nunca dudes en pedir una guía reflexiva.", "Word", 36),
         createCard("🧑‍💼", "Assistant", "Asistente, colaborador", "The administrative assistant handled all inquiries.", "El asistente administrativo gestionó todas las consultas.", "Word", 36),
         createCard("⭐", "At least", "Al menos, por lo menos", "Dedicate at least twenty minutes each day to study.", "Dedica al menos veinte minutos cada día a estudiar.", "Phrase", 36),
         createCard("⚔️", "Attack", "Ataque, ofensiva", "A strong defense repels any sudden attack.", "Una defensa fuerte repele cualquier ataque repentino.", "Word", 36),
@@ -250,7 +250,7 @@ object Booklet1Part4 {
         createCard("🍂", "Autumn", "Otoño", "Autumn paints the forest leaves in vibrant gold.", "El otoño pinta las hojas del bosque en vibrante dorado.", "Word", 36),
         createCard("👶", "Baby", "Bebé, criatura", "The smiling baby brought endless delight to everyone.", "El bebé sonriente trajo una alegría infinita a todos.", "Word", 36),
         createCard("🔙", "Back", "Espalda, parte posterior", "Lean your back against the ergonomic chair cushion.", "Apoya la espalda en el cojín ergonómico de la silla.", "Word", 36),
-        createCard("❌", "Bad", "Malo, perjudicial", "Discard bad habits to cultivate lasting success.", "Descarta los malos hábitos para cultivar un éxito duradero.", "Word", 36),
+        createCard("👎", "Bad", "Malo, perjudicial", "Discard bad habits to cultivate lasting success.", "Descarta los malos hábitos para cultivar un éxito duradero.", "Word", 36),
         createCard("👜", "Bag", "Bolsa, mochila", "Pack your essential study tools inside the bag.", "Empaca tus herramientas de estudio esenciales dentro de la bolsa.", "Word", 36),
         createCard("⚽", "Ball", "Pelota, balón", "Children kicked the colorful soccer ball across the grass.", "Los niños patearon el colorido balón de fútbol por el césped.", "Word", 36),
         createCard("🏦", "Bank", "Banco, entidad bancaria", "The historic central bank is illuminated at night.", "El histórico banco central está iluminado de noche.", "Word", 36),
@@ -261,7 +261,7 @@ object Booklet1Part4 {
         createCard("🚽", "Bathroom", "Cuarto de baño, aseo", "The modern bathroom features clean porcelain tiles.", "El baño moderno cuenta con azulejos de porcelana limpios.", "Word", 36),
         createCard("🏖️", "Beach", "Playa, orilla", "Sea waves rolled gently along the sandy beach.", "Las olas del mar rompían suavemente a lo largo de la playa de arena.", "Word", 36),
         createCard("😍", "Beautiful", "Hermoso, precioso", "We admired the beautiful mountain scenery at sunrise.", "Admiramos el hermoso paisaje montañoso al amanecer.", "Word", 36),
-        createCard("❓", "Because", "Porque, debido a que", "We persevere because our meaningful goals inspire us.", "Perseveramos porque nuestras metas significativas nos inspiran.", "Word", 36),
+        createCard("💬", "Because", "Porque, debido a que", "We persevere because our meaningful goals inspire us.", "Perseveramos porque nuestras metas significativas nos inspiran.", "Word", 36),
         createCard("🌱", "Become", "Llegar a ser, convertirse en", "Consistent study helps you become truly fluent in English.", "El estudio constante te ayuda a ser verdaderamente fluido en inglés.", "Word", 36),
         createCard("🛏️", "Bed", "Cama, lecho", "Rest comfortably in a soft, clean bed every night.", "Descansa cómodamente en una cama suave y limpia cada noche.", "Word", 36)
     )

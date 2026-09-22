@@ -26,11 +26,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material.icons.filled.NightsStay
+import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material.icons.filled.TouchApp
@@ -94,6 +96,8 @@ fun OnboardingDialog(
     isFirstOnboarding: Boolean = false,
     appLanguage: AppLanguage = AppLanguage.SPANISH,
     onDismiss: (() -> Unit)? = null,
+    onOpenTutorial: (() -> Unit)? = null,
+    onOpenThemePicker: (() -> Unit)? = null,
     onComplete: (cards: Int, minutes: Int, reminderEnabled: Boolean, reminderHour: Int, reminderMinute: Int, scheduleDate: String, scheduleType: String) -> Unit
 ) {
     val isSpanish = appLanguage == AppLanguage.SPANISH
@@ -648,6 +652,150 @@ fun OnboardingDialog(
                                             fontSize = 12.sp,
                                             fontWeight = FontWeight.Bold,
                                             color = PrimaryIndigo
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // SECTION 3: PERSONALIZACIÓN & TUTORIAL (ACCESOS DIRECTOS EN ESTA PANTALLA)
+                if (onOpenTutorial != null || onOpenThemePicker != null) {
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Surface(
+                        shape = RoundedCornerShape(18.dp),
+                        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f)),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            verticalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Tune,
+                                    contentDescription = null,
+                                    tint = StarAmber,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                                Text(
+                                    text = if (isSpanish) "Personalización y Ayuda" else "Customization & Help",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface
+                                )
+                            }
+
+                            // Option 1: Ver Tutorial Inicial
+                            if (onOpenTutorial != null) {
+                                Surface(
+                                    shape = RoundedCornerShape(14.dp),
+                                    color = StarAmber.copy(alpha = 0.12f),
+                                    border = BorderStroke(1.dp, StarAmber.copy(alpha = 0.4f)),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clip(RoundedCornerShape(14.dp))
+                                        .clickable {
+                                            onOpenTutorial()
+                                        }
+                                        .testTag("onboarding_open_tutorial_button")
+                                ) {
+                                    Row(
+                                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                                    ) {
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = StarAmber.copy(alpha = 0.2f),
+                                            modifier = Modifier.size(36.dp)
+                                        ) {
+                                            Box(contentAlignment = Alignment.Center) {
+                                                Text(text = "📖", fontSize = 18.sp)
+                                            }
+                                        }
+                                        Column(modifier = Modifier.weight(1f)) {
+                                            Text(
+                                                text = if (isSpanish) "Ver Tutorial de la Aplicación" else "View App Tutorial",
+                                                fontSize = 14.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = MaterialTheme.colorScheme.onSurface
+                                            )
+                                            Text(
+                                                text = if (isSpanish) "Guía interactiva paso a paso de todas las funciones" else "Step-by-step interactive guide to all features",
+                                                fontSize = 11.5.sp,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                            )
+                                        }
+                                        Icon(
+                                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                                            contentDescription = null,
+                                            tint = StarAmber,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                    }
+                                }
+                            }
+
+                            // Option 2: Cambiar Tema de la Aplicación
+                            if (onOpenThemePicker != null) {
+                                Surface(
+                                    shape = RoundedCornerShape(14.dp),
+                                    color = PrimaryIndigo.copy(alpha = 0.12f),
+                                    border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.4f)),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clip(RoundedCornerShape(14.dp))
+                                        .clickable {
+                                            onOpenThemePicker()
+                                        }
+                                        .testTag("onboarding_open_theme_button")
+                                ) {
+                                    Row(
+                                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                                    ) {
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = PrimaryIndigo.copy(alpha = 0.2f),
+                                            modifier = Modifier.size(36.dp)
+                                        ) {
+                                            Box(contentAlignment = Alignment.Center) {
+                                                Icon(
+                                                    imageVector = Icons.Default.Palette,
+                                                    contentDescription = null,
+                                                    tint = PrimaryIndigo,
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            }
+                                        }
+                                        Column(modifier = Modifier.weight(1f)) {
+                                            Text(
+                                                text = if (isSpanish) "Cambiar Tema y Apariencia" else "Change Theme & Appearance",
+                                                fontSize = 14.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = MaterialTheme.colorScheme.onSurface
+                                            )
+                                            Text(
+                                                text = if (isSpanish) "Elige paletas de color, estilo y modo oscuro" else "Choose color palettes, styles, and dark mode",
+                                                fontSize = 11.5.sp,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                            )
+                                        }
+                                        Icon(
+                                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                                            contentDescription = null,
+                                            tint = PrimaryIndigo,
+                                            modifier = Modifier.size(18.dp)
                                         )
                                     }
                                 }

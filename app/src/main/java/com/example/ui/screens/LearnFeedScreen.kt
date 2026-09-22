@@ -190,6 +190,8 @@ fun LearnFeedScreen(
     val folders by viewModel.folders.collectAsStateWithLifecycle()
     val selectedFolderId by viewModel.selectedFolderId.collectAsStateWithLifecycle()
     val canNavigateBack by viewModel.canNavigateBack.collectAsStateWithLifecycle()
+    val studyPlaylistCategories by viewModel.studyPlaylistCategories.collectAsStateWithLifecycle()
+    val isPlaylistLoopEnabled by viewModel.isPlaylistLoopEnabled.collectAsStateWithLifecycle()
 
     // Keep screen awake while user is actively on this Learn feed screen (especially during Auto-Play,
     // so the device screen never times out or turns off while studying).
@@ -287,6 +289,13 @@ fun LearnFeedScreen(
             viewModel.recordLastStudiedCard(currentCard.id)
             viewModel.recordCategoryStudied(currentCard.category)
         }
+    }
+
+    val currentCardCategory = remember(cards, pagerState.settledPage) {
+        if (cards.isNotEmpty()) {
+            val safeIndex = (pagerState.settledPage % cards.size).coerceIn(0, cards.size - 1)
+            cards[safeIndex].category
+        } else selectedCategory
     }
 
     // Sync Pager position when the Background Service or Notification advances to next/prev card
@@ -448,18 +457,31 @@ fun LearnFeedScreen(
 
                     Spacer(modifier = Modifier.height(6.dp))
 
-                    ActiveStudyContextBar(
-                        currentFolder = currentFolder,
-                        selectedCategory = selectedCategory,
-                        cardsCount = cards.size,
-                        appLanguage = appLanguage,
-                        onOpenWordsLibrary = {
-                            viewModel.setNavIndex(0) // Return to Palabras main screen
-                        },
-                        onOpenTutorial = {
-                            viewModel.openInAppTutorial(2)
-                        }
-                    )
+                    if (studyPlaylistCategories.isNotEmpty()) {
+                        ActiveStudyPlaylistBar(
+                            playlist = studyPlaylistCategories,
+                            currentCategory = currentCardCategory,
+                            cardsCount = cards.size,
+                            isLoopEnabled = isPlaylistLoopEnabled,
+                            appLanguage = appLanguage,
+                            onToggleLoop = { viewModel.setPlaylistLoopEnabled(!isPlaylistLoopEnabled) },
+                            onSelectCategory = { cat -> viewModel.jumpToCategoryInPlaylist(cat) },
+                            onExitPlaylist = { viewModel.clearStudyPlaylist() }
+                        )
+                    } else {
+                        ActiveStudyContextBar(
+                            currentFolder = currentFolder,
+                            selectedCategory = selectedCategory,
+                            cardsCount = cards.size,
+                            appLanguage = appLanguage,
+                            onOpenWordsLibrary = {
+                                viewModel.setNavIndex(0) // Return to Palabras main screen
+                            },
+                            onOpenTutorial = {
+                                viewModel.openInAppTutorial(2)
+                            }
+                        )
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(6.dp))
@@ -1388,6 +1410,161 @@ private fun ActiveStudyContextBar(
                         fontWeight = FontWeight.Bold,
                         maxLines = 1
                     )
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Active Study Playlist Bar shown when multiple study lists are playing in loop sequence.
+ */
+@Composable
+private fun ActiveStudyPlaylistBar(
+    playlist: List<String>,
+    currentCategory: String,
+    cardsCount: Int,
+    isLoopEnabled: Boolean,
+    appLanguage: AppLanguage,
+    onToggleLoop: () -> Unit,
+    onSelectCategory: (String) -> Unit,
+    onExitPlaylist: () -> Unit
+) {
+    val isSpanish = appLanguage == AppLanguage.SPANISH
+    val currentIndex = playlist.indexOfFirst { it.equals(currentCategory, ignoreCase = true) }.let { if (it >= 0) it + 1 else 1 }
+
+    Surface(
+        shape = RoundedCornerShape(14.dp),
+        color = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.35f)),
+        shadowElevation = 2.dp,
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("active_study_playlist_bar")
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 9.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = PrimaryIndigo.copy(alpha = 0.14f),
+                        modifier = Modifier.size(32.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Text(text = "📚", fontSize = 15.sp)
+                        }
+                    }
+
+                    Column {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Text(
+                                text = if (isSpanish) "Sesión Combinada" else "Combined Session",
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Surface(
+                                shape = RoundedCornerShape(10.dp),
+                                color = PrimaryIndigo.copy(alpha = 0.12f)
+                            ) {
+                                Text(
+                                    text = "$currentIndex / ${playlist.size}",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = PrimaryIndigo,
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                )
+                            }
+                        }
+                        Text(
+                            text = if (isSpanish)
+                                "Lista actual: $currentCategory • $cardsCount palabras en cola"
+                            else
+                                "Current list: $currentCategory • $cardsCount words in queue",
+                            fontSize = 11.5.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                }
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    IconButton(
+                        onClick = onExitPlaylist,
+                        modifier = Modifier
+                            .size(30.dp)
+                            .testTag("exit_playlist_button")
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = if (isSpanish) "Salir de la sesión combinada" else "Exit combined session",
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+            }
+
+            // Playlist Categories Scrollable Chips
+            LazyRow(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                items(playlist) { cat ->
+                    val isCurrent = cat.equals(currentCategory, ignoreCase = true)
+                    Surface(
+                        shape = RoundedCornerShape(8.dp),
+                        color = if (isCurrent) PrimaryIndigo else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                        border = BorderStroke(
+                            1.dp,
+                            if (isCurrent) PrimaryIndigo else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f)
+                        ),
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .clickable { onSelectCategory(cat) }
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            if (isCurrent) {
+                                Icon(
+                                    imageVector = Icons.Default.PlayArrow,
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(12.dp)
+                                )
+                            }
+                            Text(
+                                text = cat,
+                                fontSize = 11.5.sp,
+                                fontWeight = if (isCurrent) FontWeight.Bold else FontWeight.Medium,
+                                color = if (isCurrent) Color.White else MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    }
                 }
             }
         }

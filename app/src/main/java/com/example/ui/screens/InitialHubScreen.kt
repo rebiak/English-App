@@ -274,7 +274,7 @@ fun InitialHubScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 16.dp, vertical = 10.dp)
+                .padding(horizontal = 12.dp, vertical = 6.dp)
         ) {
             // ==========================================
             // HEADER: BRAND, STREAK & TOP ACTIONS
@@ -396,7 +396,7 @@ fun InitialHubScreen(
                         }
                     }
 
-                    // Interactive Walkthrough / Help Button (?)
+                    // Interactive Hub Tutorial / Help Button (?)
                     Surface(
                         shape = RoundedCornerShape(10.dp),
                         color = PrimaryIndigo.copy(alpha = 0.14f),
@@ -404,13 +404,13 @@ fun InitialHubScreen(
                         modifier = Modifier
                             .size(34.dp)
                             .clip(RoundedCornerShape(10.dp))
-                            .clickable { viewModel.openInAppTutorial() }
+                            .clickable { viewModel.openHubTutorial() }
                             .testTag("hub_tutorial_help_button")
                     ) {
                         Box(contentAlignment = Alignment.Center) {
                             Icon(
                                 imageVector = Icons.AutoMirrored.Filled.HelpOutline,
-                                contentDescription = if (isSpanish) "Tutorial y Ayuda" else "Tutorial and Help",
+                                contentDescription = if (isSpanish) "Tutorial Interactivo del Hub" else "Interactive Hub Tutorial",
                                 tint = PrimaryIndigo,
                                 modifier = Modifier.size(18.dp)
                             )
@@ -425,33 +425,15 @@ fun InitialHubScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 4.dp, bottom = 10.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .padding(top = 2.dp, bottom = 6.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = if (isSpanish) "Accesos principales" else "Main Hub",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.5.sp,
+                    fontWeight = FontWeight.ExtraBold,
                     color = MaterialTheme.colorScheme.onBackground
                 )
-                Surface(
-                    shape = RoundedCornerShape(10.dp),
-                    color = if (shouldShowSummaries) PrimaryIndigo.copy(alpha = 0.12f) else ElectricCyanDark.copy(alpha = 0.12f),
-                    border = BorderStroke(1.dp, if (shouldShowSummaries) PrimaryIndigo.copy(alpha = 0.25f) else ElectricCyanDark.copy(alpha = 0.35f))
-                ) {
-                    Text(
-                        text = if (shouldShowSummaries) {
-                            if (isSpanish) "🔍 Toca para ampliar (${appOpenCount.coerceAtMost(3)}/3)" else "🔍 Tap to expand (${appOpenCount.coerceAtMost(3)}/3)"
-                        } else {
-                            if (isSpanish) "⚡ Acceso directo activo" else "⚡ Direct card access active"
-                        },
-                        fontSize = 11.sp,
-                        color = if (shouldShowSummaries) PrimaryIndigo else ElectricCyanDark,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                    )
-                }
             }
 
             // ==========================================
@@ -491,6 +473,7 @@ fun InitialHubScreen(
                         testTag = "hub_card_learn",
                         onClick = { onCardClick(cardLearn) },
                         onLongClick = { selectedHubCardForEnlarge = cardLearn },
+                        isDarkMode = isDarkMode,
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
@@ -514,6 +497,7 @@ fun InitialHubScreen(
                         testTag = "hub_card_studying_lists",
                         onClick = { onCardClick(cardStudyingLists) },
                         onLongClick = { selectedHubCardForEnlarge = cardStudyingLists },
+                        isDarkMode = isDarkMode,
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
@@ -545,6 +529,7 @@ fun InitialHubScreen(
                         testTag = "hub_card_vocabulary",
                         onClick = { onCardClick(cardVocabulary) },
                         onLongClick = { selectedHubCardForEnlarge = cardVocabulary },
+                        isDarkMode = isDarkMode,
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
@@ -568,6 +553,7 @@ fun InitialHubScreen(
                         testTag = "hub_card_progress",
                         onClick = { onCardClick(cardProgress) },
                         onLongClick = { selectedHubCardForEnlarge = cardProgress },
+                        isDarkMode = isDarkMode,
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
@@ -580,7 +566,7 @@ fun InitialHubScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(4.dp))
         }
 
         // Enlarged Hub Card Popup Dialog
@@ -1260,7 +1246,7 @@ private fun DirectAccessItemRow(
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
-                    maxLines = 1,
+                    maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
@@ -1512,17 +1498,36 @@ private fun HubSquareCard(
     testTag: String,
     onClick: () -> Unit,
     onLongClick: (() -> Unit)? = null,
+    isDarkMode: Boolean = true,
     modifier: Modifier = Modifier
 ) {
+    val cardContainerColor = if (isDarkMode) Color(0xFF1E283E) else Color(0xFFFFFFFF)
+    val cardBorderColor = accentColor.copy(alpha = if (isDarkMode) 0.85f else 0.70f)
+    val cardGradient = Brush.verticalGradient(
+        colors = if (isDarkMode) {
+            listOf(
+                accentColor.copy(alpha = 0.35f),
+                Color(0xFF223049),
+                Color(0xFF182236)
+            )
+        } else {
+            listOf(
+                accentColor.copy(alpha = 0.18f),
+                Color(0xFFF8FAFC),
+                Color.White
+            )
+        }
+    )
+
     Card(
-        shape = RoundedCornerShape(26.dp),
+        shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = cardContainerColor
         ),
-        border = BorderStroke(1.8.dp, accentColor.copy(alpha = 0.50f)),
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp, pressedElevation = 8.dp),
+        border = BorderStroke(2.2.dp, cardBorderColor),
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp, pressedElevation = 10.dp),
         modifier = modifier
-            .clip(RoundedCornerShape(26.dp))
+            .clip(RoundedCornerShape(28.dp))
             .combinedClickable(
                 onClick = onClick,
                 onLongClick = onLongClick
@@ -1532,59 +1537,60 @@ private fun HubSquareCard(
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(
-                    Brush.radialGradient(
-                        colors = listOf(
-                            accentColor.copy(alpha = 0.18f),
-                            accentColor.copy(alpha = 0.05f),
-                            Color.Transparent
-                        )
-                    )
-                )
-                .padding(horizontal = 14.dp, vertical = 12.dp),
+                .background(cardGradient)
+                .padding(horizontal = 10.dp, vertical = 12.dp),
             contentAlignment = Alignment.Center
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxSize()
             ) {
+                // Larger, clear elevated icon container
                 Surface(
                     shape = CircleShape,
-                    color = accentColor.copy(alpha = 0.14f),
-                    border = BorderStroke(1.dp, accentColor.copy(alpha = 0.35f)),
-                    modifier = Modifier.size(50.dp)
+                    color = accentColor.copy(alpha = if (isDarkMode) 0.28f else 0.18f),
+                    border = BorderStroke(1.8.dp, accentColor.copy(alpha = if (isDarkMode) 0.75f else 0.55f)),
+                    modifier = Modifier.size(68.dp)
                 ) {
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             imageVector = icon,
                             contentDescription = description,
                             tint = accentColor,
-                            modifier = Modifier.size(29.dp)
+                            modifier = Modifier.size(40.dp)
                         )
                     }
                 }
-                Spacer(modifier = Modifier.height(8.dp))
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                // Larger, high-contrast title text
                 Text(
                     text = description,
-                    fontSize = 13.sp,
-                    lineHeight = 16.5.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface,
+                    fontSize = 16.5.sp,
+                    lineHeight = 21.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = if (isDarkMode) Color.White else Color(0xFF0F172A),
                     textAlign = TextAlign.Center,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.height(6.dp))
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // Clearer, larger entry badge
                 Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = accentColor.copy(alpha = 0.12f)
+                    shape = RoundedCornerShape(14.dp),
+                    color = accentColor.copy(alpha = if (isDarkMode) 0.24f else 0.14f),
+                    border = BorderStroke(1.dp, accentColor.copy(alpha = if (isDarkMode) 0.60f else 0.40f))
                 ) {
                     Text(
                         text = hintText,
-                        fontSize = 9.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = accentColor,
-                        modifier = Modifier.padding(horizontal = 7.dp, vertical = 3.dp)
+                        fontSize = 11.5.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (isDarkMode) Color(0xFFE2E8F0) else accentColor,
+                        modifier = Modifier.padding(horizontal = 11.dp, vertical = 5.dp)
                     )
                 }
             }
@@ -1647,22 +1653,21 @@ private fun EnlargedHubCardDialog(
                     .verticalScroll(rememberScrollState())
                     .padding(22.dp)
             ) {
-                // Top Draggable Handle Bar (Adaptive layout that never breaks into vertical text)
+                // Top Draggable Handle Bar
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 12.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                    horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // Center/Left Draggable Pill
+                    // Centered explicit drag handle (M3 grab bar without text label)
                     Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = if (isDragging) cardDetails.accentColor else cardDetails.accentColor.copy(alpha = 0.16f),
-                        border = BorderStroke(if (isDragging) 1.5.dp else 1.dp, cardDetails.accentColor),
-                        shadowElevation = if (isDragging) 6.dp else 0.dp,
+                        shape = RoundedCornerShape(3.dp),
+                        color = if (isDragging) cardDetails.accentColor else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),
                         modifier = Modifier
-                            .weight(1f, fill = false)
+                            .width(48.dp)
+                            .height(5.dp)
                             .pointerInput(Unit) {
                                 detectDragGestures(
                                     onDragStart = { isDragging = true },
@@ -1675,33 +1680,7 @@ private fun EnlargedHubCardDialog(
                                     }
                                 )
                             }
-                    ) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(5.dp),
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.TouchApp,
-                                contentDescription = "Mover ventana",
-                                tint = if (isDragging) Color.White else cardDetails.accentColor,
-                                modifier = Modifier.size(13.dp)
-                            )
-                            Text(
-                                text = if (isSpanish) {
-                                    if (isDragging) "Moviendo... ⠿" else "Arrastra para mover ⠿"
-                                } else {
-                                    if (isDragging) "Moving... ⠿" else "Drag to move ⠿"
-                                },
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                maxLines = 1,
-                                softWrap = false,
-                                overflow = TextOverflow.Ellipsis,
-                                color = if (isDragging) Color.White else cardDetails.accentColor
-                            )
-                        }
-                    }
+                    ) {}
 
                     // Right Recenter Button (Smoothly appears only when moved)
                     AnimatedVisibility(
@@ -1714,11 +1693,12 @@ private fun EnlargedHubCardDialog(
                             color = cardDetails.accentColor.copy(alpha = 0.18f),
                             border = BorderStroke(1.dp, cardDetails.accentColor.copy(alpha = 0.6f)),
                             modifier = Modifier
+                                .padding(start = 12.dp)
                                 .clip(RoundedCornerShape(8.dp))
                                 .clickable { resetPosition() }
                         ) {
                             Row(
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
                                 verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.spacedBy(4.dp)
                             ) {
@@ -1997,22 +1977,21 @@ private fun EnlargedTextDialog(
                     .verticalScroll(rememberScrollState())
                     .padding(22.dp)
             ) {
-                // Top Draggable Handle Bar (Adaptive layout that never breaks into vertical text)
+                // Top Draggable Handle Bar
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 12.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                    horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // Center/Left Draggable Pill
+                    // Centered explicit drag handle (M3 grab bar without text label)
                     Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = if (isDragging) accentColor else accentColor.copy(alpha = 0.16f),
-                        border = BorderStroke(if (isDragging) 1.5.dp else 1.dp, accentColor),
-                        shadowElevation = if (isDragging) 6.dp else 0.dp,
+                        shape = RoundedCornerShape(3.dp),
+                        color = if (isDragging) accentColor else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),
                         modifier = Modifier
-                            .weight(1f, fill = false)
+                            .width(48.dp)
+                            .height(5.dp)
                             .pointerInput(Unit) {
                                 detectDragGestures(
                                     onDragStart = { isDragging = true },
@@ -2025,33 +2004,7 @@ private fun EnlargedTextDialog(
                                     }
                                 )
                             }
-                    ) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(5.dp),
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.TouchApp,
-                                contentDescription = "Mover ventana",
-                                tint = if (isDragging) Color.White else accentColor,
-                                modifier = Modifier.size(13.dp)
-                            )
-                            Text(
-                                text = if (isSpanish) {
-                                    if (isDragging) "Moviendo... ⠿" else "Arrastra para mover ⠿"
-                                } else {
-                                    if (isDragging) "Moving... ⠿" else "Drag to move ⠿"
-                                },
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                maxLines = 1,
-                                softWrap = false,
-                                overflow = TextOverflow.Ellipsis,
-                                color = if (isDragging) Color.White else accentColor
-                            )
-                        }
-                    }
+                    ) {}
 
                     // Right Recenter Button (Smoothly appears only when moved)
                     AnimatedVisibility(
@@ -2064,11 +2017,12 @@ private fun EnlargedTextDialog(
                             color = accentColor.copy(alpha = 0.18f),
                             border = BorderStroke(1.dp, accentColor.copy(alpha = 0.6f)),
                             modifier = Modifier
+                                .padding(start = 12.dp)
                                 .clip(RoundedCornerShape(8.dp))
                                 .clickable { resetPosition() }
                         ) {
                             Row(
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
                                 verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.spacedBy(4.dp)
                             ) {

@@ -79,7 +79,7 @@ object Booklet6Part2 {
         createCardB6("🌳", "Nature", "La naturaleza", "I love to walk in nature.", "Me encanta caminar en la naturaleza.", "Word", 12),
         createCardB6("💎", "Luxurious", "Lujoso", "They live in a luxurious house.", "Ellos viven en una casa lujosa.", "Word", 12),
         createCardB6("📏", "Measurement", "Medida, medición", "I need the measurement of the door.", "Necesito la medida de la puerta.", "Word", 12),
-        createCardB6("🚫", "Never mind", "Olvídalo", "Never mind, it is not important.", "Olvídalo, no es importante.", "Phrase", 12),
+        createCardB6("🤷", "Never mind", "Olvídalo", "Never mind, it is not important.", "Olvídalo, no es importante.", "Phrase", 12),
         createCardB6("🎲", "Likelihood", "Probabilidad", "There is a high likelihood of rain today.", "Hay mucha probabilidad de lluvia hoy.", "Word", 12),
         createCardB6("💍", "Engaged", "Prometido (para casarse)", "They are engaged to be married.", "Están prometidos para casarse.", "Word", 12),
         createCardB6("🧱", "To reinforce", "Reforzar", "We need to reinforce the wall.", "Necesitamos reforzar la pared.", "Word", 12),
@@ -123,7 +123,7 @@ object Booklet6Part2 {
         // LIST 14
         // ==========================================
         createCardB6("⏰", "It's about time", "¡Ya era hora!", "It is about time to go home.", "Ya es hora de ir a casa.", "Phrase", 14),
-        createCardB6("🏢", "Acquisition", "Adquisición", "The company made a new acquisition.", "La empresa hizo una nueva adquisición.", "Word", 14),
+        createCardB6("🤝", "Acquisition", "Adquisición", "The company made a new acquisition.", "La empresa hizo una nueva adquisición.", "Word", 14),
         createCardB6("⚠️", "Warning", "Advertencia", "Listen to my warning.", "Escucha mi advertencia.", "Word", 14),
         createCardB6("📈", "Ups and downs", "Altibajos", "Life has many ups and downs.", "La vida tiene muchos altibajos.", "Phrase", 14),
         createCardB6("🧵", "To tie loose ends", "Atar cabos sueltos", "I need to tie some loose ends at work.", "Necesito atar cabos sueltos en el trabajo.", "Phrasal Verb", 14),

@@ -37,7 +37,7 @@ object BasicsBooklet6 {
     private fun getList1(): List<Flashcard> = parseCards("""
 🔄 | Review of level 5 | Repaso del nivel 5 | Let's review level 5 | Repasemos el nivel 5 | Phrase
 🗣️ | Talking about languages of other countries | Hablando sobre idiomas de otros países | We are talking about languages of other countries | Estamos hablando sobre idiomas de otros países | Phrase
-❓ | What language do they speak in Egypt? | ¿Qué idioma hablan en Egipto? | Tell me, what language do they speak in Egypt? | Dime, ¿qué idioma hablan en Egipto? | Question
+🇪🇬 | What language do they speak in Egypt? | ¿Qué idioma hablan en Egipto? | Tell me, what language do they speak in Egypt? | Dime, ¿qué idioma hablan en Egipto? | Question
 ⬆️ | Up the street | Calle arriba | Walk up the street | Camina calle arriba | Phrase
 🌉 | Over the bridge | Sobre el puente | Walk over the bridge | Camina sobre el puente | Phrase
 🚆 | Under the train tracks | Debajo de las vías del tren | Walk under the train tracks | Camina debajo de las vías del tren | Phrase
@@ -45,7 +45,7 @@ object BasicsBooklet6 {
 🌊 | Along the river | A lo largo del río | Walk along the river | Camina a lo largo del río | Phrase
 ⬇️ | Down the stairs | Escaleras abajo | Walk down the stairs | Camina escaleras abajo | Phrase
 🧭 | Asking and giving directions | Preguntar y dar direcciones | We are asking and giving directions | Estamos preguntando y dando direcciones | Phrase
-❓ | How do I get to the hotel? | ¿Cómo llego al hotel? | Tell me, how do I get to the hotel? | Dime, ¿cómo llego al hotel? | Question
+🤔 | How do I get to the hotel? | ¿Cómo llego al hotel? | Tell me, how do I get to the hotel? | Dime, ¿cómo llego al hotel? | Question
 🚶 | First walk up the street and turn right. | Primero camina calle arriba y gira a la derecha. | Look, first walk up the street and turn right. | Mira, primero camina calle arriba y gira a la derecha. | Phrase
 🚶 | Then, walk over the bridge and turn left. | Luego, camina sobre el puente y gira a la izquierda. | Look, then, walk over the bridge and turn left. | Mira, luego, camina sobre el puente y gira a la izquierda. | Phrase
 🚕 | Catch a taxi | Tomar un taxi | I catch a taxi | Tomo un taxi | Phrase
@@ -55,9 +55,9 @@ object BasicsBooklet6 {
 🚆 | Take the train | Tomar el tren | I take the train | Tomo el tren | Phrase
 🚗 | Drive a car | Conducir un auto | I drive a car | Conduzco un auto | Phrase
 🚗 | Talking about transportation using the past tense | Hablando sobre transporte usando el tiempo pasado | We are talking about transportation using the past tense | Estamos hablando sobre transporte usando el tiempo pasado | Phrase
-❓ | What did they do this morning? | ¿Qué hicieron esta mañana? | Tell me, what did they do this morning? | Dime, ¿qué hicieron esta mañana? | Question
+🤔 | What did they do this morning? | ¿Qué hicieron esta mañana? | Tell me, what did they do this morning? | Dime, ¿qué hicieron esta mañana? | Question
 🚕 | They caught a taxi to the zoo. | Tomaron un taxi al zoológico. | Look, they caught a taxi to the zoo. | Mira, tomamos un taxi al zoológico. | Phrase
-❓ | How did you get to the museum? | ¿Cómo llegaste al museo? | Tell me, how did you get to the museum? | Dime, ¿cómo llegaste al museo? | Question
+🏛️ | How did you get to the museum? | ¿Cómo llegaste al museo? | Tell me, how did you get to the museum? | Dime, ¿cómo llegaste al museo? | Question
 🚕 | We caught a taxi. | Tomamos un taxi. | Look, we caught a taxi. | Mira, tomamos un taxi. | Phrase
 🎪 | Finding the Fair | Encontrando la feria | This is Finding the Fair | Esta es Encontrando la feria | Phrase
 🧭 | Asking and giving directions | Preguntar y dar direcciones | We are asking and giving directions | Estamos preguntando y dando direcciones | Phrase
@@ -65,7 +65,7 @@ object BasicsBooklet6 {
 📍 | It's in that direction. | Está en esa dirección. | Look, it's in that direction. | Mira, está en esa dirección. | Phrase
 👍 | OK. Thanks. | De acuerdo. Gracias. | Yes, OK. Thanks. | Sí, de acuerdo. Gracias. | Phrase
 🤷 | Saying you don't know where a place is | Decir que no sabes dónde está un lugar | Saying you don't know where a place is is common | Decir que no sabes dónde está un lugar es común | Phrase
-❓ | The art fair? I don't know where it is. | ¿La feria de arte? No sé dónde está. | Tell me, the art fair? I don't know where it is. | Dime, ¿la feria de arte? No sé dónde está. | Question
+🎨 | The art fair? I don't know where it is. | ¿La feria de arte? No sé dónde está. | Tell me, the art fair? I don't know where it is. | Dime, ¿la feria de arte? No sé dónde está. | Question
 🙏 | Thanks, anyway. | Gracias de todos modos. | Thanks, anyway. | Gracias de todos modos. | Phrase
 🛡️ | Be prepared. | Prepárate. | Always be prepared. | Siempre prepárate. | Phrase
 🏛️ | Capital | Capital | The capital is big | La capital es grande | Word
@@ -76,8 +76,8 @@ object BasicsBooklet6 {
 👀 | Observe | Observar | I observe the cat | Observo al gato | Word
 📅 | Future with be going to for plans | Futuro con be going to para planes | We use the future with be going to for plans | Usamos el futuro con be going to para planes | Phrase
 ⛩️ | I'm going to Meiji Shrine on Friday afternoon. | Voy al santuario Meiji el viernes por la tarde. | Look, I'm going to Meiji Shrine on Friday afternoon. | Mira, voy al santuario Meiji el viernes por la tarde. | Phrase
-❓ | Asking and saying how you will get to a place | Preguntar y decir cómo llegarás a un lugar | We are asking and saying how you will get to a place | Estamos preguntando y diciendo cómo llegarás a un lugar | Phrase
-❓ | How will you get there? | ¿Cómo llegarás allí? | Tell me, how will you get there? | Dime, ¿cómo llegarás allí? | Question
+🤔 | Asking and saying how you will get to a place | Preguntar y decir cómo llegarás a un lugar | We are asking and saying how you will get to a place | Estamos preguntando y diciendo cómo llegarás a un lugar | Phrase
+🤔 | How will you get there? | ¿Cómo llegarás allí? | Tell me, how will you get there? | Dime, ¿cómo llegarás allí? | Question
 🚆 | I'll take the train to Harajuku Station and walk to the shrine entrance. | Tomaré el tren hasta la estación Harajuku y caminaré hasta la entrada del santuario. | Look, I'll take the train to Harajuku Station and walk to the shrine entrance. | Mira, tomaré el tren hasta la estación Harajuku y caminaré hasta la entrada del santuario. | Phrase
 ⬆️ | First walk up the street and turn left. | Primero camina calle arriba y gira a la izquierda. | Look, first walk up the street and turn left. | Mira, primero camina calle arriba y gira a la izquierda. | Phrase
 ⬆️ | First walk over the bridge and turn right. | Primero camina sobre el puente y gira a la derecha. | Look, first walk over the bridge and turn right. | Mira, primero camina sobre el puente y gira a la derecha. | Phrase
@@ -91,10 +91,10 @@ object BasicsBooklet6 {
 ⬆️ | Then, walk around the fountain and turn left. | Luego, camina alrededor de la fuente y gira a la izquierda. | Look, then, walk around the fountain and turn left. | Mira, luego, camina alrededor de la fuente y gira a la izquierda. | Phrase
 ⬆️ | Then, walk along the river and turn right. | Luego, camina a lo largo del río y gira a la derecha. | Look, then, walk along the river and turn right. | Mira, luego, camina a lo largo del río y gira a la derecha. | Phrase
 ⬆️ | Then, walk down the stairs and turn left. | Luego, camina escaleras abajo y gira a la izquierda. | Look, then, walk down the stairs and turn left. | Mira, luego, camina escaleras abajo y gira a la izquierda. | Phrase
-❓ | How do I get to the museum? | ¿Cómo llego al museo? | Tell me, how do I get to the museum? | Dime, ¿cómo llego al museo? | Question
-❓ | How do I get to the park? | ¿Cómo llego al parque? | Tell me, how do I get to the park? | Dime, ¿cómo llego al parque? | Question
-❓ | How do I get to the station? | ¿Cómo llego a la estación? | Tell me, how do I get to the station? | Dime, ¿cómo llego a la estación? | Question
-❓ | How do I get to the store? | ¿Cómo llego a la tienda? | Tell me, how do I get to the store? | Dime, ¿cómo llego a la tienda? | Question
+🏛️ | How do I get to the museum? | ¿Cómo llego al museo? | Tell me, how do I get to the museum? | Dime, ¿cómo llego al museo? | Question
+🏞️ | How do I get to the park? | ¿Cómo llego al parque? | Tell me, how do I get to the park? | Dime, ¿cómo llego al parque? | Question
+🤔 | How do I get to the station? | ¿Cómo llego a la estación? | Tell me, how do I get to the station? | Dime, ¿cómo llego a la estación? | Question
+🏬 | How do I get to the store? | ¿Cómo llego a la tienda? | Tell me, how do I get to the store? | Dime, ¿cómo llego a la tienda? | Question
 🚕 | They caught a ferry to the zoo. | Tomaron un ferry al zoológico. | Look, they caught a ferry to the zoo. | Mira, tomaron un ferry al zoológico. | Phrase
 🚕 | They caught the subway to the zoo. | Tomaron el metro al zoológico. | Look, they caught the subway to the zoo. | Mira, tomaron el metro al zoológico. | Phrase
 🚕 | They caught a bus to the zoo. | Tomaron un autobús al zoológico. | Look, they caught a bus to the zoo. | Mira, tomaron un autobús al zoológico. | Phrase
@@ -141,7 +141,7 @@ object BasicsBooklet6 {
 📞 | I can call friends on weekends, but I can't call friends on weekdays. | Puedo llamar a amigos los fines de semana, pero no puedo llamar a amigos los días de semana. | Look, I can call friends on weekends, but I can't call friends on weekdays. | Mira, puedo llamar a amigos los fines de semana, pero no puedo llamar a amigos los días de semana. | Phrase
 📞 | My dad could call friends when he was my age, but my mom couldn't. | Mi papá podía llamar a amigos cuando tenía mi edad, pero mi mamá no. | Look, My dad could call friends when he was my age, but my mom couldn't. | Mira, mi papá podía llamar a amigos cuando tenía mi edad, pero mi mamá no. | Phrase
 👶 | Babysitting | Cuidar niños | I like babysitting | Me gusta cuidar niños | Phrase
-❓ | Asking if something is mandatory | Preguntar si algo es obligatorio | We are asking if something is mandatory | Estamos preguntando si algo es obligatorio | Phrase
+🤔 | Asking if something is mandatory | Preguntar si algo es obligatorio | We are asking if something is mandatory | Estamos preguntando si algo es obligatorio | Phrase
 👶 | Do I have to babysit? | ¿Tengo que cuidar niños? | Tell me, do I have to babysit? | Dime, ¿tengo que cuidar niños? | Question
 👍 | You don't have to, but you should. | No tienes que hacerlo, pero deberías. | Look, you don't have to, but you should. | Mira, no tienes que hacerlo, pero deberías. | Phrase
 👍 | OK. I will. | De acuerdo. Lo haré. | Yes, OK. I will. | Sí, de acuerdo. Lo haré. | Phrase
@@ -150,13 +150,13 @@ object BasicsBooklet6 {
 👍 | All right, Mom. | Está bien, mamá. | All right, Mom. | Está bien, mamá. | Phrase
 ❤️ | Be responsible. | Sé responsable. | Please, be responsible. | Por favor, sé responsable. | Phrase
 ➕ | Addition | Suma | Addition is easy | La suma es fácil | Word
-❓ | Something | Algo | I need something | Necesito algo | Word
+🤔 | Something | Algo | I need something | Necesito algo | Word
 🔢 | Order | Orden | Put it in order | Ponlo en orden | Word
 ➖ | Subtraction | Resta | Subtraction is math | La resta es matemática | Word
 ✖️ | Multiplication | Multiplicación | Multiplication is useful | La multiplicación es útil | Word
 ➗ | Division | División | Division is math | La división es matemática | Word
-❓ | Asking what is the best way to do math problems | Preguntar cuál es la mejor manera de hacer problemas de matemáticas | We are asking what is the best way to do math problems | Estamos preguntando cuál es la mejor manera de hacer problemas de matemáticas | Phrase
-❓ | What kind of math should you use for the first problem? | ¿Qué tipo de matemáticas debes usar para el primer problema? | Tell me, what kind of math should you use for the first problem? | Dime, ¿qué tipo de matemáticas debes usar para el primer problema? | Question
+🔢 | Asking what is the best way to do math problems | Preguntar cuál es la mejor manera de hacer problemas de matemáticas | We are asking what is the best way to do math problems | Estamos preguntando cuál es la mejor manera de hacer problemas de matemáticas | Phrase
+1️⃣ | What kind of math should you use for the first problem? | ¿Qué tipo de matemáticas debes usar para el primer problema? | Tell me, what kind of math should you use for the first problem? | Dime, ¿qué tipo de matemáticas debes usar para el primer problema? | Question
 ➕ | Addition. | Suma. | Look, addition. | Mira, suma. | Phrase
 💵 | I have to pay bills, but my parents don't have to. | Tengo que pagar facturas, pero mis padres no tienen que hacerlo. | Look, I have to pay bills, but my parents don't have to. | Mira, tengo que pagar facturas, pero mis padres no tienen que hacerlo. | Phrase
 💵 | I have to pay bills, and my parents do, too. | Tengo que pagar facturas, y mis padres también. | Look, I have to pay bills, and my parents do, too. | Mira, tengo que pagar facturas, y mis padres también. | Phrase
@@ -197,7 +197,7 @@ object BasicsBooklet6 {
 📱 | Have a smartphone | Tener un teléfono inteligente | I have a smartphone | Tengo un teléfono inteligente | Phrase
 💻 | He's owned a laptop since September. | Él ha tenido una computadora portátil desde septiembre. | Look, he's owned a laptop since September. | Mira, él ha tenido una computadora portátil desde septiembre. | Phrase
 💻 | He's owned a laptop for two years. | Él ha tenido una computadora portátil durante dos años. | Look, he's owned a laptop for two years. | Mira, él ha tenido una computadora portátil durante dos años. | Phrase
-❓ | How long have you owned a laptop? | ¿Cuánto tiempo has tenido una computadora portátil? | Tell me, how long have you owned a laptop? | Dime, ¿cuánto tiempo has tenido una computadora portátil? | Question
+🐍 | How long have you owned a laptop? | ¿Cuánto tiempo has tenido una computadora portátil? | Tell me, how long have you owned a laptop? | Dime, ¿cuánto tiempo has tenido una computadora portátil? | Question
 💻 | I've owned a laptop since May. | He tenido una computadora portátil desde mayo. | Look, I've owned a laptop since mayo. | Mira, he tenido una computadora portátil desde mayo. | Phrase
 💻 | I've owned a laptop for six months. | He tenido una computadora portátil durante seis meses. | Look, I've owned a laptop for six months. | Mira, he tenido una computadora portátil durante seis meses. | Phrase
 🇫🇷 | Live in Paris | Vivir en París | I live in Paris | Vivo en París | Phrase
@@ -210,7 +210,7 @@ object BasicsBooklet6 {
 🇫🇷 | They've been living in Paris since they were ten. | Han estado viviendo en París desde que tenían diez años. | Look, They've been living in Paris since they were ten. | Mira, han estado viviendo en París desde que tenían diez años. | Phrase
 🇫🇷 | We've been living in Paris for a long time. | Hemos estado viviendo en París durante mucho tiempo. | Look, We've been living in Paris for a long time. | Mira, hemos estado viviendo en París durante mucho tiempo. | Phrase
 🇫🇷 | They've been living in Paris for a long time. | Han estado viviendo en París durante mucho tiempo. | Look, They've been living in Paris for a long time. | Mira, han estado viviendo en París durante mucho tiempo. | Phrase
-❓ | How long have you been living in Paris? | ¿Cuánto tiempo has estado viviendo en París? | Tell me, How long have you been living in Paris? | Dime, ¿cuánto tiempo has estado viviendo en París? | Question
+🐍 | How long have you been living in Paris? | ¿Cuánto tiempo has estado viviendo en París? | Tell me, How long have you been living in Paris? | Dime, ¿cuánto tiempo has estado viviendo en París? | Question
 🇫🇷 | Since I was ten. | Desde que tenía diez años. | Since I was ten. | Desde que tenía diez años. | Phrase
 🇫🇷 | For five years. | Por cinco años. | For five years. | Por cinco años. | Phrase
 🚶 | The Walk-a-Thon | La caminata benéfica | This is The Walk-a-Thon | Esta es La caminata benéfica | Phrase
@@ -226,7 +226,7 @@ object BasicsBooklet6 {
 🛠️ | Tool | Herramienta | The tool is useful | La herramienta es útil | Word
 🪖 | Samurai helmet | Casco de samurái | The samurai helmet is old | El casco de samurái es viejo | Word
 📐 | Edge | Borde | The edge is sharp | El borde está afilado | Word
-❓ | I've finished step 3. What do I do next? | He terminado el paso 3. ¿Qué hago después? | Tell me, I've finished step 3. What do I do next? | Dime, he terminado el paso 3. ¿Qué hago después? | Question
+👨 | I've finished step 3. What do I do next? | He terminado el paso 3. ¿Qué hago después? | Tell me, I've finished step 3. What do I do next? | Dime, he terminado el paso 3. ¿Qué hago después? | Question
 📄 | For step 4, you should fold the corners up to the top again. | Para el paso 4, debes doblar las esquinas hacia arriba nuevamente. | Look, For step 4, you should fold the corners up to the top again. | Mira, para el paso 4, debes doblar las esquinas hacia arriba nuevamente. | Phrase
 📱 | He's owned a smartphone since September. | Él ha tenido un teléfono inteligente desde septiembre. | Look, He's owned a smartphone since September. | Mira, él ha tenido un teléfono inteligente desde septiembre. | Phrase
 📱 | He's owned a smartphone for two years. | Él ha tenido un teléfono inteligente durante dos años. | Look, He's owned a smartphone for two years. | Mira, él ha tenido un teléfono inteligente durante dos años. | Phrase
@@ -242,11 +242,11 @@ object BasicsBooklet6 {
 📚 | He's collected comic books for two years. | Él ha coleccionado cómics durante dos años. | Look, He's collected comic books for two years. | Mira, él ha coleccionado cómics durante dos años. | Phrase
 🩰 | He's studied ballet since September. | Él ha estudiado ballet desde septiembre. | Look, He's studied ballet since September. | Mira, él ha estudiado ballet desde septiembre. | Phrase
 🩰 | He's studied ballet for two years. | Él ha estudiado ballet durante dos años. | Look, He's studied ballet for two years. | Mira, él ha estudiado ballet durante dos años. | Phrase
-❓ | How long have you played the saxophone? | ¿Cuánto tiempo has tocado el saxofón? | Tell me, How long have you played the saxophone? | Dime, ¿cuánto tiempo has tocado el saxofón? | Question
-❓ | How long have you built websites? | ¿Cuánto tiempo has construido sitios web? | Tell me, How long have you built websites? | Dime, ¿cuánto tiempo has construido sitios web? | Question
-❓ | How long have you volunteered at a soup kitchen? | ¿Cuánto tiempo has sido voluntario en un comedor social? | Tell me, How long have you volunteered at a soup kitchen? | Dime, ¿cuánto tiempo has sido voluntario en un comedor social? | Question
-❓ | How long have you collected comic books? | ¿Cuánto tiempo has coleccionado cómics? | Tell me, How long have you collected comic books? | Dime, ¿cuánto tiempo has coleccionado cómics? | Question
-❓ | How long have you studied ballet? | ¿Cuánto tiempo has estudiado ballet? | Tell me, How long have you studied ballet? | Dime, ¿cuánto tiempo has estudiado ballet? | Question
+🐍 | How long have you played the saxophone? | ¿Cuánto tiempo has tocado el saxofón? | Tell me, How long have you played the saxophone? | Dime, ¿cuánto tiempo has tocado el saxofón? | Question
+🐍 | How long have you built websites? | ¿Cuánto tiempo has construido sitios web? | Tell me, How long have you built websites? | Dime, ¿cuánto tiempo has construido sitios web? | Question
+🍳 | How long have you volunteered at a soup kitchen? | ¿Cuánto tiempo has sido voluntario en un comedor social? | Tell me, How long have you volunteered at a soup kitchen? | Dime, ¿cuánto tiempo has sido voluntario en un comedor social? | Question
+📚 | How long have you collected comic books? | ¿Cuánto tiempo has coleccionado cómics? | Tell me, How long have you collected comic books? | Dime, ¿cuánto tiempo has coleccionado cómics? | Question
+🐍 | How long have you studied ballet? | ¿Cuánto tiempo has estudiado ballet? | Tell me, How long have you studied ballet? | Dime, ¿cuánto tiempo has estudiado ballet? | Question
 🎷 | I've played the saxophone since May. | He tocado el saxofón desde mayo. | Look, I've played the saxophone since May. | Mira, he tocado el saxofón desde mayo. | Phrase
 🎷 | I've played the saxophone for six months. | He tocado el saxofón durante seis meses. | Look, I've played the saxophone for six months. | Mira, he tocado el saxofón durante seis meses. | Phrase
 💻 | I've built websites since May. | He construido sitios web desde mayo. | Look, I've built websites since May. | Mira, he construido sitios web desde mayo. | Phrase
@@ -268,7 +268,7 @@ object BasicsBooklet6 {
 🌸 | Cologne | Colonia | The cologne is nice | La colonia es agradable | Word
 🧼 | I went to the store because I needed a bar of soap. | Fui a la tienda porque necesitaba una barra de jabón. | Look, I went to the store because I needed a bar of soap. | Mira, fui a la tienda porque necesitaba una barra de jabón. | Phrase
 🌸 | I went to the store because I wanted a bottle of perfume. | Fui a la tienda porque quería una botella de perfume. | Look, I went to the store because I wanted a bottle of perfume. | Mira, fui a la tienda porque quería una botella de perfume. | Phrase
-❓ | Why is she going to the store? | ¿Por qué va ella a la tienda? | Tell me, why is she going to the store? | Dime, ¿por qué va ella a la tienda? | Question
+🏬 | Why is she going to the store? | ¿Por qué va ella a la tienda? | Tell me, why is she going to the store? | Dime, ¿por qué va ella a la tienda? | Question
 🧼 | Why is she going to the store? Because she needs a bar of soap. | ¿Por qué va ella a la tienda? Porque necesita una barra de jabón. | Why is she going to the store? Because she needs a bar of soap. | ¿Por qué va ella a la tienda? Porque necesita una barra de jabón. | Phrase
 🌸 | Why is she going to the store? Because she wants a bottle of perfume. | ¿Por qué va ella a la tienda? Porque quiere una botella de perfume. | Why is she going to the store? Because she wants a bottle of perfume. | ¿Por qué va ella a la tienda? Porque quiere una botella de perfume. | Phrase
 🧴 | Conditioner | Acondicionador | She uses conditioner | Ella usa acondicionador | Word
@@ -282,11 +282,11 @@ object BasicsBooklet6 {
 🧴 | He ran out of conditioner while he was at camp, so he bought some more. | Se le acabó el acondicionador mientras estaba en el campamento, así que compró más. | Look, he ran out of conditioner while he was at camp, so he bought some more. | Mira, se le acabó el acondicionador mientras estaba en el campamento, así que compró más. | Phrase
 ⭐ | The Talent Show | El show de talentos | This is The Talent Show | Este es El show de talentos | Phrase
 ⏳ | Saying it's not necessary to wait | Decir que no es necesario esperar | We are saying it's not necessary to wait | Estamos diciendo que no es necesario esperar | Phrase
-❓ | Should I wait until you're ready? | ¿Debería esperar hasta que estés listo? | Tell me, should I wait until you're ready? | Dime, ¿debería esperar hasta que estés listo? | Question
+🤔 | Should I wait until you're ready? | ¿Debería esperar hasta que estés listo? | Tell me, should I wait until you're ready? | Dime, ¿debería esperar hasta que estés listo? | Question
 🚶 | No, just go without me. | No, vete sin mí. | No, just go without me. | No, vete sin mí. | Phrase
 👍 | OK. See you there. | De acuerdo. Nos vemos allí. | Yes, OK. See you there. | Sí, de acuerdo. Nos vemos allí. | Phrase
 🤝 | Agreeing to wait and go together | Aceptar esperar e ir juntos | We are agreeing to wait and go together | Estamos aceptando esperar e ir juntos | Phrase
-❓ | Should I wait until you are ready? | ¿Debería esperar hasta que estés listo? | Tell me, should I wait until you are ready? | Dime, ¿debería esperar hasta que estés listo? | Question
+🤔 | Should I wait until you are ready? | ¿Debería esperar hasta que estés listo? | Tell me, should I wait until you are ready? | Dime, ¿debería esperar hasta que estés listo? | Question
 👍 | Yes, if you don't mind. | Sí, si no te importa. | Yes, if you don't mind. | Sí, si no te importa. | Phrase
 👍 | No, not at all. | No, para nada. | No, not at all. | No, para nada. | Phrase
 ❤️ | Be thoughtful. | Sé considerado. | Please, be thoughtful. | Por favor, sé considerado. | Phrase
@@ -297,9 +297,9 @@ object BasicsBooklet6 {
 🌧️ | Condensation | Condensación | Condensation makes clouds | La condensación forma nubes | Word
 🌧️ | Precipitation | Precipitación | Precipitation is rain | La precipitación es lluvia | Word
 💧 | Collection | Recolección / Acumulación | Water collection in the ocean | Acumulación de agua en el océano | Word
-❓ | What happens after evaporation? | ¿Qué pasa después de la evaporación? | Tell me, what happens after evaporation? | Dime, ¿qué pasa después de la evaporación? | Question
+☁️ | What happens after evaporation? | ¿Qué pasa después de la evaporación? | Tell me, what happens after evaporation? | Dime, ¿qué pasa después de la evaporación? | Question
 ☁️ | Condensation. | Condensación. | Look, condensation. | Mira, condensación. | Phrase
-❓ | What is condensation? | ¿Qué es la condensación? | Tell me, what is condensation? | Dime, ¿qué es la condensación? | Question
+🌧️ | What is condensation? | ¿Qué es la condensación? | Tell me, what is condensation? | Dime, ¿qué es la condensación? | Question
 ☁️ | It's when the water vapor gets cold and becomes clouds. | Es cuando el vapor de agua se enfría y se convierte en nubes. | Look, it's when the water vapor gets cold and becomes clouds. | Mira, es cuando el vapor de agua se enfría y se convierte en nubes. | Phrase
 🦷 | I went to the store because I needed toothpaste. | Fui a la tienda porque necesitaba pasta de dientes. | Look, I went to the store because I needed toothpaste. | Mira, fui a la tienda porque necesitaba pasta de dientes. | Phrase
 🧴 | I went to the store because I needed hair gel. | Fui a la tienda porque necesitaba gel para el cabello. | Look, I went to the store because I needed hair gel. | Mira, fui a la tienda porque necesitaba gel para el cabello. | Phrase
@@ -307,7 +307,7 @@ object BasicsBooklet6 {
 🌸 | I went to the store because I needed cologne. | Fui a la tienda porque necesitaba colonia. | Look, I went to the store because I needed cologne. | Mira, fui a la tienda porque necesitaba colonia. | Phrase
 🧴 | I went to the store because I wanted shampoo. | Fui a la tienda porque quería champú. | Look, I went to the store because I wanted shampoo. | Mira, fui a la tienda porque quería champú. | Phrase
 🦷 | I went to the store because I wanted toothpaste. | Fui a la tienda porque quería pasta de dientes. | Look, I went to the store because I wanted toothpaste. | Mira, fui a la tienda porque quería pasta de dientes. | Phrase
-❓ | Why is he going to the store? | ¿Por qué va él a la tienda? | Tell me, why is he going to the store? | Dime, ¿por qué va él a la tienda? | Question
+🏬 | Why is he going to the store? | ¿Por qué va él a la tienda? | Tell me, why is he going to the store? | Dime, ¿por qué va él a la tienda? | Question
 🧼 | Why is he going to the store? Because he needs soap. | ¿Por qué va él a la tienda? Porque necesita jabón. | Why is he going to the store? Because he needs soap. | ¿Por qué va él a la tienda? Porque necesita jabón. | Phrase
 🦷 | Why is he going to the store? Because he needs toothpaste. | ¿Por qué va él a la tienda? Porque necesita pasta de dientes. | Why is he going to the store? Because he needs toothpaste. | ¿Por qué va él a la tienda? Porque necesita pasta de dientes. | Phrase
 🧴 | Why is he going to the store? Because he needs hair gel. | ¿Por qué va él a la tienda? Porque necesita gel para el cabello. | Why is he going to the store? Because he needs hair gel. | ¿Por qué va él a la tienda? Porque necesita gel para el cabello. | Phrase
@@ -338,10 +338,10 @@ object BasicsBooklet6 {
 👧 | The girl who is going to the deli is my younger sister. | La niña que va a la charcutería (deli) es mi hermana menor. | Look, the girl who is going to the deli is my younger sister. | Mira, la niña que va a la charcutería (deli) es mi hermana menor. | Phrase
 👦 | The boy who is going to the deli is my older brother. | El niño que va a la charcutería (deli) es mi hermano mayor. | Look, the boy who is going to the deli is my older brother. | Mira, el niño que va a la charcutería (deli) es mi hermano mayor. | Phrase
 👧 | The girl who is going to the deli is my older sister. | La niña que va a la charcutería (deli) es mi hermana mayor. | Look, the girl who is going to the deli is my older sister. | Mira, la niña que va a la charcutería (deli) es mi hermana mayor. | Phrase
-❓ | Which one is your younger brother? | ¿Cuál es tu hermano menor? | Tell me, which one is your younger brother? | Dime, ¿cuál es tu hermano menor? | Question
-❓ | Which one is your younger sister? | ¿Cuál es tu hermana menor? | Tell me, which one is your younger sister? | Dime, ¿cuál es tu hermana menor? | Question
-❓ | Which one is your older brother? | ¿Cuál es tu hermano mayor? | Tell me, which one is your older brother? | Dime, ¿cuál es tu hermano mayor? | Question
-❓ | Which one is your older sister? | ¿Cuál es tu hermana mayor? | Tell me, which one is your older sister? | Dime, ¿cuál es tu hermana mayor? | Question
+👦 | Which one is your younger brother? | ¿Cuál es tu hermano menor? | Tell me, which one is your younger brother? | Dime, ¿cuál es tu hermano menor? | Question
+👧 | Which one is your younger sister? | ¿Cuál es tu hermana menor? | Tell me, which one is your younger sister? | Dime, ¿cuál es tu hermana menor? | Question
+👦 | Which one is your older brother? | ¿Cuál es tu hermano mayor? | Tell me, which one is your older brother? | Dime, ¿cuál es tu hermano mayor? | Question
+👧 | Which one is your older sister? | ¿Cuál es tu hermana mayor? | Tell me, which one is your older sister? | Dime, ¿cuál es tu hermana mayor? | Question
 👦 | He's the one who is going to the deli. | Él es quien va a la charcutería (deli). | Look, he's the one who is going to the deli. | Mira, él es quien va a la charcutería (deli). | Phrase
 👧 | She's the one who is going to the deli. | Ella es quien va a la charcutería (deli). | Look, she's the one who is going to the deli. | Mira, ella es quien va a la charcutería (deli). | Phrase
 🛍️ | Mall | Centro comercial | I go to the mall | Voy al centro comercial | Word
@@ -351,11 +351,11 @@ object BasicsBooklet6 {
 🖼️ | Art gallery | Galería de arte | The art gallery has paintings | La galería de arte tiene pinturas | Word
 🕹️ | Arcade | Salón de juegos | I play games at the arcade | Juego en el salón de juegos | Word
 💬 | Questions and answers with reported speech | Preguntas y respuestas con estilo indirecto | We study questions and answers with reported speech | Estudiamos preguntas y respuestas con estilo indirecto | Phrase
-❓ | What did he say? | ¿Qué dijo él? | Tell me, what did he say? | Dime, ¿qué dijo él? | Question
+🤔 | What did he say? | ¿Qué dijo él? | Tell me, what did he say? | Dime, ¿qué dijo él? | Question
 🗣️ | What did he say? He said that he was going to the mall. | ¿Qué dijo él? Él dijo que iba al centro comercial. | What did he say? He said that he was going to the mall. | ¿Qué dijo él? Él dijo que iba al centro comercial. | Phrase
-❓ | Did she say that she was going to the mall? | ¿Dijo ella que iba al centro comercial? | Tell me, Did she say that she was going to the mall? | Dime, ¿dijo ella que iba al centro comercial? | Question
-✅ | Did she say that she was going to the mall? Yes, she did. | ¿Dijo ella que iba al centro comercial? Sí, ella lo dijo. | Did she say that she was going to the mall? Yes, she did. | ¿Dijo ella que iba al centro comercial? Sí, ella lo dijo. | Phrase
-❌ | Did she say that she was going to the mall? No, she didn't. | ¿Dijo ella que iba al centro comercial? No, ella no lo dijo. | Did she say that she was going to the mall? No, she didn't. | ¿Dijo ella que iba al centro comercial? No, ella no lo dijo. | Phrase
+🛍️ | Did she say that she was going to the mall? | ¿Dijo ella que iba al centro comercial? | Tell me, Did she say that she was going to the mall? | Dime, ¿dijo ella que iba al centro comercial? | Question
+🛍️ | Did she say that she was going to the mall? Yes, she did. | ¿Dijo ella que iba al centro comercial? Sí, ella lo dijo. | Did she say that she was going to the mall? Yes, she did. | ¿Dijo ella que iba al centro comercial? Sí, ella lo dijo. | Phrase
+🛍️ | Did she say that she was going to the mall? No, she didn't. | ¿Dijo ella que iba al centro comercial? No, ella no lo dijo. | Did she say that she was going to the mall? No, she didn't. | ¿Dijo ella que iba al centro comercial? No, ella no lo dijo. | Phrase
 🃏 | The Missing Card | La tarjeta perdida | This is The Missing Card | Esta es La tarjeta perdida | Phrase
 ❤️ | Expressing you liked something | Expresar que te gustó algo | We are expressing you liked something | Estamos expresando que te gustó algo | Phrase
 🎁 | I really like the card you gave me for my birthday. | Me gusta mucho la tarjeta que me diste por mi cumpleaños. | Look, I really like the card you gave me for my birthday. | Mira, me gusta mucho la tarjeta que me diste por mi cumpleaños. | Phrase
@@ -368,8 +368,8 @@ object BasicsBooklet6 {
 🛡️ | Support | Soporte / Apoyo | We need support | Necesitamos apoyo | Word
 🛡️ | Protect | Proteger | We protect our body | Protegemos nuestro cuerpo | Word
 🔗 | Tendon | Tendón | The tendon connects muscle to bone | El tendón conecta el músculo con el hueso | Word
-❓ | Questions in the simple present | Preguntas en presente simple | We use questions in the simple present | Usamos preguntas en presente simple | Phrase
-❓ | What do bones do? | ¿Qué hacen los huesos? | Tell me, what do bones do? | Dime, ¿qué hacen los huesos? | Question
+🤔 | Questions in the simple present | Preguntas en presente simple | We use questions in the simple present | Usamos preguntas en presente simple | Phrase
+🤔 | What do bones do? | ¿Qué hacen los huesos? | Tell me, what do bones do? | Dime, ¿qué hacen los huesos? | Question
 🛡️ | They support and protect your body. | Ellas apoyan y protegen tu cuerpo. / Ellos apoyan y protegen tu cuerpo. | Look, they support and protect your body. | Mira, apoyan y protegen tu cuerpo. | Phrase
 👦 | The boy who is going to the pet shop is my younger brother. | El niño que va a la tienda de mascotas es mi hermano menor. | Look, the boy who is going to the pet shop is my younger brother. | Mira, el niño que va a la tienda de mascotas es mi hermano menor. | Phrase
 👦 | The boy who is going to the convenience store is my younger brother. | El niño que va a la tienda de conveniencia es mi hermano menor. | Look, the boy who is going to the convenience store is my younger brother. | Mira, el niño que va a la tienda de conveniencia es mi hermano menor. | Phrase
@@ -396,14 +396,14 @@ object BasicsBooklet6 {
 🗣️ | What did he say? He said that he was going to the science museum. | ¿Qué dijo él? Él dijo que iba al museo de ciencia. | What did he say? He said that he was going to the science museum. | ¿Qué dijo él? Él dijo que iba al museo de ciencia. | Phrase
 🗣️ | What did he say? He said that he was going to the art gallery. | ¿Qué dijo él? Él dijo que iba a la galería de arte. | What did he say? He said that he was going to the art gallery. | ¿Qué dijo él? Él dijo que iba a la galería de arte. | Phrase
 🗣️ | What did he say? He said that he was going to the arcade. | ¿Qué dijo él? Él dijo que iba al salón de juegos. | What did he say? He said that he was going to the arcade. | ¿Qué dijo él? Él dijo que iba al salón de juegos. | Phrase
-❓ | Did she say that she was going to the skate park? | ¿Dijo ella que iba al parque de patinaje? | Tell me, did she say that she was going to the skate park? | Dime, ¿dijo ella que iba al parque de patinaje? | Question
-❓ | Did she say that she was going to the sports stadium? | ¿Dijo ella que iba al estadio deportivo? | Tell me, did she say that she was going to the sports stadium? | Dime, ¿dijo ella que iba al estadio deportivo? | Question
-❓ | Did she say that she was going to the science museum? | ¿Dijo ella que iba al museo de ciencia? | Tell me, did she say that she was going to the science museum? | Dime, ¿dijo ella que iba al museo de ciencia? | Question
-❓ | Did she say that she was going to the art gallery? | ¿Dijo ella que iba a la galería de arte? | Tell me, did she say that she was going to the art gallery? | Dime, ¿dijo ella que iba a la galería de arte? | Question
-❓ | Did she say that she was going to the arcade? | ¿Dijo ella que iba al salón de juegos? | Tell me, did she say that she was going to the arcade? | Dime, ¿dijo ella que iba al salón de juegos? | Question
-❓ | What do muscles do? | ¿Qué hacen los músculos? | Tell me, what do muscles do? | Dime, ¿qué hacen los músculos? | Question
-❓ | What do ligaments do? | ¿Qué hacen los ligamentos? | Tell me, what do ligaments do? | Dime, ¿qué hacen los ligamentos? | Question
-❓ | What do tendons do? | ¿Qué hacen los tendones? | Tell me, what do tendons do? | Dime, ¿qué hacen los tendones? | Question
+🛹 | Did she say that she was going to the skate park? | ¿Dijo ella que iba al parque de patinaje? | Tell me, did she say that she was going to the skate park? | Dime, ¿dijo ella que iba al parque de patinaje? | Question
+🏟️ | Did she say that she was going to the sports stadium? | ¿Dijo ella que iba al estadio deportivo? | Tell me, did she say that she was going to the sports stadium? | Dime, ¿dijo ella que iba al estadio deportivo? | Question
+🏛️ | Did she say that she was going to the science museum? | ¿Dijo ella que iba al museo de ciencia? | Tell me, did she say that she was going to the science museum? | Dime, ¿dijo ella que iba al museo de ciencia? | Question
+🖼️ | Did she say that she was going to the art gallery? | ¿Dijo ella que iba a la galería de arte? | Tell me, did she say that she was going to the art gallery? | Dime, ¿dijo ella que iba a la galería de arte? | Question
+🕹️ | Did she say that she was going to the arcade? | ¿Dijo ella que iba al salón de juegos? | Tell me, did she say that she was going to the arcade? | Dime, ¿dijo ella que iba al salón de juegos? | Question
+🤔 | What do muscles do? | ¿Qué hacen los músculos? | Tell me, what do muscles do? | Dime, ¿qué hacen los músculos? | Question
+🤔 | What do ligaments do? | ¿Qué hacen los ligamentos? | Tell me, what do ligaments do? | Dime, ¿qué hacen los ligamentos? | Question
+🤔 | What do tendons do? | ¿Qué hacen los tendones? | Tell me, what do tendons do? | Dime, ¿qué hacen los tendones? | Question
     """.trimIndent(), "Basics 6 - List 5")
 
     private fun getList6(): List<Flashcard> = parseCards("""
@@ -415,8 +415,8 @@ object BasicsBooklet6 {
 🌻 | Plant a garden | Plantar un jardín | I plant a garden | Planto un jardín | Phrase
 🌍 | Sentences with the zero conditional | Oraciones con el cero condicional | We use sentences with the zero conditional | Usamos oraciones con el cero condicional | Phrase
 🌍 | If you want to help the environment, reuse paper. | Si quieres ayudar al medio ambiente, reutiliza papel. | Look, if you want to help the environment, reuse paper. | Mira, si quieres ayudar al medio ambiente, reutiliza papel. | Phrase
-❓ | Questions with the zero conditional | Preguntas con el cero condicional | We use questions with the zero conditional | Usamos preguntas con el cero condicional | Phrase
-❓ | If you want to help the environment, what can you do? | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Tell me, if you want to help the environment, what can you do? | Dime, si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Question
+🤔 | Questions with the zero conditional | Preguntas con el cero condicional | We use questions with the zero conditional | Usamos preguntas con el cero condicional | Phrase
+🤔 | If you want to help the environment, what can you do? | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Tell me, if you want to help the environment, what can you do? | Dime, si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Question
 📄 | I can reuse paper. | Puedo reutilizar papel. | Look, I can reuse paper. | Mira, puedo reutilizar papel. | Phrase
 🚌 | Take public transportation | Tomar transporte público | I take public transportation | Tomo transporte público | Phrase
 🛍️ | Take reusable shopping bags | Llevar bolsas de compras reutilizables | I take reusable shopping bags | Llevo bolsas de compras reutilizables | Phrase
@@ -430,9 +430,9 @@ object BasicsBooklet6 {
 🚲 | A New Bicycle | Una nueva bicicleta | This is A New Bicycle | Esta es Una nueva bicicleta | Phrase
 💬 | Talking with someone about what you would do | Hablar con alguien sobre lo que harías | We are talking with someone about what you would do | Estamos hablando con alguien sobre lo que harías | Phrase
 🚲 | If I had a new bicycle, I would use it all the time. | Si tuviera una bicicleta nueva, la usaría todo el tiempo. | Look, if I had a new bicycle, I would use it all the time. | Mira, si tuviera una bicicleta nueva, la usaría todo el tiempo. | Phrase
-❓ | You would? | ¿Lo harías? | Tell me, you would? | Dime, ¿lo harías? | Question
+🤔 | You would? | ¿Lo harías? | Tell me, you would? | Dime, ¿lo harías? | Question
 👍 | Yes, of course. | Sí, por supuesto. | Yes, of course. | Sí, por supuesto. | Phrase
-❓ | Are you sure? | ¿Estás seguro? | Tell me, are you sure? | Dime, ¿estás seguro? | Question
+👍 | Are you sure? | ¿Estás seguro? | Tell me, are you sure? | Dime, ¿estás seguro? | Question
 ⭐ | Definitely. | Definitivamente. | Yes, definitely. | Sí, definitivamente. | Expression
 💡 | Be resourceful. | Sé recursivo. | Please, be resourceful. | Por favor, sé recursivo. | Phrase
 🧴 | Plastic | Plástico | The bottle is plastic | La botella es de plástico | Word
@@ -449,7 +449,7 @@ object BasicsBooklet6 {
 📄 | If you want to help the environment, recycle bottles and cans. | Si quieres ayudar al medio ambiente, recicla botellas y latas. | Look, if you want to help the environment, recycle bottles and cans. | Mira, si quieres ayudar al medio ambiente, recicla botellas y latas. | Phrase
 📄 | If you want to help the environment, shut off the water. | Si quieres ayudar al medio ambiente, cierra el agua. | Look, if you want to help the environment, shut off the water. | Mira, si quieres ayudar al medio ambiente, cierra el agua. | Phrase
 📄 | If you want to help the environment, plant a garden. | Si quieres ayudar al medio ambiente, planta un jardín. | Look, if you want to help the environment, plant a garden. | Mira, si quieres ayudar al medio ambiente, planta un jardín. | Phrase
-❓ | If you want to help the environment, what can you do? | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Tell me, if you want to help the environment, what can you do? | Dime, si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Question
+🤔 | If you want to help the environment, what can you do? | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Tell me, if you want to help the environment, what can you do? | Dime, si quieres ayudar al medio ambiente, ¿qué puedes hacer? | Question
 💡 | If you want to help the environment, what can you do? I can turn off the lights. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo apagar las luces. | If you want to help the environment, what can you do? I can turn off the lights. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo apagar las luces. | Phrase
 🌱 | If you want to help the environment, what can you do? I can start a compost pile. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo iniciar una pila de compostaje. | If you want to help the environment, what can you do? I can start a compost pile. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo iniciar una pila de compostaje. | Phrase
 ♻️ | If you want to help the environment, what can you do? I can recycle bottles and cans. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo reciclar botellas y latas. | If you want to help the environment, what can you do? I can recycle bottles and cans. | Si quieres ayudar al medio ambiente, ¿qué puedes hacer? Puedo reciclar botellas y latas. | Phrase
@@ -479,9 +479,9 @@ object BasicsBooklet6 {
 🩰 | Balanchine's ballets | Ballets de Balanchine | Balanchine's ballets are famous | Los ballets de Balanchine son famosos | Phrase
 🎭 | Verdi's operas are performed here. | Las óperas de Verdi se representan aquí. | Look, Verdi's operas are performed here. | Mira, las óperas de Verdi se representan aquí. | Phrase
 🎨 | Picasso's paintings are displayed here. | Las pinturas de Picasso se exhiben aquí. | Look, Picasso's paintings are displayed here. | Mira, las pinturas de Picasso se exhiben aquí. | Phrase
-❓ | Whose operas are performed here? | ¿De quién son las óperas que se representan aquí? | Tell me, whose operas are performed here? | Dime, ¿de quién son las óperas que se representan aquí? | Question
+🤔 | Whose operas are performed here? | ¿De quién son las óperas que se representan aquí? | Tell me, whose operas are performed here? | Dime, ¿de quién son las óperas que se representan aquí? | Question
 🎭 | Verdi's operas are performed here. | Las óperas de Verdi se representan aquí. | Look, Verdi's operas are performed here. | Mira, las óperas de Verdi se representan aquí. | Phrase
-❓ | Whose paintings are displayed here? | ¿De quién son las pinturas que se exhiben aquí? | Tell me, whose paintings are displayed here? | Dime, ¿de quién son las pinturas que se exhiben aquí? | Question
+🤔 | Whose paintings are displayed here? | ¿De quién son las pinturas que se exhiben aquí? | Tell me, whose paintings are displayed here? | Dime, ¿de quién son las pinturas que se exhiben aquí? | Question
 🎨 | Picasso's paintings are displayed here. | Las pinturas de Picasso se exhiben aquí. | Look, Picasso's paintings are displayed here. | Mira, las pinturas de Picasso se exhiben aquí. | Phrase
 🌊 | Erie Canal | Canal de Erie | The Erie Canal is long | El canal de Erie es largo | Word
 🚂 | Trans-Siberian Railway | Ferrocarril transiberiano | The Trans-Siberian Railway is big | El ferrocarril transiberiano es grande | Word
@@ -490,11 +490,11 @@ object BasicsBooklet6 {
 🏙️ | Taipei 101 Building | Edificio Taipei 101 | The Taipei 101 Building is tall | El edificio Taipei 101 es alto | Word
 🌉 | Oliveira Bridge | Puente Oliveira | The Oliveira Bridge is old | El puente Oliveira es viejo | Word
 🌊 | The Erie Canal was completed in 1825. | El canal de Erie se completó en 1825. | Look, The Erie Canal was completed in 1825. | Mira, el canal de Erie se completó en 1825. | Phrase
-❓ | When was the Erie Canal constructed? | ¿Cuándo se construyó el canal de Erie? | Tell me, When was the Erie Canal constructed? | Dime, ¿cuándo se construyó el canal de Erie? | Question
+🌊 | When was the Erie Canal constructed? | ¿Cuándo se construyó el canal de Erie? | Tell me, When was the Erie Canal constructed? | Dime, ¿cuándo se construyó el canal de Erie? | Question
 🌊 | It was started in 1817, and it was finished in 1825. | Se comenzó en 1817 y se terminó en 1825. | Look, It was started in 1817, and it was finished in 1825. | Mira, se comenzó en 1817 y se terminó en 1825. | Phrase
 🎭 | An Afternoon at the Opera | Una tarde en la ópera | This is An Afternoon at the Opera | Esta es Una tarde en la ópera | Phrase
-❓ | Asking if someone knows about something | Preguntar si alguien sabe sobre algo | We are asking if someone knows about something | Estamos preguntando si alguien sabe sobre algo | Phrase
-❓ | Did you know that Aida was first performed in Egypt? | ¿Sabías que Aida se representó por primera vez en Egipto? | Tell me, did you know that Aida was first performed in Egypt? | Dime, ¿sabías que Aida se representó por primera vez en Egipto? | Question
+🤔 | Asking if someone knows about something | Preguntar si alguien sabe sobre algo | We are asking if someone knows about something | Estamos preguntando si alguien sabe sobre algo | Phrase
+🇪🇬 | Did you know that Aida was first performed in Egypt? | ¿Sabías que Aida se representó por primera vez en Egipto? | Tell me, did you know that Aida was first performed in Egypt? | Dime, ¿sabías que Aida se representó por primera vez en Egipto? | Question
 👍 | I didn't know that. | No sabía eso. | I didn't know that. | No sabía eso. | Phrase
 👍 | Yes, I knew that. | Sí, sabía eso. | Yes, I knew that. | Sí, sabía eso. | Phrase
 ❤️ | Be polite. | Sé educado. | Please, be polite. | Por favor, sé educado. | Phrase
@@ -504,10 +504,10 @@ object BasicsBooklet6 {
 📏 | Height | Altura | What is the height? | ¿Cuál es la altura? | Word
 📐 | Width | Ancho | What is the width? | ¿Cuál es el ancho? | Word
 🌊 | Underwater | Subacuático | The fish is underwater | El pez está bajo el agua | Word
-❓ | Asking questions with comparisons | Hacer preguntas con comparaciones | We are asking questions with comparisons | Estamos haciendo preguntas con comparaciones | Phrase
-❓ | Which is higher, the Golden Gate Bridge or the Channel Tunnel? | ¿Cuál es más alto, el puente Golden Gate o el túnel del Canal? | Tell me, which is higher, the Golden Gate Bridge or the Channel Tunnel? | Dime, ¿cuál es más alto, el puente Golden Gate o el túnel del Canal? | Question
+🤔 | Asking questions with comparisons | Hacer preguntas con comparaciones | We are asking questions with comparisons | Estamos haciendo preguntas con comparaciones | Phrase
+🤔 | Which is higher, the Golden Gate Bridge or the Channel Tunnel? | ¿Cuál es más alto, el puente Golden Gate o el túnel del Canal? | Tell me, which is higher, the Golden Gate Bridge or the Channel Tunnel? | Dime, ¿cuál es más alto, el puente Golden Gate o el túnel del Canal? | Question
 🌉 | Which is higher, the Golden Gate Bridge or the Channel Tunnel? The Golden Gate Bridge is higher. | ¿Cuál es más alto, el puente Golden Gate o el túnel del Canal? El puente Golden Gate es más alto. | Which is higher, the Golden Gate Bridge or the Channel Tunnel? The Golden Gate Bridge is higher. | ¿Cuál es más alto, el puente Golden Gate o el túnel del Canal? El puente Golden Gate es más alto. | Phrase
-❓ | Which has more daily use, the Golden Gate Bridge or the Channel Tunnel? | ¿Cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? | Tell me, which has more daily use, the Golden Gate Bridge or the Channel Tunnel? | Dime, ¿cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? | Question
+📅 | Which has more daily use, the Golden Gate Bridge or the Channel Tunnel? | ¿Cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? | Tell me, which has more daily use, the Golden Gate Bridge or the Channel Tunnel? | Dime, ¿cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? | Question
 🌉 | Which has more daily use, the Golden Gate Bridge or the Channel Tunnel? The Golden Gate Bridge has more daily use. | ¿Cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? El puente Golden Gate tiene más uso diario. | Which has more daily use, the Golden Gate Bridge or the Channel Tunnel? The Golden Gate Bridge has more daily use. | ¿Cuál tiene más uso diario, el puente Golden Gate o el túnel del Canal? El puente Golden Gate tiene más uso diario. | Phrase
 📖 | Shakespeare's plays are performed here. | Las obras de Shakespeare se representan aquí. | Look, Shakespeare's plays are performed here. | Mira, las obras de Shakespeare se representan aquí. | Phrase
 🎵 | Beethoven's symphonies are performed here. | Las sinfonías de Beethoven se representan aquí. | Look, Beethoven's symphonies are performed here. | Mira, las sinfonías de Beethoven se representan aquí. | Phrase
@@ -517,18 +517,18 @@ object BasicsBooklet6 {
 🎵 | Beethoven's symphonies are displayed here. | Las sinfonías de Beethoven se exhiben aquí. | Look, Beethoven's symphonies are displayed here. | Mira, las sinfonías de Beethoven se exhiben aquí. | Phrase
 🗿 | Michelangelo's sculptures are displayed here. | Las esculturas de Miguel Ángel se exhiben aquí. | Look, Michelangelo's sculptures are displayed here. | Mira, las esculturas de Miguel Ángel se exhiben aquí. | Phrase
 🩰 | Balanchine's ballets are displayed here. | Los ballets de Balanchine se exhiben aquí. | Look, Balanchine's ballets are displayed here. | Mira, los ballets de Balanchine se exhiben aquí. | Phrase
-❓ | Whose plays are performed here? | ¿De quién son las obras que se representan aquí? | Tell me, whose plays are performed here? | Dime, ¿de quién son las obras que se representan aquí? | Question
-❓ | Whose symphonies are performed here? | ¿De quién son las sinfonías que se representan aquí? | Tell me, whose symphonies are performed here? | Dime, ¿de quién son las sinfonías que se representan aquí? | Question
-❓ | Whose sculptures are performed here? | ¿De quién son las esculturas que se representan aquí? | Tell me, whose sculptures are performed here? | Dime, ¿de quién son las esculturas que se representan aquí? | Question
-❓ | Whose ballets are performed here? | ¿De quién son los ballets que se representan aquí? | Tell me, whose ballets are performed here? | Dime, ¿de quién son los ballets que se representan aquí? | Question
+🤔 | Whose plays are performed here? | ¿De quién son las obras que se representan aquí? | Tell me, whose plays are performed here? | Dime, ¿de quién son las obras que se representan aquí? | Question
+🤔 | Whose symphonies are performed here? | ¿De quién son las sinfonías que se representan aquí? | Tell me, whose symphonies are performed here? | Dime, ¿de quién son las sinfonías que se representan aquí? | Question
+🤔 | Whose sculptures are performed here? | ¿De quién son las esculturas que se representan aquí? | Tell me, whose sculptures are performed here? | Dime, ¿de quién son las esculturas que se representan aquí? | Question
+🤔 | Whose ballets are performed here? | ¿De quién son los ballets que se representan aquí? | Tell me, whose ballets are performed here? | Dime, ¿de quién son los ballets que se representan aquí? | Question
 📖 | Shakespeare's plays are performed here. | Las obras de Shakespeare se representan aquí. | Look, Shakespeare's plays are performed here. | Mira, las obras de Shakespeare se representan aquí. | Phrase
 🎵 | Beethoven's symphonies are performed here. | Las sinfonías de Beethoven se representan aquí. | Look, Beethoven's symphonies are performed here. | Mira, las sinfonías de Beethoven se representan aquí. | Phrase
 🗿 | Michelangelo's sculptures are performed here. | Las esculturas de Miguel Ángel se representan aquí. | Look, Michelangelo's sculptures are performed here. | Mira, las esculturas de Miguel Ángel se representan aquí. | Phrase
 🩰 | Balanchine's ballets are performed here. | Los ballets de Balanchine se representan aquí. | Look, Balanchine's ballets are performed here. | Mira, los ballets de Balanchine se representan aquí. | Phrase
-❓ | Whose plays are displayed here? | ¿De quién son las obras que se exhiben aquí? | Tell me, whose plays are displayed here? | Dime, ¿de quién son las obras que se exhiben aquí? | Question
-❓ | Whose symphonies are displayed here? | ¿De quién son las sinfonías que se exhiben aquí? | Tell me, whose symphonies are displayed here? | Dime, ¿de quién son las sinfonías que se exhiben aquí? | Question
-❓ | Whose sculptures are displayed here? | ¿De quién son las esculturas que se exhiben aquí? | Tell me, whose sculptures are displayed here? | Dime, ¿de quién son las esculturas que se exhiben aquí? | Question
-❓ | Whose ballets are displayed here? | ¿De quién son los ballets que se exhiben aquí? | Tell me, whose ballets are displayed here? | Dime, ¿de quién son los ballets que se exhiben aquí? | Question
+🤔 | Whose plays are displayed here? | ¿De quién son las obras que se exhiben aquí? | Tell me, whose plays are displayed here? | Dime, ¿de quién son las obras que se exhiben aquí? | Question
+🤔 | Whose symphonies are displayed here? | ¿De quién son las sinfonías que se exhiben aquí? | Tell me, whose symphonies are displayed here? | Dime, ¿de quién son las sinfonías que se exhiben aquí? | Question
+🤔 | Whose sculptures are displayed here? | ¿De quién son las esculturas que se exhiben aquí? | Tell me, whose sculptures are displayed here? | Dime, ¿de quién son las esculturas que se exhiben aquí? | Question
+🤔 | Whose ballets are displayed here? | ¿De quién son los ballets que se exhiben aquí? | Tell me, whose ballets are displayed here? | Dime, ¿de quién son los ballets que se exhiben aquí? | Question
 📖 | Shakespeare's plays are displayed here. | Las obras de Shakespeare se exhiben aquí. | Look, Shakespeare's plays are displayed here. | Mira, las obras de Shakespeare se exhiben aquí. | Phrase
 🎵 | Beethoven's symphonies are displayed here. | Las sinfonías de Beethoven se exhiben aquí. | Look, Beethoven's symphonies are displayed here. | Mira, las sinfonías de Beethoven se exhiben aquí. | Phrase
 🗿 | Michelangelo's sculptures are displayed here. | Las esculturas de Miguel Ángel se exhiben aquí. | Look, Michelangelo's sculptures are displayed here. | Mira, las esculturas de Miguel Ángel se exhiben aquí. | Phrase
@@ -538,11 +538,11 @@ object BasicsBooklet6 {
 🚇 | The Seikan tunnel was completed in 1825. | El túnel Seikan se completó en 1825. | Look, The Seikan tunnel was completed in 1825. | Mira, el túnel Seikan se completó en 1825. | Phrase
 🏙️ | The Taipei 101 Building was completed in 1825. | El edificio Taipei 101 se completó en 1825. | Look, The Taipei 101 Building was completed in 1825. | Mira, el edificio Taipei 101 se completó en 1825. | Phrase
 🌉 | The Oliveira Bridge was completed in 1825. | El puente Oliveira se completó en 1825. | Look, The Oliveira Bridge was completed in 1825. | Mira, el puente Oliveira se completó en 1825. | Phrase
-❓ | When was the Trans-Siberian Railway constructed? | ¿Cuándo se construyó el ferrocarril transiberiano? | Tell me, When was the Trans-Siberian Railway constructed? | Dime, ¿cuándo se construyó el ferrocarril transiberiano? | Question
-❓ | When was the Hoover Dam constructed? | ¿Cuándo se construyó la presa Hoover? | Tell me, When was the Hoover Dam constructed? | Dime, ¿cuándo se construyó la presa Hoover? | Question
-❓ | When was the Seikan tunnel constructed? | ¿Cuándo se construyó el túnel Seikan? | Tell me, When was the Seikan tunnel constructed? | Dime, ¿cuándo se construyó el túnel Seikan? | Question
-❓ | When was the Taipei 101 Building constructed? | ¿Cuándo se construyó el edificio Taipei 101? | Tell me, When was the Taipei 101 Building constructed? | Dime, ¿cuándo se construyó el edificio Taipei 101? | Question
-❓ | When was the Oliveira Bridge constructed? | ¿Cuándo se construyó el puente Oliveira? | Tell me, When was the Oliveira Bridge constructed? | Dime, ¿cuándo se construyó el puente Oliveira? | Question
+🤔 | When was the Trans-Siberian Railway constructed? | ¿Cuándo se construyó el ferrocarril transiberiano? | Tell me, When was the Trans-Siberian Railway constructed? | Dime, ¿cuándo se construyó el ferrocarril transiberiano? | Question
+🧱 | When was the Hoover Dam constructed? | ¿Cuándo se construyó la presa Hoover? | Tell me, When was the Hoover Dam constructed? | Dime, ¿cuándo se construyó la presa Hoover? | Question
+🚇 | When was the Seikan tunnel constructed? | ¿Cuándo se construyó el túnel Seikan? | Tell me, When was the Seikan tunnel constructed? | Dime, ¿cuándo se construyó el túnel Seikan? | Question
+🤔 | When was the Taipei 101 Building constructed? | ¿Cuándo se construyó el edificio Taipei 101? | Tell me, When was the Taipei 101 Building constructed? | Dime, ¿cuándo se construyó el edificio Taipei 101? | Question
+🌉 | When was the Oliveira Bridge constructed? | ¿Cuándo se construyó el puente Oliveira? | Tell me, When was the Oliveira Bridge constructed? | Dime, ¿cuándo se construyó el puente Oliveira? | Question
 🚂 | It was started in 1817, and it was finished in 1825. | Se comenzó en 1817 y se terminó en 1825. | Look, It was started in 1817, and it was finished in 1825. | Mira, se comenzó en 1817 y se terminó en 1825. | Phrase
     """.trimIndent(), "Basics 6 - List 7")
 
@@ -566,16 +566,16 @@ object BasicsBooklet6 {
 ⏳ | Present progressive and present perfect progressive | Presente progresivo y presente perfecto progresivo | We study present progressive and present perfect progressive | Estudiamos el presente progresivo y el presente perfecto progresivo | Phrase
 🎁 | I'm opening my presents now. | Estoy abriendo mis regalos ahora. | Look, I'm opening my presents now. | Mira, estoy abriendo mis regalos ahora. | Phrase
 🎁 | I've been opening my presents all afternoon. | He estado abriendo mis regalos toda la tarde. | Look, I've been opening my presents all afternoon. | Mira, he estado abriendo mis regalos toda la tarde. | Phrase
-❓ | What are you doing now? | ¿Qué estás haciendo ahora? | Tell me, what are you doing now? | Dime, ¿qué estás haciendo ahora? | Question
+🤔 | What are you doing now? | ¿Qué estás haciendo ahora? | Tell me, what are you doing now? | Dime, ¿qué estás haciendo ahora? | Question
 🎁 | I'm opening presents. | Estoy abriendo regalos. | Look, I'm opening presents. | Mira, estoy abriendo regalos. | Phrase
-❓ | What have you been doing all day? | ¿Qué has estado haciendo todo el día? | Tell me, what have you been doing all day? | Dime, ¿qué has estado haciendo todo el día? | Question
+🤔 | What have you been doing all day? | ¿Qué has estado haciendo todo el día? | Tell me, what have you been doing all day? | Dime, ¿qué has estado haciendo todo el día? | Question
 🎁 | I've been opening presents. | He estado abriendo regalos. | Look, I've been opening presents. | Mira, he estado abriendo regalos. | Phrase
 🎭 | Behind the Curtains | Detrás de las cortinas | This is Behind the Curtains | Esto es Detrás de las cortinas | Phrase
 🔍 | Finding out where someone has been | Descubrir dónde ha estado alguien | We are finding out where someone has been | Estamos descubriendo dónde ha estado alguien | Phrase
-❓ | Where have you been? | ¿Dónde has estado? | Tell me, where have you been? | Dime, ¿dónde has estado? | Question
+🤔 | Where have you been? | ¿Dónde has estado? | Tell me, where have you been? | Dime, ¿dónde has estado? | Question
 🎓 | I was at my brother's graduation ceremony. | Estuve en la ceremonia de graduación de mi hermano. | Look, I was at my brother's graduation ceremony. | Mira, estuve en la ceremonia de graduación de mi hermano. | Phrase
 🙇 | Sorry! | ¡Lo siento! | Sorry, I am late. | Lo siento, llego tarde. | Expression
-❓ | It's O.K. What are you doing now? | Está bien. ¿Qué estás haciendo ahora? | Tell me, it's O.K. What are you doing now? | Dime, está bien. ¿Qué estás haciendo ahora? | Question
+🤔 | It's O.K. What are you doing now? | Está bien. ¿Qué estás haciendo ahora? | Tell me, it's O.K. What are you doing now? | Dime, está bien. ¿Qué estás haciendo ahora? | Question
 🙇 | Sorry. I didn't hear my phone. | Lo siento. No escuché mi teléfono. | Look, sorry. I didn't hear my phone. | Mira, lo siento. No escuché mi teléfono. | Phrase
 👍 | Don't worry about it. | No te preocupes por eso. | Don't worry about it. | No te preocupes por eso. | Phrase
 ⏳ | Be patient. | Ten paciencia. | Please, be patient. | Por favor, ten paciencia. | Phrase
@@ -586,8 +586,8 @@ object BasicsBooklet6 {
 ✨ | Transparent | Transparente | The glass is transparent | El vidrio es transparente | Word
 🪨 | Carbon | Carbono | Carbon is an element | El carbono es un elemento | Word
 📚 | Verb tense review | Repaso de tiempos verbales | We do a verb tense review | Hacemos un repaso de tiempos verbales | Phrase
-❓ | Asking about graphite, graphene, and carbon. | Preguntar sobre grafito, grafeno y carbono. | We are asking about graphite, graphene, and carbon. | Estamos preguntando sobre grafito, grafeno y carbono. | Phrase
-❓ | Where can you find graphite? | ¿Dónde puedes encontrar grafito? | Tell me, where can you find graphite? | Dime, ¿dónde puedes encontrar grafito? | Question
+🪨 | Asking about graphite, graphene, and carbon. | Preguntar sobre grafito, grafeno y carbono. | We are asking about graphite, graphene, and carbon. | Estamos preguntando sobre grafito, grafeno y carbono. | Phrase
+🤔 | Where can you find graphite? | ¿Dónde puedes encontrar grafito? | Tell me, where can you find graphite? | Dime, ¿dónde puedes encontrar grafito? | Question
 ✏️ | You can find it in a pencil. | Puedes encontrarlo en un lápiz. | Look, you can find it in a pencil. | Mira, puedes encontrarlo en un lápiz. | Phrase
 🥱 | Bored speech | Discurso aburrido | The speech is bored | El discurso está aburrido | Word
 😴 | Boring audience | Audiencia aburrida | The audience is boring | La audiencia es aburrida | Word
@@ -635,8 +635,8 @@ object BasicsBooklet6 {
 🤝 | I'm hanging out with friends. | Estoy pasando el rato con amigos. | Look, I'm hanging out with friends. | Mira, estoy pasando el rato con amigos. | Phrase
 👋 | I'm visiting relatives. | Estoy visitando familiares. | Look, I'm visiting relatives. | Mira, estoy visitando familiares. | Phrase
 📸 | I'm posing for pictures. | Estoy posando para fotos. | Look, I'm posing for pictures. | Mira, estoy posando para fotos. | Phrase
-❓ | Where can you find graphene? | ¿Dónde puedes encontrar grafeno? | Tell me, where can you find graphene? | Dime, ¿dónde puedes encontrar grafeno? | Question
-❓ | Where can you find carbon? | ¿Dónde puedes encontrar carbono? | Tell me, where can you find carbon? | Dime, ¿dónde puedes encontrar carbono? | Question
+⚛️ | Where can you find graphene? | ¿Dónde puedes encontrar grafeno? | Tell me, where can you find graphene? | Dime, ¿dónde puedes encontrar grafeno? | Question
+🪨 | Where can you find carbon? | ¿Dónde puedes encontrar carbono? | Tell me, where can you find carbon? | Dime, ¿dónde puedes encontrar carbono? | Question
 ✏️ | You can find it in a flake. | Puedes encontrarlo en una lámina / escama. | Look, you can find it in a flake. | Mira, puedes encontrarlo en una lámina o escama. | Phrase
     """.trimIndent(), "Basics 6 - List 8")
 }

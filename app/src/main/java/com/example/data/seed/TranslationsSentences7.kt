@@ -17,19 +17,19 @@ object TranslationsSentences7 {
     private fun getListData(index: Int): String {
         return when (index) {
             1 -> """
-📌 | How long have you known about this situation? | ¿Cuánto tiempo llevas enterado de esta situación?
-⚡ | I have been investigating this matter all week | He estado investigando este asunto toda la semana
+⏱️ | How long have you known about this situation? | ¿Cuánto tiempo llevas enterado de esta situación?
+👈 | I have been investigating this matter all week | He estado investigando este asunto toda la semana
 ❓ | Has the committee made a formal announcement? | ¿Ha hecho el comité un anuncio oficial?
 🚫 | They haven't reached a unanimous conclusion | No han llegado a una conclusión unánime
 🧠 | Have you ever considered living abroad? | ¿Alguna vez has considerado vivir en el extranjero?
 📞 | She has just called to confirm the appointment | Acaba de llamar para confirmar la cita
 ⏰ | We have waited patiently for their answer | Hemos esperado pacientemente su respuesta
-🌧️ | It has been unusually cold this winter | Ha hecho un frío inusual este invierno
+🥶 | It has been unusually cold this winter | Ha hecho un frío inusual este invierno
 💡 | They have implemented new efficiency protocols | Han implementado nuevos protocolos de eficiencia
 📈 | Our team has accomplished remarkable milestones | Nuestro equipo ha alcanzado hitos extraordinarios
 """
             2 -> """
-❓ | If you had the opportunity, where would you travel? | Si tuvieras la oportunidad, ¿a dónde viajarías?
+🎯 | If you had the opportunity, where would you travel? | Si tuvieras la oportunidad, ¿a dónde viajarías?
 🏖️ | If weather permits, we will hold the event outside | Si el tiempo lo permite, celebraremos el evento al aire libre
 💼 | If you require additional resources, inform us | Si necesitas recursos adicionales, infórmanos
 🌧️ | If it rains continuously, the river may overflow | Si llueve continuamente, el río podría desbordarse
@@ -44,9 +44,9 @@ object TranslationsSentences7 {
 🗣️ | The spokesperson announced that negotiations had resumed | El portavoz anunció que las negociaciones se habían reanudado
 ❓ | She asked whether we had reviewed the revised terms | Preguntó si habíamos revisado los términos corregidos
 💬 | They stated that they would honor all prior commitments | Declararon que cumplirían todos los compromisos previos
-📌 | He inquired about the expected delivery timeline | Preguntó por el plazo de entrega previsto
+↔️ | He inquired about the expected delivery timeline | Preguntó por el plazo de entrega previsto
 📣 | She advised us to verify all figures before publishing | Nos aconsejó verificar todas las cifras antes de publicar
-🧠 | I explained that technical difficulties had caused the delay | Expliqué que dificultades técnicas habían causado el retraso
+🧗 | I explained that technical difficulties had caused the delay | Expliqué que dificultades técnicas habían causado el retraso
 💬 | They maintained that their calculations were correct | Sostuvieron que sus cálculos eran correctos
 🤝 | She agreed to participate in the international panel | Aceptó participar en el panel internacional
 💡 | He suggested exploring alternative energy solutions | Sugirió explorar soluciones de energía alternativa
@@ -54,69 +54,69 @@ object TranslationsSentences7 {
 """
             4 -> """
 🏗️ | The solar facility was inaugurated last autumn | La instalación solar fue inaugurada el otoño pasado
-📄 | The annual report will be distributed tomorrow | El informe anual se distribuirá mañana
-🚗 | The subway system is being modernized gradually | El sistema de metro está siendo modernizado gradualmente
+📅 | The annual report will be distributed tomorrow | El informe anual se distribuirá mañana
+🚇 | The subway system is being modernized gradually | El sistema de metro está siendo modernizado gradualmente
 📦 | All customer requests are processed systematically | Todas las peticiones de clientes se procesan sistemáticamente
 🔒 | The archives are accessible only with authorization | Los archivos son accesibles solo con autorización
 🏆 | He was awarded the prize for scientific innovation | Fue galardonado con el premio a la innovación científica
-🧹 | The laboratories are sanitized on a daily schedule | Los laboratorios se desinfectan según un horario diario
+📰 | The laboratories are sanitized on a daily schedule | Los laboratorios se desinfectan según un horario diario
 🏢 | This historic monument was preserved by the state | Este monumento histórico fue preservado por el estado
 📧 | Official confirmation will be delivered by email | La confirmación oficial se enviará por correo electrónico
 ⚠️ | Strict safety guidelines must be maintained | Se deben mantener estrictas directrices de seguridad
 """
             5 -> """
 ⏰ | You ought to verify references before hiring | Deberías comprobar las referencias antes de contratar
-💡 | You should have consulted the chief engineer | Deberías haber consultado al ingeniero jefe
-⚠️ | Personnel must not enter without protective goggles | El personal no debe entrar sin gafas de protección
-❓ | Could you elaborate on that particular point? | ¿Podría profundizar en ese punto en particular?
+🧑‍💼 | You should have consulted the chief engineer | Deberías haber consultado al ingeniero jefe
+👓 | Personnel must not enter without protective goggles | El personal no debe entrar sin gafas de protección
+👉 | Could you elaborate on that particular point? | ¿Podría profundizar en ese punto en particular?
 🏥 | She might be consulting with the medical board | Puede que ella esté consultando con la junta médica
 🌧️ | Thunderstorms may develop towards late afternoon | Puede que se desarrollen tormentas eléctricas hacia el final de la tarde
 🔑 | You do not have to register in advance | No tienes que registrarte por adelantado
 🧠 | He must have misunderstood the original instructions | Debe de haber entendido mal las instrucciones originales
 🚫 | That hypothesis cannot be sustained with data | Esa hipótesis no se puede sostener con datos
-🏋️ | We had better finalize the agenda today | Más vale que cerremos el orden del día hoy
+📅 | We had better finalize the agenda today | Más vale que cerremos el orden del día hoy
 """
             6 -> """
 🎒 | We look forward to establishing fruitful cooperation | Esperamos con ganas establecer una fructífera cooperación
 ⏰ | Do not put off critical maintenance routines | No pospongas las rutinas críticas de mantenimiento
 💡 | She came up with a comprehensive workflow design | Se le ocurrió un diseño integral de flujo de trabajo
 🧥 | Take off your safety gear once outside the zone | Quítate el equipo de seguridad una vez fuera de la zona
-📞 | Please hold while I connect you with the specialist | Por favor, espere mientras le comunico con el especialista
+📋 | Please hold while I connect you with the specialist | Por favor, espere mientras le comunico con el especialista
 🚗 | We ran out of spare components unexpectedly | Nos quedamos sin piezas de repuesto de forma inesperada
 🔍 | I am looking into potential vendor alternatives | Estoy investigando posibles proveedores alternativos
-🏢 | They called off the press briefing until tomorrow | Cancelaron la rueda de prensa hasta mañana
+📅 | They called off the press briefing until tomorrow | Cancelaron la rueda de prensa hasta mañana
 🚪 | Switch off testing equipment after completing tests | Apague los equipos de prueba tras finalizar las pruebas
 📈 | Productivity is looking up across all sectors | La productividad está mejorando en todos los sectores
 """
             7 -> """
-🏢 | How many regional branches does the bank operate? | ¿Cuántas sucursales regionales opera el banco?
+🏦 | How many regional branches does the bank operate? | ¿Cuántas sucursales regionales opera el banco?
 📈 | Fiscal quarterly revenue surpassed expectations | Los ingresos del trimestre fiscal superaron las expectativas
 💼 | We have scheduled a board assembly for next month | Hemos programado una asamblea de la junta para el próximo mes
-📄 | Please inspect the revised contract clauses | Por favor, inspeccione las cláusulas revisadas del contrato
-🤝 | We formed a strategic alliance with key partners | Formamos una alianza estratégica con socios clave
+📝 | Please inspect the revised contract clauses | Por favor, inspeccione las cláusulas revisadas del contrato
+🔑 | We formed a strategic alliance with key partners | Formamos una alianza estratégica con socios clave
 💰 | The investment proposal was approved unanimously | La propuesta de inversión fue aprobada por unanimidad
-📊 | Statistical projections indicate sustained expansion | Las proyecciones estadísticas indican una expansión sostenida
+📁 | Statistical projections indicate sustained expansion | Las proyecciones estadísticas indican una expansión sostenida
 🎯 | Integrity and reliability guide our corporate vision | La integridad y la fiabilidad guían nuestra visión corporativa
-✉️ | We appreciate your prompt feedback on this draft | Agradecemos sus rápidos comentarios sobre este borrador
+👈 | We appreciate your prompt feedback on this draft | Agradecemos sus rápidos comentarios sobre este borrador
 👥 | Empowering employees boosts workplace satisfaction | Empoderar a los empleados aumenta la satisfacción laboral
 """
             8 -> """
-✈️ | Boarding will commence at terminal gate four | El embarque comenzará en la puerta cuatro de la terminal
+🚪 | Boarding will commence at terminal gate four | El embarque comenzará en la puerta cuatro de la terminal
 🧳 | Please ensure your luggage tags are clearly marked | Asegúrese de que las etiquetas de su equipaje estén claramente marcadas
 🏨 | We booked an executive suite for three evenings | Reservamos una suite ejecutiva para tres noches
-🛏️ | Room service is accessible around the clock | El servicio de habitaciones está accesible las 24 horas
+⏰ | Room service is accessible around the clock | El servicio de habitaciones está accesible las 24 horas
 🗺️ | Could you mark the main architectural sites? | ¿Podría marcar los principales sitios arquitectónicos?
-🚆 | Does this express service stop at the university? | ¿Este servicio exprés para en la universidad?
+🎓 | Does this express service stop at the university? | ¿Este servicio exprés para en la universidad?
 🎟️ | Two admission passes for the historic gallery, please | Dos pases de entrada para la galería histórica, por favor
-🚕 | Please direct the driver to the convention hall | Por favor, indique al conductor la sala de convenciones
+🚗 | Please direct the driver to the convention hall | Por favor, indique al conductor la sala de convenciones
 💳 | Electronic contactless transactions are accepted | Se aceptan transacciones electrónicas sin contacto
-📍 | The harbor promenade is within easy walking distance | El paseo marítimo está a poca distancia a pie
+🦶 | The harbor promenade is within easy walking distance | El paseo marítimo está a poca distancia a pie
 """
             9 -> """
-☕ | I start the morning with fresh fruit and herbal tea | Empiezo la mañana con fruta fresca e infusión de hierbas
+🍵 | I start the morning with fresh fruit and herbal tea | Empiezo la mañana con fruta fresca e infusión de hierbas
 🏃 | She walks five kilometers along the shoreline | Camina cinco kilómetros a lo largo de la costa
-🍳 | A nutritious breakfast provides sustained energy | Un desayuno nutritivo proporciona energía sostenida
-🚗 | Public transportation eases daily urban commuting | El transporte público facilita el desplazamiento diario urbano
+⚡ | A nutritious breakfast provides sustained energy | Un desayuno nutritivo proporciona energía sostenida
+📰 | Public transportation eases daily urban commuting | El transporte público facilita el desplazamiento diario urbano
 🎧 | Educational podcasts stimulate critical thinking | Los podcasts educativos estimulan el pensamiento crítico
 🛒 | We patronize local cooperative markets regularly | Compramos en cooperativas locales con regularidad
 🍲 | Fresh Mediterranean dishes were served at dinner | Se sirvieron platos mediterráneos frescos en la cena
@@ -140,12 +140,12 @@ object TranslationsSentences7 {
 🏥 | Comprehensive health checkups detect early risks | Los chequeos médicos completos detectan riesgos tempranos
 🤕 | Preventative lifestyle changes reduce chronic pain | Cambios preventivos en el estilo de vida reducen el dolor crónico
 💊 | Follow medical prescriptions with exact precision | Siga las recetas médicas con exactitud
-🩺 | The physician conducted a detailed cardiac screening | El médico llevó a cabo una evaluación cardíaca detallada
+🧑‍⚕️ | The physician conducted a detailed cardiac screening | El médico llevó a cabo una evaluación cardíaca detallada
 🌡️ | Maintaining thermal homeostasis is vital for health | Mantener la homeostasis térmica es vital para la salud
-🩹 | Minor abrasions should be cleansed thoroughly | Las abrasiones menores deben limpiarse a fondo
+✨ | Minor abrasions should be cleansed thoroughly | Las abrasiones menores deben limpiarse a fondo
 🦷 | Regular dental hygiene prevents oral complications | La higiene dental regular previene complicaciones bucales
 🤧 | Adequate hydration bolsters respiratory defenses | La hidratación adecuada refuerza las defensas respiratorias
-🥗 | Antioxidant-rich foods support cellular health | Los alimentos ricos en antioxidantes favorecen la salud celular
+📞 | Antioxidant-rich foods support cellular health | Los alimentos ricos en antioxidantes favorecen la salud celular
 🏃 | Low-impact exercise strengthens joint mobility | El ejercicio de bajo impacto fortalece la movilidad articular
 """
             12 -> """
@@ -158,19 +158,19 @@ object TranslationsSentences7 {
 🧾 | Digital receipts are emailed directly to customers | Los recibos digitales se envían directamente por correo al cliente
 📦 | Express shipment arrives within business hours | El envío urgente llega dentro del horario comercial
 🏪 | The flagship store offers personalized consultations | La tienda insignia ofrece asesoramiento personalizado
-🥖 | Sourdough loaves are baked using traditional ovens | Las barras de masa madre se hornean en hornos tradicionales
+👩 | Sourdough loaves are baked using traditional ovens | Las barras de masa madre se hornean en hornos tradicionales
 """
             13 -> """
-🍽️ | May we examine the sommelier's wine recommendations? | ¿Podemos examinar las recomendaciones de vinos del sumiller?
+🍷 | May we examine the sommelier's wine recommendations? | ¿Podemos examinar las recomendaciones de vinos del sumiller?
 🥗 | An appetizer of seasonal greens and walnut vinaigrette | Un entrante de verduras de temporada y vinagreta de nueces
 🥩 | The chef prepared the prime tenderloin skillfully | El chef preparó el solomillo de primera con maestría
-🍷 | A glass of chilled sparkling spring water, please | Una copa de agua de manantial con gas fría, por favor
-🐟 | Today's catch includes sustainably sourced trout | La pesca de hoy incluye trucha de origen sostenible
+💧 | A glass of chilled sparkling spring water, please | Una copa de agua de manantial con gas fría, por favor
+📅 | Today's catch includes sustainably sourced trout | La pesca de hoy incluye trucha de origen sostenible
 🌾 | Please note any food sensitivities on the order | Por favor, anote cualquier intolerancia alimentaria en la comanda
-☕ | Two freshly brewed coffees and the settlement, please | Dos cafés recién hechos y la cuenta, por favor
+🧾 | Two freshly brewed coffees and the settlement, please | Dos cafés recién hechos y la cuenta, por favor
 👨‍🍳 | Our compliments for an unforgettable dining experience | Nuestras felicitaciones por una experiencia gastronómica inolvidable
 🍝 | Handmade ravioli filled with spinach and ricotta | Raviolis caseros rellenos de espinacas y ricota
-🥣 | Velvety pumpkin soup garnished with toasted seeds | Sopa aterciopelada de calabaza decorada con semillas tostadas
+🍲 | Velvety pumpkin soup garnished with toasted seeds | Sopa aterciopelada de calabaza decorada con semillas tostadas
 """
             14 -> """
 🏫 | Academic research enriches pedagogical excellence | La investigación académica enriquece la excelencia pedagógica
@@ -191,10 +191,10 @@ object TranslationsSentences7 {
 📱 | Continuous software patches mitigate cyber vulnerabilities | Los parches continuos de software mitigan las vulnerabilidades cibernéticas
 💾 | Automated off-site backups ensure disaster recovery | Las copias de seguridad automáticas externas garantizan la recuperación ante desastres
 📧 | Secure mail gateways filter malicious phishing attempts | Las pasarelas de correo seguro filtran los intentos maliciosos de phishing
-🔋 | Battery optimization algorithms prolong hardware cycles | Los algoritmos de optimización de batería prolongan los ciclos del hardware
+🧗 | Battery optimization algorithms prolong hardware cycles | Los algoritmos de optimización de batería prolongan los ciclos del hardware
 🎧 | Spatial audio technology delivers immersive soundscapes | La tecnología de audio espacial ofrece paisajes sonoros inmersivos
 ☁️ | Containerized architectures ensure reliable scalability | Las arquitecturas en contenedores aseguran una escalabilidad fiable
-🖥️ | High-refresh displays enhance graphic design workflows | Las pantallas de alto refresco mejoran los flujos de diseño gráfico
+🦒 | High-refresh displays enhance graphic design workflows | Las pantallas de alto refresco mejoran los flujos de diseño gráfico
 """
             16 -> """
 ⚽ | Tactical versatility distinguishes elite soccer teams | La versatilidad táctica distingue a los equipos de fútbol de élite
@@ -222,12 +222,12 @@ object TranslationsSentences7 {
 """
             18 -> """
 🤝 | Mutual respect nurtures enduring human relationships | El respeto mutuo nutre las relaciones humanas duraderas
-❤️ | Sincere empathy bridges deep generational gaps | La empatía sincera salva profundas brechas generacionales
+🌉 | Sincere empathy bridges deep generational gaps | La empatía sincera salva profundas brechas generacionales
 👨‍👩‍👧‍👦 | Celebrating heritage enriches family solidarity | Celebrar el patrimonio enriquece la solidaridad familiar
 💬 | Compassionate dialogue overcomes long-standing grievances | El diálogo compasivo supera los agravios de larga data
-👂 | Non-judgmental listening provides profound emotional comfort | La escucha sin juicios proporciona un profundo consuelo emocional
+📋 | Non-judgmental listening provides profound emotional comfort | La escucha sin juicios proporciona un profundo consuelo emocional
 👶 | Early childhood environments shape emotional resilience | Los entornos en la primera infancia moldean la resiliencia emocional
-🎂 | Family anniversaries commemorate shared life journeys | Los aniversarios familiares conmemoran trayectorias de vida compartidas
+👨‍👩‍👧‍👦 | Family anniversaries commemorate shared life journeys | Los aniversarios familiares conmemoran trayectorias de vida compartidas
 🧑‍🤝‍🧑 | Loyal friendships provide shelter in times of adversity | Las amistades leales proporcionan cobijo en tiempos de adversidad
 🎁 | Generosity of spirit transcends material expressions | La generosidad de espíritu trasciende las expresiones materiales
 💔 | Understanding and patience heal interpersonal discord | La comprensión y la paciencia curan la discordia interpersonal
@@ -238,7 +238,7 @@ object TranslationsSentences7 {
 🌳 | Native reforestation restores depleted natural watersheds | La reforestación autóctona restaura cuencas hidrográficas agotadas
 ⚡ | Decentralized microgrids empower green communities | Las microrredes descentralizadas empoderan a las comunidades ecológicas
 💧 | Responsible water use secures future agricultural yields | El uso responsable del agua asegura los futuros rendimientos agrícolas
-🚗 | Low-emission transit networks clean metropolitan air | Las redes de transporte de bajas emisiones limpian el aire metropolitano
+✨ | Low-emission transit networks clean metropolitan air | Las redes de transporte de bajas emisiones limpian el aire metropolitano
 🦁 | Preserving biosphere reserves safeguards fragile species | Preservar reservas de la biosfera protege especies frágiles
 🌊 | Coastal wetland restoration shields shores from storms | Restaurar humedales costeros protege las costas de las tormentas
 🚲 | Pedestrianized boulevards encourage urban vitality | Los bulevares peatonales fomentan la vitalidad urbana
@@ -250,16 +250,16 @@ object TranslationsSentences7 {
 🚗 | The electrical circuit broke down during testing | El circuito eléctrico se averió durante las pruebas
 🚪 | Reliable collaborators uphold their commitments unfailingly | Los colaboradores fiables mantienen sus compromisos sin falta
 📞 | I will return your inquiry before close of business | Responderé a su consulta antes del cierre de la jornada
-📝 | Please transcribe these verbatim witness accounts | Por favor, transcriba estas declaraciones de testigos al pie de la letra
+🦶 | Please transcribe these verbatim witness accounts | Por favor, transcriba estas declaraciones de testigos al pie de la letra
 🧥 | Don thermal gear when operating in arctic conditions | Use ropa térmica al operar en condiciones árticas
 💡 | The committee turned down the unsubstantiated proposal | El comité rechazó la propuesta no fundamentada
-⏰ | Project milestones require immediate execution | Los hitos del proyecto requieren una ejecución inmediata
+📁 | Project milestones require immediate execution | Los hitos del proyecto requieren una ejecución inmediata
 ✈️ | We accompanied foreign dignitaries to their departure | Acompañamos a los dignatarios extranjeros hasta su salida
 """
             21 -> """
-📌 | That technical certification was a piece of cake | Esa certificación técnica fue pan comido
-🌧️ | It is raining cats and dogs throughout the river basin | Está lloviendo a cántaros en toda la cuenca del río
-💰 | State-of-the-art laboratory gear costs an arm and a leg | Los equipos de laboratorio de última generación cuestan un ojo de la cara
+🍞 | That technical certification was a piece of cake | Esa certificación técnica fue pan comido
+🐕 | It is raining cats and dogs throughout the river basin | Está lloviendo a cántaros en toda la cuenca del río
+👁️ | State-of-the-art laboratory gear costs an arm and a leg | Los equipos de laboratorio de última generación cuestan un ojo de la cara
 👂 | Present your detailed thesis; we are all ears | Exponga su tesis detallada; somos todo oídos
 ⏳ | Better late than never when correcting systemic errors | Más vale tarde que nunca a la hora de corregir errores sistémicos
 🥊 | Your incisive evaluation hit the nail on the head | Su incisiva evaluación dio en el clavo
@@ -269,8 +269,8 @@ object TranslationsSentences7 {
 ⚡ | The technological breakthrough emerged out of the blue | El avance tecnológico surgió de la nada
 """
             22 -> """
-💰 | Sound monetary planning secures lasting family welfare | Una sólida planificación monetaria asegura un bienestar familiar duradero
-💳 | Liquidate high-interest balances systematically | Liquide los saldos con altos intereses de forma sistemática
+👨‍👩‍👧‍👦 | Sound monetary planning secures lasting family welfare | Una sólida planificación monetaria asegura un bienestar familiar duradero
+🦒 | Liquidate high-interest balances systematically | Liquide los saldos con altos intereses de forma sistemática
 🏠 | Long-term mortgage structures protect homeowner equity | Las estructuras hipotecarias a largo plazo protegen el patrimonio
 📈 | Diversified asset allocations weather market volatility | Las asignaciones diversificadas de activos resisten la volatilidad del mercado
 📉 | Deflationary and inflationary cycles affect capital reserves | Los ciclos deflacionarios e inflacionarios afectan a las reservas de capital
@@ -284,7 +284,7 @@ object TranslationsSentences7 {
 ⚖️ | Statutory justice guarantees equal protection for all | La justicia estatutaria garantiza igual protección para todos
 🏛️ | The constitutional tribunal issued its landmark judgment | El tribunal constitucional emitió su sentencia histórica
 👨‍⚖️ | The judiciary evaluated extensive documented evidence | El poder judicial evaluó abundantes pruebas documentales
-📄 | Contractual clauses mandate strict compliance schedules | Las cláusulas contractuales exigen estrictos calendarios de cumplimiento
+📝 | Contractual clauses mandate strict compliance schedules | Las cláusulas contractuales exigen estrictos calendarios de cumplimiento
 🔒 | Law enforcement executed the mandate with professionalism | Las fuerzas del orden ejecutaron el mandato con profesionalidad
 🔍 | Forensic protocols guaranteed integrity of the evidence | Los protocolos forenses garantizaron la integridad de las pruebas
 🗣️ | The expert witness provided compelling technical testimony | El perito aportó un testimonio técnico convincente
@@ -334,7 +334,7 @@ object TranslationsSentences7 {
 🍳 | Masterful cuisine balances aesthetic presentation with flavor | La cocina magistral equilibra la presentación estética con el sabor
 🪴 | Cultivating rare botanicals requires horticultural discipline | Cultivar especies botánicas raras requiere disciplina hortícola
 ♟️ | Grandmaster strategy balances tactical offense with defense | La estrategia de grandes maestros equilibra el ataque táctico con la defensa
-📚 | Immersing oneself in profound books enlightens the spirit | Sumergirse en libros profundos ilumina el espíritu
+📖 | Immersing oneself in profound books enlightens the spirit | Sumergirse en libros profundos ilumina el espíritu
 🎨 | Expressive artistic creation communicates beyond words | La creación artística expresiva se comunica más allá de las palabras
 🎣 | River navigation fosters meditative connection with nature | La navegación fluvial fomenta una conexión meditativa con la naturaleza
 🥾 | Alpine expeditions demand endurance and navigational acumen | Las expediciones alpinas exigen resistencia y destreza en la navegación
@@ -342,15 +342,15 @@ object TranslationsSentences7 {
 """
             28 -> """
 🗣️ | Eloquent expression enhances interpersonal influence | La expresión elocuente mejora la influencia interpersonal
-🤝 | Deep listening establishes genuine mutual comprehension | La escucha profunda establece una comprensión mutua auténtica
+📋 | Deep listening establishes genuine mutual comprehension | La escucha profunda establece una comprensión mutua auténtica
 📧 | Professional correspondence demands clarity and tact | La correspondencia profesional exige claridad y tacto
 🎯 | Oratorical poise is refined through deliberate practice | El aplomo oratorio se perfecciona mediante la práctica deliberada
 💡 | Translate nuanced thoughts into persuasive explanations | Traduzca pensamientos con matices en explicaciones persuasivas
 👀 | Attentive posture conveys genuine respect and engagement | Una postura atenta transmite auténtico respeto e interés
 📱 | Mindful messaging prevents digital misinterpretations | La mensajería consciente previene malas interpretaciones digitales
-🤫 | Strategic pauses allow listeners to assimilate concepts | Las pausas estratégicas permiten a los oyentes asimilar conceptos
+📋 | Strategic pauses allow listeners to assimilate concepts | Las pausas estratégicas permiten a los oyentes asimilar conceptos
 🤝 | Empathetic reasoning resolves intricate workplace disputes | El razonamiento empático resuelve disputas laborales complejas
-📢 | Resonant speech projection commands audience attention | La proyección de voz resonante capta la atención del público
+📁 | Resonant speech projection commands audience attention | La proyección de voz resonante capta la atención del público
 """
             29 -> """
 🧭 | Ethical governance inspires widespread civic confidence | El buen gobierno ético inspira una amplia confianza cívica
@@ -370,10 +370,10 @@ object TranslationsSentences7 {
 📖 | Reading sophisticated literature builds an elite vocabulary | Leer literatura sofisticada construye un vocabulario de élite
 🗣️ | Continuous speaking practice turns confidence into second nature | La práctica oral continua convierte la seguridad en una segunda naturaleza
 ✍️ | Writing structured essays reinforces complex grammar mastery | Escribir ensayos estructurados refuerza el dominio de la gramática compleja
-🧠 | Thinking seamlessly in English removes mental translation | Pensar con fluidez en inglés elimina la traducción mental
+🇬🇧 | Thinking seamlessly in English removes mental translation | Pensar con fluidez en inglés elimina la traducción mental
 🎬 | Authentic audiovisual immersion reveals subtle humor and idioms | La inmersión audiovisual auténtica revela el humor sutil y los modismos
 🎯 | Sustained focus on language milestones delivers excellence | El enfoque constante en los hitos lingüísticos brinda excelencia
-⚡ | Persistence and curiosity unlock the beauty of English | La perseverancia y la curiosidad desbloquean la belleza del inglés
+🇬🇧 | Persistence and curiosity unlock the beauty of English | La perseverancia y la curiosidad desbloquean la belleza del inglés
 🎉 | Congratulations on conquering this entire translation module! | ¡Enhorabuena por conquistar este módulo completo de traducción!
 """
             else -> ""

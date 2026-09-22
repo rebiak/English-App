@@ -23,12 +23,15 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material3.Button
@@ -42,10 +45,16 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
@@ -74,9 +83,47 @@ fun SessionCompletedDialog(
     onExtend10Mins: () -> Unit,
     onRestartSession: () -> Unit,
     onFinishToday: () -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    onAutoTimeout: () -> Unit = onFinishToday
 ) {
     val isSpanish = appLanguage == AppLanguage.SPANISH
+
+    // 30-second auto-timeout countdown: closes window / exits app if user doesn't act within 30s
+    var secondsRemaining by remember { mutableIntStateOf(30) }
+    var isTimerActive by remember { mutableStateOf(true) }
+
+    LaunchedEffect(isTimerActive) {
+        if (isTimerActive) {
+            while (secondsRemaining > 0) {
+                delay(1000L)
+                secondsRemaining--
+            }
+            if (secondsRemaining <= 0) {
+                onAutoTimeout()
+            }
+        }
+    }
+
+    val handleExtend5 = {
+        isTimerActive = false
+        onExtend5Mins()
+    }
+    val handleExtend10 = {
+        isTimerActive = false
+        onExtend10Mins()
+    }
+    val handleRestart = {
+        isTimerActive = false
+        onRestartSession()
+    }
+    val handleFinish = {
+        isTimerActive = false
+        onFinishToday()
+    }
+    val handleDismiss = {
+        isTimerActive = false
+        onDismiss()
+    }
 
     // Subtle breathing pulse for the trophy/timer icon
     val infiniteTransition = rememberInfiniteTransition(label = "pulse_scale")
@@ -91,7 +138,7 @@ fun SessionCompletedDialog(
     )
 
     Dialog(
-        onDismissRequest = onDismiss,
+        onDismissRequest = handleDismiss,
         properties = DialogProperties(
             dismissOnBackPress = true,
             dismissOnClickOutside = true,
@@ -105,7 +152,7 @@ fun SessionCompletedDialog(
                 .clickable(
                     interactionSource = remember { androidx.compose.foundation.interaction.MutableInteractionSource() },
                     indication = null,
-                    onClick = onDismiss
+                    onClick = handleDismiss
                 )
                 .safeDrawingPadding()
                 .padding(horizontal = 20.dp, vertical = 24.dp),
@@ -129,6 +176,7 @@ fun SessionCompletedDialog(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
                         .padding(22.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -138,7 +186,7 @@ fun SessionCompletedDialog(
                         horizontalArrangement = Arrangement.End
                     ) {
                         IconButton(
-                            onClick = onDismiss,
+                            onClick = handleDismiss,
                             modifier = Modifier
                                 .size(44.dp)
                                 .testTag("close_session_completed_dialog")
@@ -262,7 +310,7 @@ fun SessionCompletedDialog(
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         Button(
-                            onClick = onExtend5Mins,
+                            onClick = handleExtend5,
                             colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier
@@ -281,7 +329,7 @@ fun SessionCompletedDialog(
                         }
 
                         Button(
-                            onClick = onExtend10Mins,
+                            onClick = handleExtend10,
                             colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier
@@ -304,7 +352,7 @@ fun SessionCompletedDialog(
 
                     // Full Restart / Free Practicing Button
                     Button(
-                        onClick = onRestartSession,
+                        onClick = handleRestart,
                         colors = ButtonDefaults.buttonColors(
                             containerColor = MaterialTheme.colorScheme.surfaceVariant,
                             contentColor = MaterialTheme.colorScheme.primary
@@ -334,7 +382,7 @@ fun SessionCompletedDialog(
 
                     // Finish for today button
                     OutlinedButton(
-                        onClick = onFinishToday,
+                        onClick = handleFinish,
                         shape = RoundedCornerShape(14.dp),
                         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.6f)),
                         colors = ButtonDefaults.outlinedButtonColors(
@@ -356,6 +404,45 @@ fun SessionCompletedDialog(
                             fontSize = 13.5.sp,
                             fontWeight = FontWeight.SemiBold
                         )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    // 30s auto-close badge indicator with tap to pause/resume
+                    Surface(
+                        shape = RoundedCornerShape(12.dp),
+                        color = if (isTimerActive) MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f) else MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.25f),
+                        border = BorderStroke(
+                            1.dp,
+                            if (isTimerActive) MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f) else MaterialTheme.colorScheme.error.copy(alpha = 0.4f)
+                        ),
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(12.dp))
+                            .clickable { isTimerActive = !isTimerActive }
+                            .testTag("session_completed_auto_close_pill")
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(
+                                imageVector = if (isTimerActive) Icons.Default.Timer else Icons.Default.Pause,
+                                contentDescription = null,
+                                modifier = Modifier.size(14.dp),
+                                tint = if (isTimerActive) PrimaryIndigo else MaterialTheme.colorScheme.error
+                            )
+                            Text(
+                                text = if (isTimerActive) {
+                                    if (isSpanish) "Cierre automático en ${secondsRemaining}s (Toca para pausar)" else "Auto-close in ${secondsRemaining}s (Tap to pause)"
+                                } else {
+                                    if (isSpanish) "Auto-cierre pausado (Toca para reanudar)" else "Auto-close paused (Tap to resume)"
+                                },
+                                fontSize = 11.5.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = if (isTimerActive) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.error
+                            )
+                        }
                     }
                 }
             }

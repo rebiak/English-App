@@ -1274,7 +1274,7 @@ private fun QuizModeView(
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 15.sp,
                                         color = MaterialTheme.colorScheme.onSurface,
-                                        maxLines = 1,
+                                        maxLines = 2,
                                         overflow = TextOverflow.Ellipsis
                                     )
                                     Spacer(modifier = Modifier.height(2.dp))
@@ -1305,7 +1305,7 @@ private fun QuizModeView(
                                         )
                                         Spacer(modifier = Modifier.width(4.dp))
                                         Text(
-                                            text = if (isSpanish) "Listo" else "Ready",
+                                            text = if (isSpanish) "Seleccionada" else "Selected",
                                             color = MasteredGreen,
                                             fontWeight = FontWeight.Bold,
                                             fontSize = 11.5.sp,

@@ -155,7 +155,7 @@ object Booklet5Part2 {
         createCardB5("🎯", "Achilles heel", "Talón de Aquiles", "Pride is his Achilles heel.", "El orgullo es su talón de Aquiles.", "Phrase", 15),
         createCardB5("🛣️", "Asphalt", "Asfalto", "The street has new asphalt.", "La calle tiene nuevo asfalto.", "Word", 15),
         createCardB5("🕊️", "Cease-fire", "Alto el fuego", "The two countries made a cease-fire.", "Los dos países hicieron un alto el fuego.", "Word", 15),
-        createCardB5("👍", "Convincing", "Convincente", "Her story is very convincing.", "Su historia es muy convincente.", "Word", 15),
+        createCardB5("💯", "Convincing", "Convincente", "Her story is very convincing.", "Su historia es muy convincente.", "Word", 15),
         createCardB5("🇩🇰", "Denmark", "Dinamarca", "Denmark is a cold country.", "Dinamarca es un país frío.", "Word", 15),
         createCardB5("💍", "Formal engagement", "Noviazgo formal", "They announced their formal engagement.", "Anunciaron su noviazgo formal.", "Phrase", 15),
         createCardB5("🔮", "Foresight", "Visión de futuro, previsión", "She had the foresight to save money.", "Ella tuvo la previsión de ahorrar dinero.", "Word", 15),
@@ -210,7 +210,7 @@ object Booklet5Part2 {
         // ==========================================
         // LIST 17
         // ==========================================
-        createCardB5("🏢", "Acquisition", "Adquisición", "I need to sign the new office acquisition.", "Necesito firmar la nueva adquisición de la oficina.", "Word", 17),
+        createCardB5("🤝", "Acquisition", "Adquisición", "I need to sign the new office acquisition.", "Necesito firmar la nueva adquisición de la oficina.", "Word", 17),
         createCardB5("🛡️", "At all costs", "A toda costa", "We must protect our data at all costs.", "Debemos proteger nuestros datos a toda costa.", "Phrase", 17),
         createCardB5("🧗", "Challenge", "Reto, desafío", "Learning a new language is a fun challenge.", "Aprender un nuevo idioma es un reto divertido.", "Word", 17),
         createCardB5("👮", "Cop", "Policía", "The friendly cop helped me cross the street.", "El policía amable me ayudó a cruzar la calle.", "Word", 17),

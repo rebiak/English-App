@@ -184,7 +184,7 @@ object Booklet4Part3 {
         createCardB4("🗳️", "Choice", "Elección", "I have a choice of two shirts.", "Tengo una elección de dos camisas.", "Word", 25),
         createCardB4("🦌", "Deer", "Ciervo", "We saw a deer in the woods.", "Vimos un ciervo en el bosque.", "Word", 25),
         createCardB4("📉", "Disadvantage", "Desventaja", "Lack of money is a big disadvantage.", "La falta de dinero es una gran desventaja.", "Word", 25),
-        createCardB4("❌", "Failure", "Fracaso", "Do not be afraid of failure.", "No tengas miedo al fracaso.", "Word", 25),
+        createCardB4("📉", "Failure", "Fracaso", "Do not be afraid of failure.", "No tengas miedo al fracaso.", "Word", 25),
         createCardB4("⏳", "It's pointless", "Es una pérdida de tiempo", "Trying to fix this old phone is pointless.", "Intentar arreglar este teléfono viejo es una pérdida de tiempo.", "Phrase", 25),
         createCardB4("⭐", "Mainly", "Principalmente", "I eat fruit, mainly apples.", "Como fruta, principalmente manzanas.", "Word", 25),
         createCardB4("🤝", "Mutually", "Mutuamente", "We help each other mutually.", "Nos ayudamos mutuamente.", "Word", 25),

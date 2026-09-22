@@ -57,7 +57,7 @@ object Booklet4Part2 {
         createCardB4("👥", "To collaborate", "Colaborar", "We collaborate on this project.", "Colaboramos en este proyecto.", "Word", 11),
         createCardB4("👻", "To frighten", "Asustar", "The loud noise can frighten the baby.", "El ruido fuerte puede asustar al bebé.", "Word", 11),
         createCardB4("🎉", "To have a good time", "Pasárselo bien", "We always have a good time here.", "Siempre nos lo pasamos bien aquí.", "Phrase", 11),
-        createCardB4("🧠", "To make a decision", "Tomar una decisión", "I need to make a decision now.", "Necesito tomar una decisión ahora.", "Phrase", 11),
+        createCardB4("⚖️", "To make a decision", "Tomar una decisión", "I need to make a decision now.", "Necesito tomar una decisión ahora.", "Phrase", 11),
         createCardB4("📦", "To place", "Colocar", "Please place the book on the table.", "Por favor, coloca el libro en la mesa.", "Word", 11),
         createCardB4("🛑", "To pressure", "Presionar", "Do not pressure me to decide.", "No me presiones para decidir.", "Word", 11),
         createCardB4("🛌", "Unconscious", "Inconsciente", "He was unconscious after the fall.", "Él estaba inconsciente después de la caída.", "Word", 11),
@@ -85,7 +85,7 @@ object Booklet4Part2 {
         createCardB4("📢", "To emphasize", "Hacer hincapié en", "The teacher will emphasize this rule.", "El profesor hará hincapié en esta regla.", "Word", 12),
         createCardB4("🛋️", "To furnish", "Proporcionar, amueblar", "They need to furnish their new apartment.", "Necesitan amueblar su nuevo apartamento.", "Word", 12),
         createCardB4("⚠️", "To punish", "Castigar", "The mother had to punish her son.", "La madre tuvo que castigar a su hijo.", "Word", 12),
-        createCardB4("🚫", "To reject", "Rechazar", "They might reject our offer.", "Ellos podrían rechazar nuestra oferta.", "Word", 12),
+        createCardB4("🙅", "To reject", "Rechazar", "They might reject our offer.", "Ellos podrían rechazar nuestra oferta.", "Word", 12),
         createCardB4("💬", "To reply", "Responder, contestar", "Please reply to my email today.", "Por favor, responde a mi correo hoy.", "Word", 12),
         createCardB4("⏭️", "To skip", "Saltar, omitir", "You can skip this hard question.", "Puedes omitir esta pregunta difícil.", "Word", 12),
         createCardB4("⚾", "To throw", "Lanzar, arrojar", "Throw the ball to me, please.", "Lánzame la pelota, por favor.", "Word", 12),
@@ -123,7 +123,7 @@ object Booklet4Part2 {
         // ==========================================
         // LIST 14
         // ==========================================
-        createCardB4("👍", "Approval", "Aprobación", "I need your approval for this plan.", "Necesito tu aprobación para este plan.", "Word", 14),
+        createCardB4("✅", "Approval", "Aprobación", "I need your approval for this plan.", "Necesito tu aprobación para este plan.", "Word", 14),
         createCardB4("💪", "Capable of", "Capaz de", "She is capable of doing this job.", "Ella es capaz de hacer este trabajo.", "Phrase", 14),
         createCardB4("🤔", "Doubtful", "Dudoso", "I am doubtful about this plan.", "Tengo dudas sobre este plan.", "Word", 14),
         createCardB4("🧴", "Glue", "Pegamento", "I use glue to fix the cup.", "Uso pegamento para arreglar la taza.", "Word", 14),
@@ -220,7 +220,7 @@ object Booklet4Part2 {
         createCardB4("📄", "Resignation", "Dimisión", "I read his letter of resignation.", "Leí su carta de dimisión.", "Word", 17),
         createCardB4("🧱", "Rubber", "Goma, caucho", "My boots are made of rubber.", "Mis botas son de goma.", "Word", 17),
         createCardB4("🫣", "Shy", "Tímido", "The new boy is very shy.", "El chico nuevo es muy tímido.", "Word", 17),
-        createCardB4("📼", "Tape", "Papel celo, cinta", "Can I use some tape?", "¿Puedo usar un poco de cinta?", "Word", 17),
+        createCardB4("🩹", "Tape", "Papel celo, cinta", "Can I use some tape?", "¿Puedo usar un poco de cinta?", "Word", 17),
         createCardB4("🟦", "Tile", "Azulejos", "The bathroom has blue tile.", "El baño tiene azulejos azules.", "Word", 17),
         createCardB4("🏆", "To achieve", "Lograr", "I want to achieve my goals.", "Quiero lograr mis metas.", "Word", 17),
         createCardB4("💡", "To clarify", "Clarificar", "Can you clarify this point?", "¿Puedes clarificar este punto?", "Word", 17),

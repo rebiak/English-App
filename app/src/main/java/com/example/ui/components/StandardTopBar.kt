@@ -202,7 +202,7 @@ fun StandardTopBar(
                 }
             }
 
-            // Interactive Cursor Walkthrough Button (❓)
+            // Screen Tutorial / Help Button (❓)
             Surface(
                 shape = RoundedCornerShape(10.dp),
                 color = PrimaryIndigo.copy(alpha = 0.12f),
@@ -219,7 +219,7 @@ fun StandardTopBar(
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.HelpOutline,
-                        contentDescription = if (appLanguage == AppLanguage.SPANISH) "Tutorial interactivo con cursor" else "Interactive cursor tutorial",
+                        contentDescription = if (appLanguage == AppLanguage.SPANISH) "Tutorial interactivo de la pantalla" else "Interactive screen tutorial",
                         tint = PrimaryIndigo,
                         modifier = Modifier.size(17.dp)
                     )

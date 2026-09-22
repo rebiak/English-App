@@ -519,6 +519,9 @@ fun MyWordsScreen(
                                     activeStudyingLists = activeStudyingLists,
                                     isLoading = isStudyingListsLoading,
                                     isSpanish = isSpanish,
+                                    dynamicCategories = dynamicCategories,
+                                    allCards = allCards,
+                                    folders = folders,
                                     onOpenList = { catName, parentFolder ->
                                         openedFromStudyingTab = true
                                         selectedFolder = parentFolder
@@ -528,6 +531,9 @@ fun MyWordsScreen(
                                     },
                                     onStudyList = { catName ->
                                         viewModel.startStudyList(catName)
+                                    },
+                                    onStartStudyPlaylist = { categories, _ ->
+                                        viewModel.startStudyPlaylist(categories, startAutoScroll = false, loop = false)
                                     },
                                     onResetList = { catName ->
                                         locallyDismissedCategories = locallyDismissedCategories + catName.trim().lowercase()
@@ -2839,12 +2845,180 @@ private fun StudyingListsTabContent(
     activeStudyingLists: List<StudyingListSummary>,
     isLoading: Boolean,
     isSpanish: Boolean,
+    dynamicCategories: List<String> = emptyList(),
+    allCards: List<Flashcard> = emptyList(),
+    folders: List<Folder> = emptyList(),
     onOpenList: (String, Folder?) -> Unit,
     onStudyList: (String) -> Unit,
+    onStartStudyPlaylist: (List<String>, Boolean) -> Unit = { _, _ -> },
     onResetList: (String) -> Unit,
     onRemoveFromStudyList: (String) -> Unit,
     onSwitchToVocabularyTab: () -> Unit
 ) {
+    var isSelectionMode by remember { mutableStateOf(false) }
+    val selectedCategories = remember { mutableStateListOf<String>() }
+    var showVocabPickerSheet by remember { mutableStateOf(false) }
+
+    if (showVocabPickerSheet) {
+        val vocabCategories = remember(dynamicCategories) {
+            dynamicCategories.filter { it.isNotBlank() && !it.equals("All", ignoreCase = true) }
+        }
+        val pickerSelected = remember { mutableStateListOf<String>() }
+
+        AlertDialog(
+            onDismissRequest = { showVocabPickerSheet = false },
+            icon = {
+                Text(text = "📚", fontSize = 28.sp)
+            },
+            title = {
+                Text(
+                    text = if (isSpanish) "Estudiar Selección de Listas" else "Study Selected Lists",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.sp,
+                    textAlign = TextAlign.Center
+                )
+            },
+            text = {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    Text(
+                        text = if (isSpanish)
+                            "Selecciona las listas que deseas estudiar juntas en esta sesión:"
+                        else
+                            "Select the lists you want to study together in this session:",
+                        fontSize = 12.5.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = if (isSpanish) "${pickerSelected.size} seleccionadas" else "${pickerSelected.size} selected",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = PrimaryIndigo
+                        )
+                        TextButton(
+                            onClick = {
+                                if (pickerSelected.size == vocabCategories.size) {
+                                    pickerSelected.clear()
+                                } else {
+                                    pickerSelected.clear()
+                                    pickerSelected.addAll(vocabCategories)
+                                }
+                            }
+                        ) {
+                            Text(
+                                text = if (pickerSelected.size == vocabCategories.size)
+                                    (if (isSpanish) "Deseleccionar" else "Deselect")
+                                else
+                                    (if (isSpanish) "Todas" else "All"),
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = PrimaryIndigo
+                            )
+                        }
+                    }
+
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 240.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        items(vocabCategories) { cat ->
+                            val isChecked = pickerSelected.contains(cat)
+                            val catCards = allCards.filter { it.category.equals(cat, ignoreCase = true) }
+                            Surface(
+                                shape = RoundedCornerShape(10.dp),
+                                color = if (isChecked) PrimaryIndigo.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f),
+                                border = BorderStroke(
+                                    1.dp,
+                                    if (isChecked) PrimaryIndigo else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f)
+                                ),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .clickable {
+                                        if (isChecked) pickerSelected.remove(cat) else pickerSelected.add(cat)
+                                    }
+                            ) {
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(horizontal = 10.dp, vertical = 8.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.SpaceBetween
+                                ) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                        modifier = Modifier.weight(1f)
+                                    ) {
+                                        Checkbox(
+                                            checked = isChecked,
+                                            onCheckedChange = {
+                                                if (isChecked) pickerSelected.remove(cat) else pickerSelected.add(cat)
+                                            },
+                                            colors = CheckboxDefaults.colors(
+                                                checkedColor = PrimaryIndigo,
+                                                checkmarkColor = Color.White
+                                            )
+                                        )
+                                        Text(
+                                            text = cat,
+                                            fontSize = 13.5.sp,
+                                            fontWeight = if (isChecked) FontWeight.Bold else FontWeight.Medium,
+                                            color = MaterialTheme.colorScheme.onSurface,
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                    Text(
+                                        text = "${catCards.size} ${if (isSpanish) "palabras" else "words"}",
+                                        fontSize = 11.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        if (pickerSelected.isNotEmpty()) {
+                            val listsToPlay = pickerSelected.toList()
+                            showVocabPickerSheet = false
+                            onStartStudyPlaylist(listsToPlay, false)
+                        }
+                    },
+                    enabled = pickerSelected.isNotEmpty(),
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo)
+                ) {
+                    Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(16.dp))
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = if (isSpanish) "Iniciar Estudio (${pickerSelected.size})" else "Start Study (${pickerSelected.size})",
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showVocabPickerSheet = false }) {
+                    Text(text = if (isSpanish) "Cancelar" else "Cancel")
+                }
+            }
+        )
+    }
+
     if (isLoading) {
         Box(
             modifier = Modifier
@@ -2946,69 +3120,331 @@ private fun StudyingListsTabContent(
                         lineHeight = 18.sp
                     )
                     Spacer(modifier = Modifier.height(20.dp))
-                    Button(
-                        onClick = onSwitchToVocabularyTab,
-                        shape = RoundedCornerShape(12.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
-                        modifier = Modifier.testTag("btn_explore_vocabulary_empty")
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Icon(Icons.Default.Folder, contentDescription = null, modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text(
-                            text = if (isSpanish) "Explorar Vocabulario" else "Explore Vocabulary",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 13.5.sp
-                        )
+                        Button(
+                            onClick = onSwitchToVocabularyTab,
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
+                            modifier = Modifier
+                                .weight(1f)
+                                .testTag("btn_explore_vocabulary_empty")
+                        ) {
+                            Icon(Icons.Default.Folder, contentDescription = null, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = if (isSpanish) "Vocabulario" else "Vocabulary",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp
+                            )
+                        }
+
+                        if (dynamicCategories.isNotEmpty()) {
+                            OutlinedButton(
+                                onClick = { showVocabPickerSheet = true },
+                                shape = RoundedCornerShape(12.dp),
+                                border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.65f)),
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .testTag("btn_loop_vocabulary_picker")
+                            ) {
+                                Text(text = "📚", fontSize = 14.sp)
+                                Spacer(modifier = Modifier.width(5.dp))
+                                Text(
+                                    text = if (isSpanish) "Estudiar" else "Study",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.sp,
+                                    color = PrimaryIndigo
+                                )
+                            }
+                        }
                     }
                 }
             }
         }
     } else {
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .testTag("studying_lists_lazy_column"),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            contentPadding = PaddingValues(bottom = 80.dp)
-        ) {
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 2.dp, bottom = 2.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column {
-                        Text(
-                            text = if (isSpanish) "🎯 Listas en Estudio Activas (${activeStudyingLists.size})" else "🎯 Active Lists in Study (${activeStudyingLists.size})",
-                            fontSize = 14.5.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                            text = if (isSpanish) "⚡ Última estudiada arriba • Mayor dominio a continuación" else "⚡ Last studied on top • Highest mastery following",
-                            fontSize = 11.5.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
+        Box(modifier = Modifier.fillMaxSize()) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .testTag("studying_lists_lazy_column"),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+                contentPadding = PaddingValues(bottom = if (isSelectionMode) 120.dp else 80.dp)
+            ) {
+                item {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 2.dp, bottom = 2.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column {
+                            Text(
+                                text = if (isSpanish) "🎯 Listas en Estudio Activas (${activeStudyingLists.size})" else "🎯 Active Lists in Study (${activeStudyingLists.size})",
+                                fontSize = 14.5.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Text(
+                                text = if (isSpanish) "⚡ Última estudiada arriba • Mayor dominio a continuación" else "⚡ Last studied on top • Highest mastery following",
+                                fontSize = 11.5.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
                     }
+                }
+
+                // Action Bar: Play All in Loop / Multi-select
+                item {
+                    if (!isSelectionMode) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Button(
+                                onClick = {
+                                    onStartStudyPlaylist(activeStudyingLists.map { it.categoryName }, false)
+                                },
+                                modifier = Modifier
+                                    .weight(1.3f)
+                                    .testTag("btn_play_all_loop"),
+                                shape = RoundedCornerShape(12.dp),
+                                colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
+                                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 9.dp)
+                            ) {
+                                Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(18.dp))
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = if (isSpanish) "Estudiar Todo" else "Study All",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 12.5.sp,
+                                    maxLines = 1
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Surface(
+                                    shape = CircleShape,
+                                    color = Color.White.copy(alpha = 0.25f)
+                                ) {
+                                    Text(
+                                        text = "${activeStudyingLists.size}",
+                                        fontSize = 11.sp,
+                                        fontWeight = FontWeight.ExtraBold,
+                                        color = Color.White,
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 1.5.dp)
+                                    )
+                                }
+                            }
+
+                            OutlinedButton(
+                                onClick = {
+                                    isSelectionMode = true
+                                    selectedCategories.clear()
+                                },
+                                modifier = Modifier
+                                    .weight(0.9f)
+                                    .testTag("btn_toggle_select_lists"),
+                                shape = RoundedCornerShape(12.dp),
+                                border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.6f)),
+                                contentPadding = PaddingValues(horizontal = 10.dp, vertical = 9.dp)
+                            ) {
+                                Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp), tint = PrimaryIndigo)
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = if (isSpanish) "Seleccionar" else "Select",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 12.5.sp,
+                                    color = PrimaryIndigo,
+                                    maxLines = 1
+                                )
+                            }
+                        }
+                    } else {
+                        Card(
+                            shape = RoundedCornerShape(12.dp),
+                            colors = CardDefaults.cardColors(containerColor = PrimaryIndigo.copy(alpha = 0.08f)),
+                            border = BorderStroke(1.5.dp, PrimaryIndigo.copy(alpha = 0.45f)),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp)
+                        ) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Surface(
+                                        shape = CircleShape,
+                                        color = PrimaryIndigo,
+                                        modifier = Modifier.size(24.dp)
+                                    ) {
+                                        Box(contentAlignment = Alignment.Center) {
+                                            Text(
+                                                text = "${selectedCategories.size}",
+                                                color = Color.White,
+                                                fontWeight = FontWeight.Bold,
+                                                fontSize = 11.5.sp
+                                            )
+                                        }
+                                    }
+                                    Text(
+                                        text = if (isSpanish)
+                                            "${selectedCategories.size} de ${activeStudyingLists.size} seleccionadas"
+                                        else
+                                            "${selectedCategories.size} of ${activeStudyingLists.size} selected",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 13.sp,
+                                        color = MaterialTheme.colorScheme.onSurface
+                                    )
+                                }
+
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                                ) {
+                                    TextButton(
+                                        onClick = {
+                                            if (selectedCategories.size == activeStudyingLists.size) {
+                                                selectedCategories.clear()
+                                            } else {
+                                                selectedCategories.clear()
+                                                selectedCategories.addAll(activeStudyingLists.map { it.categoryName })
+                                            }
+                                        },
+                                        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
+                                    ) {
+                                        Text(
+                                            text = if (selectedCategories.size == activeStudyingLists.size)
+                                                (if (isSpanish) "Deseleccionar" else "Deselect")
+                                            else
+                                                (if (isSpanish) "Todas" else "All"),
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = PrimaryIndigo
+                                        )
+                                    }
+
+                                    IconButton(
+                                        onClick = {
+                                            isSelectionMode = false
+                                            selectedCategories.clear()
+                                        },
+                                        modifier = Modifier.size(32.dp)
+                                    ) {
+                                        Icon(Icons.Default.Close, contentDescription = "Cancelar", tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                items(activeStudyingLists, key = { "studying_tab_${it.categoryName}" }) { item ->
+                    ActiveStudyListCard(
+                        categoryName = item.categoryName,
+                        folder = item.folder,
+                        totalWords = item.totalWords,
+                        studiedWords = item.studiedWords,
+                        avgMastery = item.avgMastery,
+                        isLastStudied = item.isLastStudied,
+                        isSpanish = isSpanish,
+                        isSelectionMode = isSelectionMode,
+                        isSelected = selectedCategories.contains(item.categoryName),
+                        onToggleSelect = {
+                            if (selectedCategories.contains(item.categoryName)) {
+                                selectedCategories.remove(item.categoryName)
+                            } else {
+                                selectedCategories.add(item.categoryName)
+                            }
+                        },
+                        onOpen = { onOpenList(item.categoryName, item.folder) },
+                        onStudy = { onStudyList(item.categoryName) },
+                        onReset = { onResetList(item.categoryName) },
+                        onRemoveFromStudy = { onRemoveFromStudyList(item.categoryName) }
+                    )
                 }
             }
 
-            items(activeStudyingLists, key = { "studying_tab_${it.categoryName}" }) { item ->
-                ActiveStudyListCard(
-                    categoryName = item.categoryName,
-                    folder = item.folder,
-                    totalWords = item.totalWords,
-                    studiedWords = item.studiedWords,
-                    avgMastery = item.avgMastery,
-                    isLastStudied = item.isLastStudied,
-                    isSpanish = isSpanish,
-                    onOpen = { onOpenList(item.categoryName, item.folder) },
-                    onStudy = { onStudyList(item.categoryName) },
-                    onReset = { onResetList(item.categoryName) },
-                    onRemoveFromStudy = { onRemoveFromStudyList(item.categoryName) }
-                )
+            // Floating Bottom Action Bar in Selection Mode
+            AnimatedVisibility(
+                visible = isSelectionMode,
+                enter = fadeIn() + slideInVertically(initialOffsetY = { it }),
+                exit = fadeOut() + slideOutVertically(targetOffsetY = { it }),
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 16.dp, start = 12.dp, end = 12.dp)
+            ) {
+                Surface(
+                    shape = RoundedCornerShape(18.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    shadowElevation = 8.dp,
+                    border = BorderStroke(1.dp, PrimaryIndigo.copy(alpha = 0.35f)),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 14.dp, vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = if (selectedCategories.isEmpty())
+                                    (if (isSpanish) "Elige listas a estudiar" else "Choose lists to study")
+                                else
+                                    (if (isSpanish) "${selectedCategories.size} seleccionada(s)" else "${selectedCategories.size} selected"),
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Text(
+                                text = if (isSpanish) "Se estudiarán juntas en la misma sesión" else "Will study together in the same session",
+                                fontSize = 11.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+
+                        Button(
+                            onClick = {
+                                if (selectedCategories.isNotEmpty()) {
+                                    val toPlay = selectedCategories.toList()
+                                    isSelectionMode = false
+                                    selectedCategories.clear()
+                                    onStartStudyPlaylist(toPlay, false)
+                                }
+                            },
+                            enabled = selectedCategories.isNotEmpty(),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = PrimaryIndigo,
+                                disabledContainerColor = PrimaryIndigo.copy(alpha = 0.3f)
+                            ),
+                            contentPadding = PaddingValues(horizontal = 14.dp, vertical = 8.dp),
+                            modifier = Modifier.testTag("btn_play_selected_loop")
+                        ) {
+                            Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(18.dp))
+                            Spacer(modifier = Modifier.width(5.dp))
+                            Text(
+                                text = if (isSpanish) "Estudiar (${selectedCategories.size})" else "Study (${selectedCategories.size})",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -3026,6 +3462,9 @@ private fun ActiveStudyListCard(
     avgMastery: Int,
     isLastStudied: Boolean,
     isSpanish: Boolean,
+    isSelectionMode: Boolean = false,
+    isSelected: Boolean = false,
+    onToggleSelect: () -> Unit = {},
     onOpen: () -> Unit,
     onStudy: () -> Unit,
     onReset: () -> Unit,
@@ -3156,15 +3595,19 @@ private fun ActiveStudyListCard(
 
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isSelectionMode && isSelected) PrimaryIndigo.copy(alpha = 0.08f) else MaterialTheme.colorScheme.surface
+        ),
         border = BorderStroke(
-            width = if (isLastStudied) 1.5.dp else 1.dp,
-            color = if (isLastStudied) PrimaryIndigo.copy(alpha = 0.85f) else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)
+            width = if (isSelectionMode && isSelected) 2.dp else if (isLastStudied) 1.5.dp else 1.dp,
+            color = if (isSelectionMode && isSelected) PrimaryIndigo else if (isLastStudied) PrimaryIndigo.copy(alpha = 0.85f) else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)
         ),
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
-            .clickable { onOpen() }
+            .clickable {
+                if (isSelectionMode) onToggleSelect() else onOpen()
+            }
             .testTag("studying_card_${categoryName.replace(" ", "_")}")
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
@@ -3178,6 +3621,18 @@ private fun ActiveStudyListCard(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.weight(1f)
                 ) {
+                    if (isSelectionMode) {
+                        Checkbox(
+                            checked = isSelected,
+                            onCheckedChange = { onToggleSelect() },
+                            colors = CheckboxDefaults.colors(
+                                checkedColor = PrimaryIndigo,
+                                checkmarkColor = Color.White
+                            ),
+                            modifier = Modifier.padding(end = 4.dp)
+                        )
+                    }
+
                     Surface(
                         shape = CircleShape,
                         color = if (isLastStudied) PrimaryIndigo.copy(alpha = 0.16f) else MaterialTheme.colorScheme.surfaceVariant,
@@ -3188,13 +3643,13 @@ private fun ActiveStudyListCard(
                         }
                     }
                     Spacer(modifier = Modifier.width(10.dp))
-                    Column {
+                    Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = categoryName,
                             fontSize = 15.sp,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                         Text(
@@ -3275,77 +3730,111 @@ private fun ActiveStudyListCard(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Actions Row: Abrir Lista, Estudiar, Resetear 0%
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                OutlinedButton(
-                    onClick = onOpen,
-                    shape = RoundedCornerShape(10.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.35f)),
-                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+            if (isSelectionMode) {
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = if (isSelected) PrimaryIndigo.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
                     modifier = Modifier
-                        .weight(1f)
-                        .testTag("open_studying_list_${categoryName.replace(" ", "_")}")
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable { onToggleSelect() }
                 ) {
-                    Icon(
-                        Icons.Default.FolderOpen,
-                        contentDescription = null,
-                        modifier = Modifier.size(15.dp),
-                        tint = MaterialTheme.colorScheme.onSurface
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        if (isSpanish) "Abrir Lista" else "Open List",
-                        fontSize = 11.5.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        maxLines = 1
-                    )
+                    Row(
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 7.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            imageVector = if (isSelected) Icons.Default.CheckCircle else Icons.Default.Check,
+                            contentDescription = null,
+                            tint = if (isSelected) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(15.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = if (isSelected)
+                                (if (isSpanish) "✓ Lista seleccionada para la sesión" else "✓ List selected for session")
+                            else
+                                (if (isSpanish) "Toca para incluir en la sesión" else "Tap to include in session"),
+                            fontSize = 11.5.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = if (isSelected) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
                 }
-
-                Button(
-                    onClick = onStudy,
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
-                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
-                    modifier = Modifier
-                        .weight(1.1f)
-                        .testTag("study_studying_list_${categoryName.replace(" ", "_")}")
+            } else {
+                // Actions Row: Abrir Lista, Estudiar, Resetear 0%
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(
-                        Icons.Default.PlayArrow,
-                        contentDescription = null,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        if (isSpanish) "Estudiar" else "Study",
-                        fontSize = 11.5.sp,
-                        fontWeight = FontWeight.Bold,
-                        maxLines = 1
-                    )
-                }
+                    OutlinedButton(
+                        onClick = onOpen,
+                        shape = RoundedCornerShape(10.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.35f)),
+                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag("open_studying_list_${categoryName.replace(" ", "_")}")
+                    ) {
+                        Icon(
+                            Icons.Default.FolderOpen,
+                            contentDescription = null,
+                            modifier = Modifier.size(15.dp),
+                            tint = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            if (isSpanish) "Abrir Lista" else "Open List",
+                            fontSize = 11.5.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface,
+                            maxLines = 1
+                        )
+                    }
 
-                OutlinedIconButton(
-                    onClick = { showResetDialog = true },
-                    shape = RoundedCornerShape(10.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.4f)),
-                    colors = IconButtonDefaults.outlinedIconButtonColors(
-                        containerColor = MaterialTheme.colorScheme.error.copy(alpha = 0.08f),
-                        contentColor = MaterialTheme.colorScheme.error
-                    ),
-                    modifier = Modifier
-                        .size(38.dp)
-                        .testTag("reset_studying_list_${categoryName.replace(" ", "_")}")
-                ) {
-                    Icon(
-                        Icons.Default.RestartAlt,
-                        contentDescription = if (isSpanish) "Quitar de estudio o resetear al 0%" else "Remove from study or reset to 0%",
-                        modifier = Modifier.size(18.dp)
-                    )
+                    Button(
+                        onClick = onStudy,
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = PrimaryIndigo),
+                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                        modifier = Modifier
+                            .weight(1.1f)
+                            .testTag("study_studying_list_${categoryName.replace(" ", "_")}")
+                    ) {
+                        Icon(
+                            Icons.Default.PlayArrow,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            if (isSpanish) "Estudiar" else "Study",
+                            fontSize = 11.5.sp,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1
+                        )
+                    }
+
+                    OutlinedIconButton(
+                        onClick = { showResetDialog = true },
+                        shape = RoundedCornerShape(10.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.4f)),
+                        colors = IconButtonDefaults.outlinedIconButtonColors(
+                            containerColor = MaterialTheme.colorScheme.error.copy(alpha = 0.08f),
+                            contentColor = MaterialTheme.colorScheme.error
+                        ),
+                        modifier = Modifier
+                            .size(38.dp)
+                            .testTag("reset_studying_list_${categoryName.replace(" ", "_")}")
+                    ) {
+                        Icon(
+                            Icons.Default.RestartAlt,
+                            contentDescription = if (isSpanish) "Quitar de estudio o resetear al 0%" else "Remove from study or reset to 0%",
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
                 }
             }
         }
@@ -5080,6 +5569,20 @@ private fun EnhancedVocabularyCardItem(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.weight(1f, fill = false)
                 ) {
+                    val isCardQuestion = card.type.equals("Question", ignoreCase = true) ||
+                            card.english.trim().endsWith("?") ||
+                            card.spanish.trim().endsWith("?") ||
+                            card.spanish.trim().startsWith("¿")
+                    val isCardNegation = !isCardQuestion && (
+                            card.english.contains("n't", ignoreCase = true) ||
+                            card.english.contains(" not ", ignoreCase = true) ||
+                            card.english.startsWith("no,", ignoreCase = true) ||
+                            card.english.startsWith("don't", ignoreCase = true) ||
+                            card.english.startsWith("never", ignoreCase = true) ||
+                            card.spanish.contains(" no ", ignoreCase = true) ||
+                            card.spanish.startsWith("no,", ignoreCase = true)
+                    )
+
                     Surface(
                         shape = CircleShape,
                         color = MaterialTheme.colorScheme.surfaceVariant,
@@ -5087,6 +5590,27 @@ private fun EnhancedVocabularyCardItem(
                     ) {
                         Box(contentAlignment = Alignment.Center) {
                             Text(text = card.emoji, fontSize = 16.sp)
+                            if (isCardQuestion) {
+                                Text(
+                                    text = "?",
+                                    fontSize = 9.sp,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.75f),
+                                    modifier = Modifier
+                                        .align(Alignment.TopEnd)
+                                        .padding(end = 3.dp, top = 1.dp)
+                                )
+                            } else if (isCardNegation) {
+                                Text(
+                                    text = "✕",
+                                    fontSize = 8.sp,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.error.copy(alpha = 0.75f),
+                                    modifier = Modifier
+                                        .align(Alignment.TopEnd)
+                                        .padding(end = 3.dp, top = 1.dp)
+                                )
+                            }
                         }
                     }
 

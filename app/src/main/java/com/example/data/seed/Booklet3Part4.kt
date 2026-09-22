@@ -7,8 +7,8 @@ object Booklet3Part4 {
         // ==========================================
         // LIST 28
         // ==========================================
-        createCardB3("🟢", "Alive", "Vivo", "The cat is alive and happy.", "El gato está vivo y feliz.", "Word", 28),
-        createCardB3("📌", "Bulletin board", "Tablón de anuncios", "Look at the bulletin board on the wall.", "Mira el tablón de anuncios en la pared.", "Phrase", 28),
+        createCardB3("💓", "Alive", "Vivo", "The cat is alive and happy.", "El gato está vivo y feliz.", "Word", 28),
+        createCardB3("📋", "Bulletin board", "Tablón de anuncios", "Look at the bulletin board on the wall.", "Mira el tablón de anuncios en la pared.", "Phrase", 28),
         createCardB3("🧩", "Complicated", "Complicado", "This math homework is very complicated.", "Esta tarea de matemáticas es muy complicada.", "Word", 28),
         createCardB3("🚗", "Dealer", "Concesionario", "We bought a new car at the dealer.", "Compramos un carro nuevo en el concesionario.", "Word", 28),
         createCardB3("⚰️", "Death", "La muerte", "The sad news was about his death.", "La triste noticia fue sobre su muerte.", "Word", 28),

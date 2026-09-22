@@ -1056,6 +1056,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val current = launchPrefs.getInt("pref_app_open_count", 0) + 1
         launchPrefs.edit().putInt("pref_app_open_count", current).apply()
         _appOpenCount.value = current
+
+        val tutorialCount = launchPrefs.getInt("pref_initial_tutorial_launch_count_v3", 0) + 1
+        launchPrefs.edit().putInt("pref_initial_tutorial_launch_count_v3", tutorialCount).apply()
+
+        // El tutorial se presenta únicamente en las primeras 3 aperturas de la app
+        _showInitialAppTutorial.value = tutorialCount <= 3
     }
 
     fun setAppOpenCount(count: Int) {
@@ -1069,6 +1075,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun resetAppOpenCount() {
         setAppOpenCount(1)
+        launchPrefs.edit().putInt("pref_initial_tutorial_launch_count_v3", 0).apply()
     }
 
     // =========================================================================
@@ -1307,11 +1314,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         setNavIndex(2) // "Aprender" screen
     }
 
+    // Study Playlist Mode: allows looping multiple lists sequentially in a continuous loop
+    private val _studyPlaylistCategories = MutableStateFlow<List<String>>(emptyList())
+    val studyPlaylistCategories: StateFlow<List<String>> = _studyPlaylistCategories.asStateFlow()
+
+    private val _isPlaylistLoopEnabled = MutableStateFlow(true)
+    val isPlaylistLoopEnabled: StateFlow<Boolean> = _isPlaylistLoopEnabled.asStateFlow()
+
     /**
      * Cleanly transitions to study an entire list from the beginning,
      * resetting filters and syncing parent folder context.
      */
     fun startStudyList(category: String) {
+        _studyPlaylistCategories.value = emptyList() // Reset playlist mode when studying single list
         val targetCat = category.trim()
         if (targetCat.isNotBlank() && !targetCat.equals("All", ignoreCase = true)) {
             recordCategoryStudied(targetCat)
@@ -1337,6 +1352,61 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         setNavIndex(2) // "Aprender" screen
+    }
+
+    /**
+     * Starts combined study session for multiple categories in a single session.
+     * Combines cards of all selected categories into one queue for manual study.
+     */
+    fun startStudyPlaylist(categories: List<String>, startAutoScroll: Boolean = false, loop: Boolean = false) {
+        val cleanList = categories.map { it.trim() }.filter { it.isNotBlank() && !it.equals("All", ignoreCase = true) }
+        if (cleanList.isEmpty()) return
+
+        _studyPlaylistCategories.value = cleanList
+        _isPlaylistLoopEnabled.value = loop
+        val firstCat = cleanList.first()
+        _selectedCategory.value = firstCat
+        _selectedType.value = "All"
+        _selectedLevel.value = "All"
+        _currentCardIndex.value = 0
+        _isCardFlipped.value = false
+        _targetFeedCardId.value = null
+
+        cleanList.forEach { cat ->
+            recordCategoryStudied(cat)
+            val target = _categoryTargetMastery.value[cat] ?: getTargetMasteryForCategory(cat, allCards.value)
+            _categoryTargetMastery.value = _categoryTargetMastery.value + (cat to target)
+        }
+
+        val parentFolder = _folders.value.find { folder ->
+            folder.categoryNames.any { it.equals(firstCat, ignoreCase = true) }
+        }
+        if (parentFolder != null) {
+            _selectedFolderId.value = parentFolder.id
+        }
+
+        // Keep study completely manual by default so user studies at their own pace without automatic scrolling
+        setAutoScroll(false)
+
+        setNavIndex(2) // "Aprender" screen
+    }
+
+    fun clearStudyPlaylist() {
+        _studyPlaylistCategories.value = emptyList()
+    }
+
+    fun setPlaylistLoopEnabled(enabled: Boolean) {
+        _isPlaylistLoopEnabled.value = enabled
+    }
+
+    fun jumpToCategoryInPlaylist(category: String) {
+        val targetCat = category.trim()
+        val cards = filteredCards.value
+        val targetIndex = cards.indexOfFirst { it.category.equals(targetCat, ignoreCase = true) }
+        if (targetIndex >= 0) {
+            _currentCardIndex.value = targetIndex
+            _targetFeedCardId.value = cards[targetIndex].id
+        }
     }
 
     // Card Display Mode (Word vs Example Sentence Focus)
@@ -1442,6 +1512,23 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _showHubTutorial = MutableStateFlow(false)
     val showHubTutorial: StateFlow<Boolean> = _showHubTutorial.asStateFlow()
     val isTtsSpeaking: StateFlow<Boolean> = ttsHelper.isSpeaking
+
+    // Initial App Walkthrough Tutorial (Presents automatically ONLY on first 3 launches, and via options anytime)
+    private val _showInitialAppTutorial = MutableStateFlow(false)
+    val showInitialAppTutorial: StateFlow<Boolean> = _showInitialAppTutorial.asStateFlow()
+
+    fun openInitialAppTutorial() {
+        _showInitialAppTutorial.value = true
+    }
+
+    fun dismissInitialAppTutorial() {
+        _showInitialAppTutorial.value = false
+    }
+
+    fun resetInitialTutorialCount() {
+        launchPrefs.edit().putInt("pref_initial_tutorial_launch_count_v3", 0).apply()
+        _showInitialAppTutorial.value = true
+    }
 
     // Interactive In-App Tutorial State (Tabs: 0=Vocabulario, 1=Práctica, 2=Aprender, 3=Crear, 4=Progreso)
     private val _showInAppTutorial = MutableStateFlow(false)
@@ -1784,7 +1871,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _practiceDismissedCardIds,
         _selectedFolderId,
         _folders,
-        _targetFeedCardId
+        _targetFeedCardId,
+        _studyPlaylistCategories
     ) { args: Array<Any?> ->
         @Suppress("UNCHECKED_CAST")
         val cards = args[0] as List<Flashcard>
@@ -1801,10 +1889,30 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         @Suppress("UNCHECKED_CAST")
         val foldersList = args[9] as List<Folder>
         val targetCardId = args[10] as Long?
+        @Suppress("UNCHECKED_CAST")
+        val playlist = args[11] as List<String>
 
         val activeFolder = if (folderId != null) foldersList.find { it.id == folderId } else null
 
-        var list = if (category != "All") {
+        var list = if (playlist.isNotEmpty()) {
+            val playlistCards = mutableListOf<Flashcard>()
+            for (cat in playlist) {
+                val catCards = cards.filter { it.category.equals(cat, ignoreCase = true) }
+                if (catCards.isNotEmpty()) {
+                    val target = targets[cat] ?: getTargetMasteryForCategory(cat, cards)
+                    val unmastered = catCards.filter { it.mastery < target }
+                    val toAdd = if (unmastered.isNotEmpty()) unmastered else catCards
+                    playlistCards.addAll(toAdd)
+                }
+            }
+            if (targetCardId != null && playlistCards.none { it.id == targetCardId }) {
+                val explicitCard = cards.find { it.id == targetCardId }
+                if (explicitCard != null) {
+                    playlistCards.add(0, explicitCard)
+                }
+            }
+            playlistCards
+        } else if (category != "All") {
             val catCards = cards.filter { it.category.equals(category, ignoreCase = true) }
             if (catCards.isEmpty()) {
                 emptyList()
@@ -1844,6 +1952,29 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         if (isShuffle) {
             // Modo Aleatorio: Shuffled with seed so it is stable per cycle but randomized
             list.shuffled(kotlin.random.Random(seed))
+        } else if (playlist.isNotEmpty()) {
+            // Modo Sesión Combinada: Conserva el orden secuencial por listas seleccionadas (Lista 1 -> Lista 2 -> etc.)
+            val now = System.currentTimeMillis()
+            val comparator = compareBy<Flashcard>(
+                {
+                    when {
+                        it.nextReviewTimestamp in 1..now -> 0
+                        it.status == FlashcardStatus.NEEDS_PRACTICE.name -> 1
+                        it.status == FlashcardStatus.NEW.name -> 2
+                        it.status == FlashcardStatus.IN_PROGRESS.name -> 3
+                        it.status == FlashcardStatus.LEARNED.name -> 4
+                        else -> 5
+                    }
+                },
+                { it.mastery }
+            ).thenBy { it.id }
+
+            val orderedByPlaylist = mutableListOf<Flashcard>()
+            for (cat in playlist) {
+                val catItems = list.filter { it.category.equals(cat, ignoreCase = true) }.sortedWith(comparator)
+                orderedByPlaylist.addAll(catItems)
+            }
+            orderedByPlaylist
         } else {
             // Modo Normal: Smart Spaced Repetition queue ordering (with newest cards first)
             val now = System.currentTimeMillis()

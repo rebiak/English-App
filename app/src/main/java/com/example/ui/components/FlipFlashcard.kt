@@ -383,6 +383,20 @@ private fun CardFrontContent(
                 }
 
                 // 2. Emoji Icon Container (Tactile Clay - Increased 15%)
+                val isQuestionSentence = card.type.equals("Question", ignoreCase = true) ||
+                        card.english.trim().endsWith("?") ||
+                        card.spanish.trim().endsWith("?") ||
+                        card.spanish.trim().startsWith("¿")
+                val isNegationSentence = !isQuestionSentence && (
+                        card.english.contains("n't", ignoreCase = true) ||
+                        card.english.contains(" not ", ignoreCase = true) ||
+                        card.english.startsWith("no,", ignoreCase = true) ||
+                        card.english.startsWith("don't", ignoreCase = true) ||
+                        card.english.startsWith("never", ignoreCase = true) ||
+                        card.spanish.contains(" no ", ignoreCase = true) ||
+                        card.spanish.startsWith("no,", ignoreCase = true)
+                )
+
                 Box(
                     modifier = Modifier
                         .size(78.dp)
@@ -395,6 +409,45 @@ private fun CardFrontContent(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(text = card.emoji, fontSize = 39.sp)
+
+                    // Discrete subtle indicator over the icon ("que casi no se nota")
+                    if (isQuestionSentence) {
+                        Surface(
+                            shape = CircleShape,
+                            color = MaterialTheme.colorScheme.primary.copy(alpha = 0.20f),
+                            modifier = Modifier
+                                .align(Alignment.TopEnd)
+                                .padding(top = 4.dp, end = 4.dp)
+                                .size(20.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Text(
+                                    text = "?",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.70f)
+                                )
+                            }
+                        }
+                    } else if (isNegationSentence) {
+                        Surface(
+                            shape = CircleShape,
+                            color = MaterialTheme.colorScheme.error.copy(alpha = 0.20f),
+                            modifier = Modifier
+                                .align(Alignment.TopEnd)
+                                .padding(top = 4.dp, end = 4.dp)
+                                .size(20.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Text(
+                                    text = "✕",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.error.copy(alpha = 0.70f)
+                                )
+                            }
+                        }
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(12.dp))

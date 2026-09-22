@@ -134,7 +134,7 @@ object Booklet4Part1 {
         createCardB4("📻", "The forties", "Los años cuarenta", "My grandma was born in the forties.", "Mi abuela nació en los años cuarenta.", "Phrase", 4),
         createCardB4("🐜", "Tiny", "Muy pequeño, diminuto", "The ant is very tiny.", "La hormiga es muy pequeña.", "Word", 4),
         createCardB4("🚶", "To approach", "Acercarse a", "Please approach the front desk.", "Por favor, acérquese a la recepción.", "Phrasal Verb", 4),
-        createCardB4("👍", "To approve", "Aprobar", "The boss will approve our plan.", "El jefe aprobará nuestro plan.", "Phrasal Verb", 4),
+        createCardB4("✅", "To approve", "Aprobar", "The boss will approve our plan.", "El jefe aprobará nuestro plan.", "Phrasal Verb", 4),
         createCardB4("🧱", "To reinforce", "Reforzar", "We need to reinforce this wall.", "Necesitamos reforzar esta pared.", "Phrasal Verb", 4),
         createCardB4("🏎️", "To speed up", "Acelerar", "You need to speed up the car.", "Necesitas acelerar el coche.", "Phrasal Verb", 4),
         createCardB4("🗣️", "To state", "Afirmar", "The police officer did state the facts.", "El policía afirmó los hechos.", "Phrasal Verb", 4),
@@ -178,7 +178,7 @@ object Booklet4Part1 {
         // ==========================================
         createCardB4("📢", "Advertising", "Publicidad", "We see a lot of advertising on TV.", "Vemos mucha publicidad en la tele.", "Word", 6),
         createCardB4("🔄", "As usual", "Como de costumbre", "He is late, as usual.", "Él llega tarde, como de costumbre.", "Phrase", 6),
-        createCardB4("💼", "Career", "Vida profesional", "She wants a career in medicine.", "Ella quiere una carrera en medicina.", "Word", 6),
+        createCardB4("📈", "Career", "Vida profesional", "She wants a career in medicine.", "Ella quiere una carrera en medicina.", "Word", 6),
         createCardB4("🏭", "Manufacturer", "Fabricante", "This car has a good manufacturer.", "Este coche tiene un buen fabricante.", "Word", 6),
         createCardB4("🛠️", "Means", "Medios", "We must find new means to help.", "Debemos buscar nuevos medios para ayudar.", "Word", 6),
         createCardB4("🚫", "No way !", "¡ De ninguna manera, para nada !", "No way! I will not do that.", "¡De ninguna manera! No haré eso.", "Phrase", 6),
@@ -205,7 +205,7 @@ object Booklet4Part1 {
         // ==========================================
         // LIST 7
         // ==========================================
-        createCardB4("🌱", "Beneficial", "Beneficioso", "Water is beneficial for plants.", "El agua es beneficiosa para las plantas.", "Word", 7),
+        createCardB4("🌟", "Beneficial", "Beneficioso", "Water is beneficial for plants.", "El agua es beneficiosa para las plantas.", "Word", 7),
         createCardB4("⚖️", "Comparison", "Comparación", "This car is better by comparison.", "Este coche es mejor en comparación.", "Word", 7),
         createCardB4("🍎", "Flavor", "Sabor", "This apple has a sweet flavor.", "Esta manzana tiene un sabor dulce.", "Word", 7),
         createCardB4("⭐", "Impressive", "Impresionante", "Your new house is impressive.", "Tu casa nueva es impresionante.", "Word", 7),

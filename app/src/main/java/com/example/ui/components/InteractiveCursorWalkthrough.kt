@@ -53,7 +53,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.BarChart
@@ -1520,54 +1519,19 @@ fun InteractiveCursorWalkthroughOverlay(
                         .fillMaxWidth()
                         .padding(horizontal = 14.dp, vertical = 10.dp)
                 ) {
-                    // DRAG HANDLE BAR & PEEK CONTROLS ("Mover con el dedo para ver lo que hay abajo")
-                    Row(
+                    // EXPLICIT DRAG HANDLE (Arrastre táctil explícito para mover la ventana sin texto visible)
+                    Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(bottom = 6.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
+                        contentAlignment = Alignment.Center
                     ) {
-                        // Left: Quick peek transparency toggle to see what is underneath
                         Surface(
-                            shape = RoundedCornerShape(8.dp),
-                            color = if (isHudTransparent) PrimaryIndigo.copy(alpha = 0.25f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
-                            border = BorderStroke(1.dp, if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)),
+                            shape = RoundedCornerShape(3.dp),
+                            color = if (isHudDragging) currentStep.accentColor else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),
                             modifier = Modifier
-                                .clip(RoundedCornerShape(8.dp))
-                                .clickable { isHudTransparent = !isHudTransparent }
-                                .testTag("walkthrough_peek_toggle")
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 3.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(3.dp)
-                            ) {
-                                Icon(
-                                    imageVector = if (isHudTransparent) Icons.Default.Visibility else Icons.Default.VisibilityOff,
-                                    contentDescription = "Ver fondo",
-                                    tint = if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier.size(12.dp)
-                                )
-                                Text(
-                                    text = if (isSpanish) (if (isHudTransparent) "Opaco" else "Ver abajo 👁️") else (if (isHudTransparent) "Solid" else "Peek 👁️"),
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    maxLines = 1,
-                                    softWrap = false,
-                                    color = if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                        }
-
-                        // Center: Draggable pill handle with touch feedback (Drag freely with finger)
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = if (isHudDragging) currentStep.accentColor else currentStep.accentColor.copy(alpha = 0.16f),
-                            border = BorderStroke(if (isHudDragging) 1.5.dp else 1.dp, currentStep.accentColor),
-                            shadowElevation = if (isHudDragging) 6.dp else 0.dp,
-                            modifier = Modifier
-                                .weight(1f, fill = false)
+                                .width(46.dp)
+                                .height(5.dp)
                                 .pointerInput(Unit) {
                                     detectDragGestures(
                                         onDragStart = { isHudDragging = true },
@@ -1581,64 +1545,7 @@ fun InteractiveCursorWalkthroughOverlay(
                                     )
                                 }
                                 .testTag("walkthrough_drag_handle")
-                        ) {
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(4.dp),
-                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.5.dp)
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Default.TouchApp,
-                                    contentDescription = "Arrastrar ventana",
-                                    tint = if (isHudDragging) Color.White else currentStep.accentColor,
-                                    modifier = Modifier.size(13.dp)
-                                )
-                                Text(
-                                    text = if (isSpanish) {
-                                        if (isHudDragging) "Moviendo... ⠿" else "Mover ⠿"
-                                    } else {
-                                        if (isHudDragging) "Moving... ⠿" else "Move ⠿"
-                                    },
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    maxLines = 1,
-                                    softWrap = false,
-                                    color = if (isHudDragging) Color.White else currentStep.accentColor
-                                )
-                            }
-                        }
-
-                        // Right: Reset position button or quick flip dock
-                        Surface(
-                            shape = RoundedCornerShape(8.dp),
-                            color = if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) currentStep.accentColor.copy(alpha = 0.18f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
-                            border = BorderStroke(1.dp, if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) currentStep.accentColor.copy(alpha = 0.6f) else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)),
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(8.dp))
-                                .clickable { resetHudPosition(isTargetInTopHalf) }
-                                .testTag("walkthrough_reset_position")
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 3.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(3.dp)
-                            ) {
-                                Icon(
-                                    imageVector = if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) Icons.Default.RestartAlt else Icons.Default.SwipeVertical,
-                                    contentDescription = "Posición",
-                                    tint = if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) currentStep.accentColor else MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier.size(12.dp)
-                                )
-                                Text(
-                                    text = if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) (if (isSpanish) "Centrar ⟲" else "Reset ⟲") else (if (isSpanish) "Alternar ↕️" else "Flip ↕️"),
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    maxLines = 1,
-                                    softWrap = false,
-                                    color = if (hudDragOffsetX != 0f || hudDragOffsetY != 0f) currentStep.accentColor else MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                        }
+                        ) {}
                     }
 
                     // 1. TOP HEADER: Title, Step badge & Close Button
@@ -1705,11 +1612,41 @@ fun InteractiveCursorWalkthroughOverlay(
                             }
                         }
 
-                        // Action buttons: Escalar (Emergente y más grande) + Cerrar
+                        // Action buttons: Ver fondo + Escalar + Cerrar
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(6.dp)
                         ) {
+                            // Quick peek transparency toggle to see what is underneath
+                            Surface(
+                                shape = RoundedCornerShape(10.dp),
+                                color = if (isHudTransparent) PrimaryIndigo.copy(alpha = 0.25f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
+                                border = BorderStroke(1.dp, if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)),
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .clickable { isHudTransparent = !isHudTransparent }
+                                    .testTag("walkthrough_peek_toggle")
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.padding(horizontal = 7.dp, vertical = 4.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isHudTransparent) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                                        contentDescription = "Ver fondo",
+                                        tint = if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant,
+                                        modifier = Modifier.size(12.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(3.dp))
+                                    Text(
+                                        text = if (isSpanish) (if (isHudTransparent) "Opaco" else "Fondo 👁️") else (if (isHudTransparent) "Solid" else "Peek 👁️"),
+                                        fontSize = 10.5.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        color = if (isHudTransparent) PrimaryIndigo else MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+
                             // "Escalar de clic, se pone emergente y más grande"
                             Surface(
                                 shape = RoundedCornerShape(10.dp),
@@ -1753,6 +1690,8 @@ fun InteractiveCursorWalkthroughOverlay(
                                     text = if (isSpanish) "Cerrar ✕" else "Skip ✕",
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
+                                    maxLines = 1,
+                                    softWrap = false,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                                 )
@@ -2151,22 +2090,21 @@ fun InteractiveCursorWalkthroughOverlay(
                             .fillMaxWidth()
                             .padding(16.dp)
                     ) {
-                        // Emergent Top Drag & Position Control Bar (Adaptive layout that never breaks into vertical text)
+                        // Emergent Top Drag Handle & Recenter
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(bottom = 8.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
+                            horizontalArrangement = Arrangement.Center,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            // Center/Left: Draggable pill handle with touch feedback
+                            // Centered explicit drag handle (M3 grab bar without text label)
                             Surface(
-                                shape = RoundedCornerShape(12.dp),
-                                color = if (isEmergentDragging) currentStep.accentColor else currentStep.accentColor.copy(alpha = 0.16f),
-                                border = BorderStroke(if (isEmergentDragging) 1.5.dp else 1.dp, currentStep.accentColor),
-                                shadowElevation = if (isEmergentDragging) 6.dp else 0.dp,
+                                shape = RoundedCornerShape(3.dp),
+                                color = if (isEmergentDragging) currentStep.accentColor else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),
                                 modifier = Modifier
-                                    .weight(1f, fill = false)
+                                    .width(48.dp)
+                                    .height(5.dp)
                                     .pointerInput(Unit) {
                                         detectDragGestures(
                                             onDragStart = { isEmergentDragging = true },
@@ -2180,35 +2118,9 @@ fun InteractiveCursorWalkthroughOverlay(
                                         )
                                     }
                                     .testTag("emergent_drag_handle")
-                            ) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.spacedBy(5.dp),
-                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.TouchApp,
-                                        contentDescription = "Mover con el dedo",
-                                        tint = if (isEmergentDragging) Color.White else currentStep.accentColor,
-                                        modifier = Modifier.size(13.dp)
-                                    )
-                                    Text(
-                                        text = if (isSpanish) {
-                                            if (isEmergentDragging) "Moviendo... ⠿" else "Arrastra para mover ⠿"
-                                        } else {
-                                            if (isEmergentDragging) "Moving... ⠿" else "Drag to move ⠿"
-                                        },
-                                        fontSize = 11.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        maxLines = 1,
-                                        softWrap = false,
-                                        overflow = TextOverflow.Ellipsis,
-                                        color = if (isEmergentDragging) Color.White else currentStep.accentColor
-                                    )
-                                }
-                            }
+                            ) {}
 
-                            // Right: Centrar (Reset) button - appears dynamically only when moved, preventing cramped layout
+                            // Right: Centrar (Reset) button - appears dynamically only when moved
                             AnimatedVisibility(
                                 visible = emergentDragOffsetX != 0f || emergentDragOffsetY != 0f,
                                 enter = fadeIn() + expandHorizontally(),
@@ -2219,12 +2131,13 @@ fun InteractiveCursorWalkthroughOverlay(
                                     color = currentStep.accentColor.copy(alpha = 0.18f),
                                     border = BorderStroke(1.dp, currentStep.accentColor.copy(alpha = 0.6f)),
                                     modifier = Modifier
+                                        .padding(start = 12.dp)
                                         .clip(RoundedCornerShape(8.dp))
                                         .clickable { resetEmergentPosition() }
                                         .testTag("walkthrough_emergent_recenter_button")
                                 ) {
                                     Row(
-                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
                                         verticalAlignment = Alignment.CenterVertically,
                                         horizontalArrangement = Arrangement.spacedBy(4.dp)
                                     ) {

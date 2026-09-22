@@ -15,7 +15,7 @@ object Booklet2Part3 {
         createCardB2("⭐", "Dependable", "Responsable", "He is a dependable friend.", "Él es un amigo responsable.", "Word", 19),
         createCardB2("💰", "Expensive", "Caro", "This shirt is expensive.", "Esta camisa es cara.", "Word", 19),
         createCardB2("🏋️", "Heavy", "Pesado", "The box is heavy.", "La caja es pesada.", "Word", 19),
-        createCardB2("💡", "Interesting", "Interesante", "This book is interesting.", "Este libro es interesante.", "Word", 19),
+        createCardB2("✨", "Interesting", "Interesante", "This book is interesting.", "Este libro es interesante.", "Word", 19),
         createCardB2("☘️", "Irish", "Irlandés", "My friend is Irish.", "Mi amigo es irlandés.", "Word", 19),
         createCardB2("⏳", "Not yet", "Todavía no", "I am not ready yet.", "No estoy listo todavía.", "Word", 19),
         createCardB2("📊", "Rate", "Tasa", "The tax rate is high.", "La tasa de impuestos es alta.", "Word", 19),
@@ -29,7 +29,7 @@ object Booklet2Part3 {
         createCardB2("📘", "To explain", "Explicar", "Can you explain this?", "¿Puedes explicar esto?", "Word", 19),
         createCardB2("🤝", "To help", "Ayudar", "Can you help me?", "¿Puedes ayudarme?", "Word", 19),
         createCardB2("👋", "To meet", "Trabar conocimiento", "Nice to meet you.", "Mucho gusto en conocerte.", "Word", 19),
-        createCardB2("👍", "To recommend", "Recomendar", "I recommend this restaurant.", "Recomiendo este restaurante.", "Word", 19),
+        createCardB2("⭐", "To recommend", "Recomendar", "I recommend this restaurant.", "Recomiendo este restaurante.", "Word", 19),
         createCardB2("👻", "To scare", "Asustar", "Do not scare the cat.", "No asustes al gato.", "Word", 19),
         createCardB2("🍉", "Watermelon", "Sandía", "I like to eat watermelon.", "Me gusta comer sandía.", "Word", 19),
 
@@ -45,7 +45,7 @@ object Booklet2Part3 {
         createCardB2("📈", "Improvement", "Mejora", "I see a big improvement in you.", "Veo una gran mejora en ti.", "Word", 20),
         createCardB2("🔪", "Knife", "Cuchillo", "Cut the bread with a knife.", "Corta el pan con un cuchillo.", "Word", 20),
         createCardB2("⏱️", "Nearly", "Casi", "It is nearly four o'clock.", "Son casi las cuatro.", "Word", 20),
-        createCardB2("💡", "Recommendation", "Recomendación", "That is a good recommendation.", "Esa es una buena recomendación.", "Word", 20),
+        createCardB2("⭐", "Recommendation", "Recomendación", "That is a good recommendation.", "Esa es una buena recomendación.", "Word", 20),
         createCardB2("🎯", "Strategy", "Estrategia", "We need a new strategy.", "Necesitamos una nueva estrategia.", "Word", 20),
         createCardB2("📖", "Telephone book", "Guía telefónica", "Look for the number in the telephone book.", "Busca el número en la guía telefónica.", "Phrase", 20),
         createCardB2("🙋", "To answer", "Contestar", "Please answer the phone.", "Por favor, contesta el teléfono.", "Phrasal Verb", 20),
@@ -100,7 +100,7 @@ object Booklet2Part3 {
         createCardB2("⭐", "Better than", "Mejor que", "Milk is better than soda.", "La leche es mejor que el refresco.", "Phrase", 22),
         createCardB2("🏃", "Come on", "Venga, vamos", "Come on, we are late.", "Venga, vamos tarde.", "Phrasal Verb", 22),
         createCardB2("⚰️", "Dead", "Muerto", "The old plant is dead.", "La planta vieja está muerta.", "Word", 22),
-        createCardB2("✅", "Enough", "Suficiente", "I have enough money.", "Tengo dinero suficiente.", "Word", 22),
+        createCardB2("⚖️", "Enough", "Suficiente", "I have enough money.", "Tengo dinero suficiente.", "Word", 22),
         createCardB2("🍎", "Food", "Comida", "I need to buy food.", "Necesito comprar comida.", "Word", 22),
         createCardB2("⏰", "Hurry up", "Date prisa", "Hurry up, the bus is here.", "Date prisa, el autobús está aquí.", "Phrasal Verb", 22),
         createCardB2("📅", "Lately", "Últimamente", "I am very tired lately.", "Estoy muy cansado últimamente.", "Word", 22),
@@ -118,7 +118,7 @@ object Booklet2Part3 {
         createCardB2("🔗", "To depend on", "Depender de", "It depends on the weather.", "Depende del tiempo.", "Phrasal Verb", 22),
         createCardB2("🍦", "To feel like", "Tener ganas de", "I feel like eating ice cream.", "Tengo ganas de comer helado.", "Phrase", 22),
         createCardB2("🤝", "To hire", "Contratar", "They want to hire a new chef.", "Quieren contratar a un nuevo cocinero.", "Word", 22),
-        createCardB2("🧠", "To make a decision", "Tomar una decisión", "I need to make a decision now.", "Necesito tomar una decisión ahora.", "Phrase", 22),
+        createCardB2("⚖️", "To make a decision", "Tomar una decisión", "I need to make a decision now.", "Necesito tomar una decisión ahora.", "Phrase", 22),
 
         // ==========================================
         // LIST 23
@@ -126,12 +126,12 @@ object Booklet2Part3 {
         createCardB2("🛤️", "Along", "A lo largo de", "I walk along the street.", "Camino a lo largo de la calle.", "Word", 23),
         createCardB2("📋", "Attendance", "Asistencia", "Good attendance is very important.", "Una buena asistencia es muy importante.", "Word", 23),
         createCardB2("⬇️", "Beneath", "Debajo de", "The cat is beneath the table.", "El gato está debajo de la mesa.", "Word", 23),
-        createCardB2("💼", "Busy", "Ocupado (persona)", "She is very busy today.", "Ella está muy ocupada hoy.", "Word", 23),
+        createCardB2("⏱️", "Busy", "Ocupado (persona)", "She is very busy today.", "Ella está muy ocupada hoy.", "Word", 23),
         createCardB2("🤪", "Crazy", "Loco", "That is a crazy idea.", "Esa es una idea loca.", "Word", 23),
         createCardB2("🐘", "Enormous", "Enorme", "The elephant is enormous.", "El elefante es enorme.", "Word", 23),
         createCardB2("🥤", "Full", "Lleno", "My glass is full of water.", "Mi vaso está lleno de agua.", "Word", 23),
-        createCardB2("✔️", "In fact", "De hecho", "In fact, I like this food.", "De hecho, me gusta esta comida.", "Phrase", 23),
-        createCardB2("🧠", "Memory", "Memoria", "I have a good memory for names.", "Tengo buena memoria para los nombres.", "Word", 23),
+        createCardB2("🔍", "In fact", "De hecho", "In fact, I like this food.", "De hecho, me gusta esta comida.", "Phrase", 23),
+        createCardB2("💭", "Memory", "Memoria", "I have a good memory for names.", "Tengo buena memoria para los nombres.", "Word", 23),
         createCardB2("⬅️", "Previous", "Anterior", "I saw him the previous day.", "Lo vi el día anterior.", "Word", 23),
         createCardB2("💻", "Screen", "Pantalla", "My phone screen is clean.", "La pantalla de mi teléfono está limpia.", "Word", 23),
         createCardB2("⛈️", "Storm", "Tormenta", "A big storm is coming.", "Se aproxima una gran tormenta.", "Word", 23),
@@ -143,7 +143,7 @@ object Booklet2Part3 {
         createCardB2("😡", "To get angry", "Enfadarse", "Try not to get angry.", "Intenta no enfadarte.", "Phrasal Verb", 23),
         createCardB2("🈳", "To lack", "Carecer de, faltar", "They lack money for food.", "Carecen de dinero para comida.", "Word", 23),
         createCardB2("📈", "To promote", "Promocionar, promover", "They want to promote her at work.", "Quieren promoverla en el trabajo.", "Word", 23),
-        createCardB2("🏢", "To report to", "Depender de (jerárquico)", "I report to the manager.", "Dependo del gerente.", "Phrasal Verb", 23),
+        createCardB2("👔", "To report to", "Depender de (jerárquico)", "I report to the manager.", "Dependo del gerente.", "Phrasal Verb", 23),
         createCardB2("😊", "To smile", "Sonreír", "She has a nice smile.", "Ella tiene una bonita sonrisa.", "Word", 23),
         createCardB2("💭", "To think", "Pensar", "I think you are right.", "Pienso que tienes razón.", "Word", 23),
         createCardB2("⚖️", "To weigh", "Pesarse", "I weigh myself every week.", "Me peso cada semana.", "Word", 23),
@@ -154,7 +154,7 @@ object Booklet2Part3 {
         // ==========================================
         createCardB2("⏱️", "Already", "Ya", "I am already here.", "Ya estoy aquí.", "Word", 24),
         createCardB2("✨", "Attractive", "Atractivo", "She has an attractive smile.", "Ella tiene una sonrisa atractiva.", "Word", 24),
-        createCardB2("👍", "Benefit", "Beneficio", "Sleep is a benefit for health.", "El sueño es un beneficio para la salud.", "Word", 24),
+        createCardB2("🌟", "Benefit", "Beneficio", "Sleep is a benefit for health.", "El sueño es un beneficio para la salud.", "Word", 24),
         createCardB2("⚠️", "Careful", "Cuidadoso", "Be careful with the glass.", "Ten cuidado con el vaso.", "Word", 24),
         createCardB2("⭐", "Crucial", "Crucial", "Water is crucial for life.", "El agua es crucial para la vida.", "Word", 24),
         createCardB2("🌳", "Environment", "Entorno, medio ambiente", "We must protect our environment.", "Debemos proteger nuestro medio ambiente.", "Word", 24),
@@ -175,7 +175,7 @@ object Booklet2Part3 {
         createCardB2("🛡️", "To protect", "Proteger", "Wear a coat to protect from cold.", "Usa abrigo para protegerte del frío.", "Word", 24),
         createCardB2("🛋️", "To rest", "Descansar", "I want to rest on the sofa.", "Quiero descansar en el sofá.", "Word", 24),
         createCardB2("👉", "To select", "Seleccionar", "Please select a red shirt.", "Por favor selecciona una camisa roja.", "Word", 24),
-        createCardB2("💡", "To solve", "Resolver", "We can solve this math problem.", "Podemos resolver este problema de matemáticas.", "Word", 24),
+        createCardB2("🧩", "To solve", "Resolver", "We can solve this math problem.", "Podemos resolver este problema de matemáticas.", "Word", 24),
         createCardB2("👆", "To touch", "Tocar", "Do not touch the hot stove.", "No toques la estufa caliente.", "Word", 24),
 
         // ==========================================
@@ -186,7 +186,7 @@ object Booklet2Part3 {
         createCardB2("🦴", "Bone", "Hueso", "The dog likes to chew a bone.", "Al perro le gusta masticar un hueso.", "Word", 25),
         createCardB2("📍", "Close to", "Cerca de", "My house is close to the park.", "Mi casa está cerca del parque.", "Phrase", 25),
         createCardB2("🌊", "Deep", "Profundo", "The blue sea is very deep.", "El mar azul es muy profundo.", "Word", 25),
-        createCardB2("🧠", "Expert", "Experto", "He is an expert in computers.", "Él es un experto en computadoras.", "Word", 25),
+        createCardB2("🎓", "Expert", "Experto", "He is an expert in computers.", "Él es un experto en computadoras.", "Word", 25),
         createCardB2("🌟", "Hope", "Esperanza", "I have hope for a better day.", "Tengo esperanza en un día mejor.", "Word", 25),
         createCardB2("🎯", "Likely", "Probable", "It is likely to rain today.", "Es probable que llueva hoy.", "Word", 25),
         createCardB2("🏡", "Neighbour", "Vecino", "My neighbour has a nice dog.", "Mi vecino tiene un perro bonito.", "Word", 25),
@@ -219,7 +219,7 @@ object Booklet2Part3 {
         createCardB2("🌍", "Everyone", "Todo el mundo", "Everyone is happy today.", "Todo el mundo está feliz hoy.", "Word", 26),
         createCardB2("📊", "Generally", "Generalmente", "I generally drink tea in the morning.", "Generalmente tomo té por la mañana.", "Word", 26),
         createCardB2("☔", "In spite of", "A pesar de", "We went out in spite of the rain.", "Salimos a pesar de la lluvia.", "Phrase", 26),
-        createCardB2("❌", "Mistake", "Error", "I made a small mistake on the test.", "Cometí un pequeño error en el examen.", "Word", 26),
+        createCardB2("⚠️", "Mistake", "Error", "I made a small mistake on the test.", "Cometí un pequeño error en el examen.", "Word", 26),
         createCardB2("⏳", "Now and then", "De vez en cuando", "We see each other now and then.", "Nos vemos de vez en cuando.", "Phrase", 26),
         createCardB2("🏃", "Race", "Carrera", "The runners start the race now.", "Los corredores empiezan la carrera ahora.", "Word", 26),
         createCardB2("🧩", "Simple", "Sencillo", "This game is very simple.", "Este juego es muy sencillo.", "Word", 26),
@@ -228,7 +228,7 @@ object Booklet2Part3 {
         createCardB2("🛬", "To arrive", "Llegar", "We will arrive at the hotel soon.", "Llegaremos al hotel pronto.", "Word", 26),
         createCardB2("🔥", "To burn", "Quemar, arder", "Be careful, the stove can burn you.", "Ten cuidado, la estufa te puede quemar.", "Word", 26),
         createCardB2("🛡️", "To defend", "Defender", "A dog can defend its home.", "Un perro puede defender su hogar.", "Word", 26),
-        createCardB2("🧠", "To forget", "Olvidar", "Do not forget your keys.", "No olvides tus llaves.", "Word", 26),
+        createCardB2("🤷", "To forget", "Olvidar", "Do not forget your keys.", "No olvides tus llaves.", "Word", 26),
         createCardB2("🔒", "To keep", "Quedar con, guardar", "Please keep this secret.", "Por favor guarda este secreto.", "Word", 26),
         createCardB2("🤝", "To promise", "Prometer", "I promise to help you tomorrow.", "Prometo ayudarte mañana.", "Word", 26),
         createCardB2("🚪", "Push", "Empujar", "Push the door to open it.", "Empuja la puerta para abrirla.", "Word", 26),
@@ -263,6 +263,6 @@ object Booklet2Part3 {
         createCardB2("🏖️", "To retire", "Jubilarse", "My dad will retire next year.", "Mi papá se jubilará el próximo año.", "Word", 27),
         createCardB2("📝", "To specify", "Especificar", "Please specify the color.", "Por favor especifica el color.", "Word", 27),
         createCardB2("🔌", "To turn off", "Apagar", "Please turn off the TV.", "Por favor apaga la televisión.", "Phrasal Verb", 27),
-        createCardB2("❌", "Wrong", "Equivocado", "My answer was wrong.", "Mi respuesta estaba equivocada.", "Word", 27)
+        createCardB2("🙅", "Wrong", "Equivocado", "My answer was wrong.", "Mi respuesta estaba equivocada.", "Word", 27)
     )
 }

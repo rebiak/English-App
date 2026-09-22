@@ -78,7 +78,7 @@ object Booklet6Part1 {
         createCardB6("🏖️", "Leisure", "Ocio", "I like to read in my leisure time.", "Me gusta leer en mi tiempo de ocio.", "Word", 2),
         createCardB6("😰", "To get nervous", "Ponerse nervioso", "I get nervous before tests.", "Me pongo nervioso antes de los exámenes.", "Phrasal Verb", 2),
         createCardB6("💊", "Prescription", "Receta (médica)", "I need a prescription from the doctor.", "Necesito una receta del médico.", "Word", 2),
-        createCardB6("🚫", "To reject", "Rechazar", "They did reject my offer.", "Ellos rechazaron mi oferta.", "Word", 2),
+        createCardB6("🙅", "To reject", "Rechazar", "They did reject my offer.", "Ellos rechazaron mi oferta.", "Word", 2),
         createCardB6("🤝", "Rapport", "Relación, compenetración", "We have a good rapport.", "Tenemos una buena compenetración.", "Word", 2),
         createCardB6("👔", "In charge of", "Responsable de", "She is in charge of the team.", "Ella está a cargo del equipo.", "Phrase", 2),
         createCardB6("💡", "To suggest", "Sugerir", "Can you suggest a good movie?", "¿Puedes sugerir una buena película?", "Word", 2),

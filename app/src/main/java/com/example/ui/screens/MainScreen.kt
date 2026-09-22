@@ -54,6 +54,7 @@ import com.example.ui.util.AppLanguage
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.ui.components.CelebrationDialog
 import com.example.ui.components.InAppCursorWalkthroughOverlay
+import com.example.ui.components.InitialAppTutorialDialog
 import com.example.ui.components.InteractiveCursorWalkthroughOverlay
 import com.example.ui.components.OnboardingDialog
 import com.example.ui.components.SessionCompletedDialog
@@ -81,6 +82,7 @@ fun MainScreen(
     val showSessionCompletedDialog by viewModel.showSessionCompletedDialog.collectAsStateWithLifecycle()
     val sessionDurationMinutes by viewModel.sessionDurationMinutes.collectAsStateWithLifecycle()
     val appLanguage by viewModel.appLanguage.collectAsStateWithLifecycle()
+    val learningMode by viewModel.learningMode.collectAsStateWithLifecycle()
     val isClearMode by viewModel.isClearMode.collectAsStateWithLifecycle()
     val canNavigateBack by viewModel.canNavigateBack.collectAsStateWithLifecycle()
     val showThemePicker by viewModel.showThemePicker.collectAsStateWithLifecycle()
@@ -88,6 +90,7 @@ fun MainScreen(
     val isDarkMode by viewModel.isDarkMode.collectAsStateWithLifecycle()
     val showInAppTutorial by viewModel.showInAppTutorial.collectAsStateWithLifecycle()
     val showHubTutorial by viewModel.showHubTutorial.collectAsStateWithLifecycle()
+    val showInitialAppTutorial by viewModel.showInitialAppTutorial.collectAsStateWithLifecycle()
 
     // Handle system back gesture
     BackHandler(enabled = canNavigateBack) {
@@ -336,6 +339,14 @@ fun MainScreen(
             isFirstOnboarding = isFirstTime,
             appLanguage = appLanguage,
             onDismiss = { viewModel.closeDailyGoalDialog() },
+            onOpenTutorial = {
+                viewModel.closeDailyGoalDialog()
+                viewModel.openInitialAppTutorial()
+            },
+            onOpenThemePicker = {
+                viewModel.closeDailyGoalDialog()
+                viewModel.setShowThemePicker(true)
+            },
             onComplete = { cards, minutes, reminderEnabled, reminderHour, reminderMinute, schedDate, schedType ->
                 viewModel.updateDailyGoalAndReminder(
                     dailyGoalCards = cards,
@@ -361,6 +372,7 @@ fun MainScreen(
 
     // Session Timer Completed Dialog / Notification Card
     if (showSessionCompletedDialog) {
+        val context = androidx.compose.ui.platform.LocalContext.current
         SessionCompletedDialog(
             sessionMinutes = sessionDurationMinutes,
             cardsStudiedToday = userProfile?.cardsStudiedToday ?: 0,
@@ -372,7 +384,12 @@ fun MainScreen(
                 viewModel.dismissSessionCompletedDialog()
                 viewModel.setNavIndex(4)
             },
-            onDismiss = { viewModel.dismissSessionCompletedDialog() }
+            onDismiss = { viewModel.dismissSessionCompletedDialog() },
+            onAutoTimeout = {
+                viewModel.dismissSessionCompletedDialog()
+                viewModel.setNavIndex(4)
+                (context as? android.app.Activity)?.finish()
+            }
         )
     }
 
@@ -385,6 +402,16 @@ fun MainScreen(
             onSelectTheme = { style -> viewModel.setThemeStyle(style) },
             onToggleDarkMode = { viewModel.toggleDarkMode() },
             onDismiss = { viewModel.setShowThemePicker(false) }
+        )
+    }
+
+    // Initial App Walkthrough Tutorial (Shows on first 3 launches, and anytime on demand)
+    if (showInitialAppTutorial) {
+        InitialAppTutorialDialog(
+            appLanguage = appLanguage,
+            learningMode = learningMode,
+            onSelectLearningMode = { mode -> viewModel.setLearningMode(mode) },
+            onDismiss = { viewModel.dismissInitialAppTutorial() }
         )
     }
 }

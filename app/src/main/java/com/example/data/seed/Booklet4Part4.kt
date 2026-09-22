@@ -27,7 +27,7 @@ object Booklet4Part4 {
         createCardB4("👀", "To pay attention to", "Prestar atención a", "Please pay attention to the teacher.", "Por favor, presta atención al maestro.", "Phrasal Verb", 28),
         createCardB4("🧠", "To recall", "Acordarse de", "I cannot recall his name.", "No puedo acordarme de su nombre.", "Word", 28),
         createCardB4("🔄", "To renew", "Renovar", "I need to renew my passport.", "Necesito renovar mi pasaporte.", "Word", 28),
-        createCardB4("📋", "To report to", "Depender de (jerárquicamente)", "I report to the boss.", "Dependo del jefe.", "Phrasal Verb", 28),
+        createCardB4("👔", "To report to", "Depender de (jerárquicamente)", "I report to the boss.", "Dependo del jefe.", "Phrasal Verb", 28),
         createCardB4("✂️", "To simplify", "Simplificar", "Can you simplify this rule?", "¿Puedes simplificar esta regla?", "Word", 28),
         createCardB4("🎁", "To wrap", "Envolver", "I will wrap the birthday gift.", "Voy a envolver el regalo de cumpleaños.", "Word", 28),
         createCardB4("🍷", "Wine cellar", "Bodega", "The wine cellar is cold.", "La bodega está fría.", "Word", 28),
@@ -181,7 +181,7 @@ object Booklet4Part4 {
         // ==========================================
         // LIST 34
         // ==========================================
-        createCardB4("🟢", "Alive", "Vivo", "I am alive and happy.", "Estoy vivo y feliz.", "Word", 34),
+        createCardB4("💓", "Alive", "Vivo", "I am alive and happy.", "Estoy vivo y feliz.", "Word", 34),
         createCardB4("⏳", "For the time being", "Por ahora, de momento", "I will stay here for the time being.", "Me quedaré aquí por ahora.", "Phrase", 34),
         createCardB4("💍", "Marriage", "Matrimonio", "Their marriage is very happy.", "Su matrimonio es muy feliz.", "Word", 34),
         createCardB4("🍞", "Needs", "Necesidades", "Water is a basic need.", "El agua es una necesidad básica.", "Word", 34),

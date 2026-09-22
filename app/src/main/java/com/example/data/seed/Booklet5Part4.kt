@@ -128,7 +128,7 @@ object Booklet5Part4 {
         createCardB5("🧑‍💼", "Colleague", "Colega", "She is a nice colleague.", "Ella es una colega simpática.", "Word", 32),
         createCardB5("🧩", "Crossword puzzle", "Crucigrama", "I do a crossword puzzle every morning.", "Hago un crucigrama todas las mañanas.", "Phrase", 32),
         createCardB5("🥁", "Drum", "Tambor", "The boy plays the drum.", "El niño toca el tambor.", "Word", 32),
-        createCardB5("❌", "Failure", "Fracaso", "Do not be afraid of failure.", "No tengas miedo al fracaso.", "Word", 32),
+        createCardB5("📉", "Failure", "Fracaso", "Do not be afraid of failure.", "No tengas miedo al fracaso.", "Word", 32),
         createCardB5("🐹", "Guinea pig", "Conejillo de indias", "We have a pet guinea pig.", "Tenemos un conejillo de indias de mascota.", "Phrase", 32),
         createCardB5("📉", "In decline", "En declive", "That business is in decline.", "Ese negocio está en declive.", "Phrase", 32),
         createCardB5("🌄", "Landscape", "Paisaje", "The mountain landscape is very beautiful.", "El paisaje de la montaña es muy hermoso.", "Word", 32),

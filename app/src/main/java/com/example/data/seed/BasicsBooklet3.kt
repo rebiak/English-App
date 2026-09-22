@@ -41,17 +41,17 @@ object BasicsBooklet3 {
 🏃 | P.E. | Educación física | We have P.E. today | Tenemos educación física hoy | Word
 🎵 | Music | Música | Listen to music | Escuchar música | Word
 🌍 | Social Studies | Estudios sociales | Social studies class | Clase de estudios sociales | Word
-❓ | What's his favorite subject? | ¿Cuál es su materia favorita? | Tell me, what's his favorite subject? | Dime, ¿cuál es su materia favorita? | Question
+🤔 | What's his favorite subject? | ¿Cuál es su materia favorita? | Tell me, what's his favorite subject? | Dime, ¿cuál es su materia favorita? | Question
 🔬 | It's science. | Son las ciencias. | Look, it's science. | Mira, son las ciencias. | Phrase
-❓ | What's her favorite subject? | ¿Cuál es su materia favorita? | Tell me, what's her favorite subject? | Dime, ¿cuál es su materia favorita? | Question
+🤔 | What's her favorite subject? | ¿Cuál es su materia favorita? | Tell me, what's her favorite subject? | Dime, ¿cuál es su materia favorita? | Question
 🔬 | It's science. | Son las ciencias. | Look, it's science. | Mira, son las ciencias. | Phrase
 🇧🇷 | Brazil | Brasil | He lives in Brazil | Él vive en Brasil | Word
 🇨🇦 | Canada | Canadá | Canada is big | Canadá es grande | Word
 🇪🇬 | Egypt | Egipto | The pyramids in Egypt | Las pirámides en Egipto | Word
 🇰🇷 | South Korea | Corea del Sur | Welcome to South Korea | Bienvenidos a Corea del Sur | Word
-❓ | Where is he from? | ¿De dónde es él? | Tell me, where is he from? | Dime, ¿de dónde es él? | Question
+🤔 | Where is he from? | ¿De dónde es él? | Tell me, where is he from? | Dime, ¿de dónde es él? | Question
 🇧🇷 | He's from Brazil. | Él es de Brasil. | Look, he's from Brazil. | Mira, él es de Brasil. | Phrase
-❓ | Where is she from? | ¿De dónde es ella? | Tell me, where is she from? | Dime, ¿de dónde es ella? | Question
+🤔 | Where is she from? | ¿De dónde es ella? | Tell me, where is she from? | Dime, ¿de dónde es ella? | Question
 🇧🇷 | She's from Brazil. | Ella es de Brasil. | Look, she's from Brazil. | Mira, ella es de Brasil. | Phrase
 🤷 | I'm not sure. | No estoy seguro. | Well, I'm not sure. | Bueno, no estoy seguro. | Phrase
 👀 | Look at this. | Mira esto. | Please, look at this. | Por favor, mira esto. | Phrase
@@ -80,14 +80,14 @@ object BasicsBooklet3 {
 🏃 | What's her favorite subject? It's P.E. | ¿Cuál es su materia favorita? Es educación física. | What's her favorite subject? It's P.E. | ¿Cuál es su materia favorita? Es educación física. | Phrase
 🎵 | What's her favorite subject? It's music. | ¿Cuál es su materia favorita? Es música. | What's her favorite subject? It's music. | ¿Cuál es su materia favorita? Es música. | Phrase
 🌍 | What's her favorite subject? It's social studies. | ¿Cuál es su materia favorita? Son los estudios sociales. | What's her favorite subject? It's social studies. | ¿Cuál es su materia favorita? Son los estudios sociales. | Phrase
-❓ | What's your favorite subject? | ¿Cuál es tu materia favorita? | Tell me, what's your favorite subject? | Dime, ¿cuál es tu materia favorita? | Question
+🤔 | What's your favorite subject? | ¿Cuál es tu materia favorita? | Tell me, what's your favorite subject? | Dime, ¿cuál es tu materia favorita? | Question
 🔬 | It's science. | Son las ciencias. | For me, it's science. | Para mí, son las ciencias. | Phrase
 🎨 | It's art. | Es arte. | For me, it's art. | Para mí, es arte. | Phrase
 🔢 | It's math. | Son las matemáticas. | For me, it's math. | Para mí, son las matemáticas. | Phrase
 🏃 | It's P.E. | Es educación física. | For me, it's P.E. | Para mí, es educación física. | Phrase
 🎵 | It's music. | Es música. | For me, it's music. | Para mí, es música. | Phrase
 🌍 | It's social studies. | Son los estudios sociales. | For me, it's social studies. | Para mí, son los estudios sociales. | Phrase
-❓ | Where are you from? | ¿De dónde eres? | Tell me, where are you from? | Dime, ¿de dónde eres? | Question
+🤔 | Where are you from? | ¿De dónde eres? | Tell me, where are you from? | Dime, ¿de dónde eres? | Question
 🇧🇷 | I'm from Brazil. | Soy de Brasil. | Look, I'm from Brazil. | Mira, soy de Brasil. | Phrase
 🇨🇦 | I'm from Canada. | Soy de Canadá. | Look, I'm from Canada. | Mira, soy de Canadá. | Phrase
 🇪🇬 | I'm from Egypt. | Soy de Egipto. | Look, I'm from Egypt. | Mira, soy de Egipto. | Phrase
@@ -121,11 +121,11 @@ object BasicsBooklet3 {
 📅 | October | Octubre | Fall in October | Otoño en octubre | Word
 📅 | November | Noviembre | Cool November | Noviembre fresco | Word
 📅 | December | Diciembre | Holidays in December | Fiestas en diciembre | Word
-❓ | When is his birthday? | ¿Cuándo es su cumpleaños? | Tell me, when is his birthday? | Dime, ¿cuándo es su cumpleaños? | Question
+🤔 | When is his birthday? | ¿Cuándo es su cumpleaños? | Tell me, when is his birthday? | Dime, ¿cuándo es su cumpleaños? | Question
 📅 | It's in January. | Es en enero. | Look, it's in January. | Mira, es en enero. | Phrase
-❓ | When is her birthday? | ¿Cuándo es su cumpleaños? | Tell me, when is her birthday? | Dime, ¿cuándo es su cumpleaños? | Question
+🤔 | When is her birthday? | ¿Cuándo es su cumpleaños? | Tell me, when is her birthday? | Dime, ¿cuándo es su cumpleaños? | Question
 📅 | It's in January. | Es en enero. | Look, it's in January. | Mira, es en enero. | Phrase
-❓ | What's the date today? | ¿Cuál es la fecha de hoy? | Tell me, what's the date today? | Dime, ¿cuál es la fecha de hoy? | Question
+🤔 | What's the date today? | ¿Cuál es la fecha de hoy? | Tell me, what's the date today? | Dime, ¿cuál es la fecha de hoy? | Question
 📅 | It's January 15th. | Es 15 de enero. | Look, it's January 15th. | Mira, es 15 de enero. | Phrase
 🗓️ | Look at the calendar. | Mira el calendario. | Please, look at the calendar. | Por favor, mira el calendario. | Phrase
 🎂 | Happy birthday! | ¡Feliz cumpleaños! | Wow, happy birthday! | ¡Vaya, feliz cumpleaños! | Phrase
@@ -145,7 +145,7 @@ object BasicsBooklet3 {
 8️⃣ | Eighth | Octavo | Eighth step | Octavo paso | Word
 9️⃣ | Ninth | Noveno | Ninth chapter | Noveno capítulo | Word
 🔟 | Tenth | Décimo | Tenth floor | Décimo piso | Word
-❓ | When is your birthday? | ¿Cuándo es tu cumpleaños? | Tell me, when is your birthday? | Dime, ¿cuándo es tu cumpleaños? | Question
+🤔 | When is your birthday? | ¿Cuándo es tu cumpleaños? | Tell me, when is your birthday? | Dime, ¿cuándo es tu cumpleaños? | Question
 📅 | It's in May. | Es en mayo. | Look, it's in May. | Mira, es en mayo. | Phrase
 📅 | When is his birthday? It's in February. | ¿Cuándo es su cumpleaños? Es en febrero. | When is his birthday? It's in February. | ¿Cuándo es su cumpleaños? Es en febrero. | Phrase
 📅 | When is his birthday? It's in March. | ¿Cuándo es su cumpleaños? Es en marzo. | When is his birthday? It's in March. | ¿Cuándo es su cumpleaños? Es en marzo. | Phrase
@@ -205,13 +205,13 @@ object BasicsBooklet3 {
     private fun getList3(): List<Flashcard> = parseCards("""
 🖍️ | Chalk | Tiza | White chalk | Tiza blanca | Word
 🎨 | Paint | Pintura | Color paint | Pintura de color | Word
-📼 | Tape | Cinta pegante / Cinta adhesiva | Strong tape | Cinta pegante fuerte | Word
+🩹 | Tape | Cinta pegante / Cinta adhesiva | Strong tape | Cinta pegante fuerte | Word
 ✂️ | Scissors | Tijeras | Cut with scissors | Corta con tijeras | Word
 🧴 | Glue | Pegamento | Sticky glue | Pegamento pegajoso | Word
 📄 | Paper | Papel | Clean paper | Papel limpio | Word
-❓ | What does he have? | ¿Qué tiene él? | Tell me, what does he have? | Dime, ¿qué tiene él? | Question
+🤔 | What does he have? | ¿Qué tiene él? | Tell me, what does he have? | Dime, ¿qué tiene él? | Question
 🖍️ | What does he have? He has some chalk. | ¿Qué tiene él? Él tiene algo de tiza. | What does he have? He has some chalk. | ¿Qué tiene él? Él tiene algo de tiza. | Phrase
-❓ | What does she have? | ¿Qué tiene ella? | Tell me, what does she have? | Dime, ¿qué tiene ella? | Question
+🤔 | What does she have? | ¿Qué tiene ella? | Tell me, what does she have? | Dime, ¿qué tiene ella? | Question
 🖍️ | What does she have? She has some chalk. | ¿Qué tiene ella? Ella tiene algo de tiza. | What does she have? She has some chalk. | ¿Qué tiene ella? Ella tiene algo de tiza. | Phrase
 🍬 | Gum | Chicle | Chew gum | Masticar chicle | Word
 🍿 | Popcorn | Palomitas | Eat popcorn | Come palomitas | Word
@@ -219,11 +219,11 @@ object BasicsBooklet3 {
 🥔 | Potato chips | Papas fritas | Salty potato chips | Papas fritas saladas | Word
 🥤 | Soda | Refresco | Cold soda | Refresco frío | Word
 🍭 | Candy | Dulces | Sweet candy | Dulces deliciosos | Word
-❓ | What does he have? | ¿Qué tiene él? | Tell me, what does he have? | Dime, ¿qué tiene él? | Question
+🤔 | What does he have? | ¿Qué tiene él? | Tell me, what does he have? | Dime, ¿qué tiene él? | Question
 🍬 | What does he have? He has some gum. | ¿Qué tiene él? Él tiene algo de chicle. | What does he have? He has some gum. | ¿Qué tiene él? Él tiene algo de chicle. | Phrase
-❓ | What does she have? | ¿Qué tiene ella? | Tell me, what does she have? | Dime, ¿qué tiene ella? | Question
+🤔 | What does she have? | ¿Qué tiene ella? | Tell me, what does she have? | Dime, ¿qué tiene ella? | Question
 🍬 | What does she have? She has some gum. | ¿Qué tiene ella? Ella tiene algo de chicle. | What does she have? She has some gum. | ¿Qué tiene ella? Ella tiene algo de chicle. | Phrase
-❓ | Do you want some? | ¿Quieres un poco? | Tell me, do you want some? | Dime, ¿quieres un poco? | Question
+🤔 | Do you want some? | ¿Quieres un poco? | Tell me, do you want some? | Dime, ¿quieres un poco? | Question
 🙏 | Do you want some? Yes, please. | ¿Quieres un poco? Sí, por favor. | Do you want some? Yes, please. | ¿Quieres un poco? Sí, por favor. | Phrase
 🙅 | Do you want some? No, thank you. | ¿Quieres un poco? No, gracias. | Do you want some? No, thank you. | ¿Quieres un poco? No, gracias. | Phrase
 👍 | Sure, thanks. | Claro, gracias. | Sure, thanks a lot. | Claro, muchas gracias. | Phrase
@@ -232,21 +232,21 @@ object BasicsBooklet3 {
 💖 | Be generous. | Sé generoso. | Always be generous. | Siempre sé generoso. | Phrase
 🎁 | Give to others. | Da a los demás. | Please, give to others. | Por favor, da a los demás. | Phrase
 🧵 | String | Cuerda | Long string | Cuerda larga | Word
-🎀 | Ribbon | Cinta de tela / Listón | Red ribbon | Listón rojo | Word
+🩹 | Ribbon | Cinta de tela / Listón | Red ribbon | Listón rojo | Word
 📎 | Stapler | Grapadora / Cosedora | Office stapler | Grapadora de oficina | Word
 📎 | Paper clips | Clips de papel / Ganchos para papel | Metal paper clips | Clips de metal | Word
-📼 | What does he have? He has some tape. | ¿Qué tiene él? Él tiene cinta pegante. | What does he have? He has some tape. | ¿Qué tiene él? Él tiene cinta pegante. | Phrase
+🩹 | What does he have? He has some tape. | ¿Qué tiene él? Él tiene cinta pegante. | What does he have? He has some tape. | ¿Qué tiene él? Él tiene cinta pegante. | Phrase
 ✂️ | What does he have? He has some scissors. | ¿Qué tiene él? Él tiene unas tijeras. | What does he have? He has some scissors. | ¿Qué tiene él? Él tiene unas tijeras. | Phrase
 🧴 | What does he have? He has some glue. | ¿Qué tiene él? Él tiene algo de pegamento. | What does he have? He has some glue. | ¿Qué tiene él? Él tiene algo de pegamento. | Phrase
 📄 | What does he have? He has some paper. | ¿Qué tiene él? Él tiene algo de papel. | What does he have? He has some paper. | ¿Qué tiene él? Él tiene algo de papel. | Phrase
-📼 | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | Phrase
+🩹 | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | Phrase
 ✂️ | What does she have? She has some scissors. | ¿Qué tiene ella? Ella tiene unas tijeras. | What does she have? She has some scissors. | ¿Qué tiene ella? Ella tiene unas tijeras. | Phrase
 🧴 | What does she have? She has some glue. | ¿Qué tiene ella? Ella tiene algo de pegamento. | What does she have? She has some glue. | ¿Qué tiene ella? Ella tiene algo de pegamento. | Phrase
 📄 | What does she have? She has some paper. | ¿Qué tiene ella? Ella tiene algo de papel. | What does she have? She has some paper. | ¿Qué tiene ella? Ella tiene algo de papel. | Phrase
 🎨 | What does he have? He has some paint. | ¿Qué tiene él? Él tiene algo de pintura. | What does he have? He has some paint. | ¿Qué tiene él? Él tiene algo de pintura. | Phrase
 ✂️ | What does he have? He has some scissors. | ¿Qué tiene él? Él tiene unas tijeras. | What does he have? He has some scissors. | ¿Qué tiene él? Él tiene unas tijeras. | Phrase
 🧴 | What does he have? He has some glue. | ¿Qué tiene él? Él tiene algo de pegamento. | What does he have? He has some glue. | ¿Qué tiene él? Él tiene algo de pegamento. | Phrase
-📼 | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | Phrase
+🩹 | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | What does she have? She has some tape. | ¿Qué tiene ella? Ella tiene cinta pegante. | Phrase
 📄 | What does she have? She has some paper. | ¿Qué tiene ella? Ella tiene algo de papel. | What does she have? She has some paper. | ¿Qué tiene ella? Ella tiene algo de papel. | Phrase
 🍿 | What does he have? He has some popcorn. | ¿Qué tiene él? Él tiene palomitas. | What does he have? He has some popcorn. | ¿Qué tiene él? Él tiene palomitas. | Phrase
 🥜 | What does he have? He has some peanuts. | ¿Qué tiene él? Él tiene cacahuates. | What does he have? He has some peanuts. | ¿Qué tiene él? Él tiene cacahuates. | Phrase
@@ -258,8 +258,8 @@ object BasicsBooklet3 {
 🥔 | What does she have? She has some potato chips. | ¿Qué tiene ella? Ella tiene papas fritas. | What does she have? She has some potato chips. | ¿Qué tiene ella? Ella tiene papas fritas. | Phrase
 🥤 | What does she have? She has some soda. | ¿Qué tiene ella? Ella tiene refresco. | What does she have? She has some soda. | ¿Qué tiene ella? Ella tiene refresco. | Phrase
 🍭 | What does she have? She has some candy. | ¿Qué tiene ella? Ella tiene dulces. | What does she have? She has some candy. | ¿Qué tiene ella? Ella tiene dulces. | Phrase
-❓ | Do you have some string? | ¿Tienes algo de cuerda? | Tell me, do you have some string? | Dime, ¿tienes algo de cuerda? | Question
-❓ | Do you have some ribbon? | ¿Tienes algo de cinta de tela / listón? | Tell me, do you have some ribbon? | Dime, ¿tienes algo de cinta de tela / listón? | Question
+🧵 | Do you have some string? | ¿Tienes algo de cuerda? | Tell me, do you have some string? | Dime, ¿tienes algo de cuerda? | Question
+🩹 | Do you have some ribbon? | ¿Tienes algo de cinta de tela / listón? | Tell me, do you have some ribbon? | Dime, ¿tienes algo de cinta de tela / listón? | Question
 📎 | He has some paper clips. | Él tiene algunos clips de papel. | Look, he has some paper clips. | Mira, él tiene algunos clips de papel. | Phrase
 📎 | She has a stapler. | Ella tiene una grapadora. | Look, she has a stapler. | Mira, ella tiene una grapadora. | Phrase
     """.trimIndent(), "Basics 3 - List 3")
@@ -273,16 +273,16 @@ object BasicsBooklet3 {
 🍅 | Tomato | Tomate | Red tomato | Tomate rojo | Word
 🥕 | We need some carrots. | Necesitamos zanahorias. | Yes, we need some carrots. | Sí, necesitamos zanahorias. | Phrase
 🥕 | We don't need any carrots. | No necesitamos zanahorias. | No, we don't need any carrots. | No, no necesitamos zanahorias. | Phrase
-❓ | Do we need any carrots? | ¿Necesitamos zanahorias? | Tell me, do we need any carrots? | Dime, ¿necesitamos zanahorias? | Question
-✅ | Yes, we do. | Sí, necesitamos. | Yes, we do need carrots. | Sí, necesitamos zanahorias. | Phrase
-❌ | No, we don't. | No, no necesitamos. | No, we don't need carrots. | No, no necesitamos zanahorias. | Phrase
+🤔 | Do we need any carrots? | ¿Necesitamos zanahorias? | Tell me, do we need any carrots? | Dime, ¿necesitamos zanahorias? | Question
+👍 | Yes, we do. | Sí, necesitamos. | Yes, we do need carrots. | Sí, necesitamos zanahorias. | Phrase
+🙅 | No, we don't. | No, no necesitamos. | No, we don't need carrots. | No, no necesitamos zanahorias. | Phrase
 🍳 | Omelet | Tortilla de huevo | Cook an omelet | Cocina una tortilla de huevo | Word
 🥤 | Smoothie | Batido | Fruit smoothie | Batido de frutas | Word
 🥗 | Fruit salad | Ensalada de frutas | Sweet fruit salad | Ensalada de frutas dulce | Word
 🥤 | Milkshake | Malteada | Chocolate milkshake | Malteada de chocolate | Word
-❓ | What's she making? | ¿Qué está haciendo ella? | Tell me, what's she making? | Dime, ¿qué está haciendo ella? | Question
+🤔 | What's she making? | ¿Qué está haciendo ella? | Tell me, what's she making? | Dime, ¿qué está haciendo ella? | Question
 🍳 | She's making an omelet. | Ella está haciendo una tortilla. | Look, she's making an omelet. | Mira, ella está haciendo una tortilla. | Phrase
-❓ | What's he making? | ¿Qué está haciendo él? | Tell me, what's he making? | Dime, ¿qué está haciendo él? | Question
+🤔 | What's he making? | ¿Qué está haciendo él? | Tell me, what's he making? | Dime, ¿qué está haciendo él? | Question
 🍳 | He's making an omelet. | Él está haciendo una tortilla. | Look, he's making an omelet. | Mira, él está haciendo una tortilla. | Phrase
 🧂 | Can you pass the salt? | ¿Puedes pasar la sal? | Please, can you pass the salt? | Por favor, ¿puedes pasar la sal? | Phrase
 🤲 | Here you are. | Aquí tienes. | Yes, here you are. | Sí, aquí tienes. | Phrase
@@ -306,23 +306,23 @@ object BasicsBooklet3 {
 🥬 | We don't need any cabbage. | No necesitamos col. | No, we don't need any cabbage. | No, no necesitamos col. | Phrase
 🥔 | We don't need any potatoes. | No necesitamos papas. | No, we don't need any potatoes. | No, no necesitamos papas. | Phrase
 🍅 | We don't need any tomatoes. | No necesitamos tomates. | No, we don't need any tomatoes. | No, no necesitamos tomates. | Phrase
-❓ | Do we need any onions? | ¿Necesitamos cebollas? | Tell me, do we need any onions? | Dime, ¿necesitamos cebollas? | Question
-❓ | Do we need any peppers? | ¿Necesitamos pimientos? | Tell me, do we need any peppers? | Dime, ¿necesitamos pimientos? | Question
-❓ | Do we need any cabbage? | ¿Necesitamos col? | Tell me, do we need any cabbage? | Dime, ¿necesitamos col? | Question
-❓ | Do we need any potatoes? | ¿Necesitamos papas? | Tell me, do we need any potatoes? | Dime, ¿necesitamos papas? | Question
-❓ | Do we need any tomatoes? | ¿Necesitamos tomates? | Tell me, do we need any tomatoes? | Dime, ¿necesitamos tomates? | Question
+🤔 | Do we need any onions? | ¿Necesitamos cebollas? | Tell me, do we need any onions? | Dime, ¿necesitamos cebollas? | Question
+🤔 | Do we need any peppers? | ¿Necesitamos pimientos? | Tell me, do we need any peppers? | Dime, ¿necesitamos pimientos? | Question
+🥬 | Do we need any cabbage? | ¿Necesitamos col? | Tell me, do we need any cabbage? | Dime, ¿necesitamos col? | Question
+🤔 | Do we need any potatoes? | ¿Necesitamos papas? | Tell me, do we need any potatoes? | Dime, ¿necesitamos papas? | Question
+🤔 | Do we need any tomatoes? | ¿Necesitamos tomates? | Tell me, do we need any tomatoes? | Dime, ¿necesitamos tomates? | Question
 🥤 | What's she making? She's making a smoothie. | ¿Qué está haciendo ella? Ella está haciendo un batido. | What's she making? She's making a smoothie. | ¿Qué está haciendo ella? Ella está haciendo un batido. | Phrase
 🥗 | What's she making? She's making a fruit salad. | ¿Qué está haciendo ella? Ella está haciendo ensalada de frutas. | What's she making? She's making a fruit salad. | ¿Qué está haciendo ella? Ella está haciendo ensalada de frutas. | Phrase
 🥤 | What's she making? She's making a milkshake. | ¿Qué está haciendo ella? Ella está haciendo una malteada. | What's she making? She's making a milkshake. | ¿Qué está haciendo ella? Ella está haciendo una malteada. | Phrase
 🥤 | What's he making? He's making a smoothie. | ¿Qué está haciendo él? Él está haciendo un batido. | What's he making? He's making a smoothie. | ¿Qué está haciendo él? Él está haciendo un batido. | Phrase
 🥗 | What's he making? He's making a fruit salad. | ¿Qué está haciendo él? Él está haciendo ensalada de frutas. | What's he making? He's making a fruit salad. | ¿Qué está haciendo él? Él está haciendo ensalada de frutas. | Phrase
 🥤 | What's he making? He's making a milkshake. | ¿Qué está haciendo él? Él está haciendo una malteada. | What's he making? He's making a milkshake. | ¿Qué está haciendo él? Él está haciendo una malteada. | Phrase
-❓ | What are you making? | ¿Qué estás haciendo? | Tell me, what are you making? | Dime, ¿qué estás haciendo? | Question
+🤔 | What are you making? | ¿Qué estás haciendo? | Tell me, what are you making? | Dime, ¿qué estás haciendo? | Question
 🍳 | I'm making an omelet. | Estoy haciendo una tortilla. | Look, I'm making an omelet. | Mira, estoy haciendo una tortilla. | Phrase
 🥤 | I'm making a smoothie. | Estoy haciendo un batido. | Look, I'm making a smoothie. | Mira, estoy haciendo un batido. | Phrase
 🥗 | I'm making a fruit salad. | Estoy haciendo ensalada de frutas. | Look, I'm making a fruit salad. | Mira, estoy haciendo ensalada de frutas. | Phrase
 🥤 | I'm making a milkshake. | Estoy haciendo una malteada. | Look, I'm making a milkshake. | Mira, estoy haciendo una malteada. | Phrase
-❓ | What are they making? | ¿Qué están haciendo ellos? | Tell me, what are they making? | Dime, ¿qué están haciendo ellos? | Question
+🤔 | What are they making? | ¿Qué están haciendo ellos? | Tell me, what are they making? | Dime, ¿qué están haciendo ellos? | Question
 🍳 | They're making an omelet. | Ellos están haciendo una tortilla. | Look, they're making an omelet. | Mira, ellos están haciendo una tortilla. | Phrase
 🥤 | They're making a smoothie. | Ellos están haciendo un batido. | Look, they're making a smoothie. | Mira, ellos están haciendo un batido. | Phrase
 🥗 | They're making fruit salad. | Ellos están haciendo ensalada de frutas. | Look, they're making fruit salad. | Mira, ellos están haciendo ensalada de frutas. | Phrase
@@ -348,19 +348,19 @@ object BasicsBooklet3 {
 📮 | Post office | Oficina de correos | Send mail at the post office | Envía correo en la oficina | Word
 🏬 | Department store | Tienda departamental | Big department store | Gran tienda departamental | Word
 📚 | Library | Biblioteca | Read books at the library | Lee libros en la biblioteca | Word
-❓ | Where is he going? | ¿A dónde va él? | Tell me, where is he going? | Dime, ¿a dónde va él? | Question
+🤔 | Where is he going? | ¿A dónde va él? | Tell me, where is he going? | Dime, ¿a dónde va él? | Question
 🏞️ | He's going to the park. | Él va al parque. | Look, he's going to the park. | Mira, él va al parque. | Phrase
-❓ | Where is she going? | ¿A dónde va ella? | Tell me, where is she going? | Dime, ¿a dónde va ella? | Question
+🤔 | Where is she going? | ¿A dónde va ella? | Tell me, where is she going? | Dime, ¿a dónde va ella? | Question
 🏞️ | She's going to the park. | Ella va al parque. | Look, she's going to the park. | Mira, ella va al parque. | Phrase
 🚗 | By car | En carro | Travel by car | Viaja en carro | Phrase
 🚌 | By bus | En autobús | Go by bus | Ve en autobús | Phrase
 🚲 | By bike | En bicicleta | Ride by bike | Ve en bicicleta | Phrase
 🚶 | On foot | A pie | Walk on foot | Camina a pie | Phrase
-❓ | How is he going there? | ¿Cómo va él allí? | Tell me, how is he going there? | Dime, ¿cómo va él allí? | Question
+🤔 | How is he going there? | ¿Cómo va él allí? | Tell me, how is he going there? | Dime, ¿cómo va él allí? | Question
 🚗 | He's going by car. | Él va en carro. | Look, he's going by car. | Mira, él va en carro. | Phrase
-❓ | How is she going there? | ¿Cómo va ella allí? | Tell me, how is she going there? | Dime, ¿cómo va ella allí? | Question
+🤔 | How is she going there? | ¿Cómo va ella allí? | Tell me, how is she going there? | Dime, ¿cómo va ella allí? | Question
 🚗 | She's going by car. | Ella va en carro. | Look, she's going by car. | Mira, ella va en carro. | Phrase
-❓ | Excuse me. Where is the library? | Disculpe. ¿Dónde está la biblioteca? | Excuse me. Where is the library? | Disculpe. ¿Dónde está la biblioteca? | Question
+🙋 | Excuse me. Where is the library? | Disculpe. ¿Dónde está la biblioteca? | Excuse me. Where is the library? | Disculpe. ¿Dónde está la biblioteca? | Question
 👉 | It's over there. | Está por allí. | Look, it's over there. | Mira, está por allí. | Phrase
 🙏 | Thank you. | Gracias. | Thank you very much. | Muchas gracias. | Phrase
 😊 | You're welcome. | De nada. | Oh, you're welcome. | Oh, de nada. | Phrase
@@ -386,20 +386,20 @@ object BasicsBooklet3 {
 🚌 | How is she going there? She's going by bus. | ¿Cómo va ella allí? Ella va en autobús. | How is she going there? She's going by bus. | ¿Cómo va ella allí? Ella va en autobús. | Phrase
 🚲 | How is she going there? She's going by bike. | ¿Cómo va ella allí? Ella va en bicicleta. | How is she going there? She's going by bike. | ¿Cómo va ella allí? Ella va en bicicleta. | Phrase
 🚶 | How is she going there? She's going on foot. | ¿Cómo va ella allí? Ella va a pie. | How is she going there? She's going on foot. | ¿Cómo va ella allí? Ella va a pie. | Phrase
-❓ | Where are you going? | ¿A dónde vas? | Tell me, where are you going? | Dime, ¿a dónde vas? | Question
+🤔 | Where are you going? | ¿A dónde vas? | Tell me, where are you going? | Dime, ¿a dónde vas? | Question
 🏞️ | I'm going to the park. | Voy al parque. | Look, I'm going to the park. | Mira, voy al parque. | Phrase
 📚 | I'm going to the library. | Voy a la biblioteca. | Look, I'm going to the library. | Mira, voy a la biblioteca. | Phrase
 🏥 | I'm going to the hospital. | Voy al hospital. | Look, I'm going to the hospital. | Mira, voy al hospital. | Phrase
-❓ | How are you going there? | ¿Cómo vas allí? | Tell me, how are you going there? | Dime, ¿cómo vas allí? | Question
+🤔 | How are you going there? | ¿Cómo vas allí? | Tell me, how are you going there? | Dime, ¿cómo vas allí? | Question
 🚌 | I'm going by bus. | Voy en autobús. | Look, I'm going by bus. | Mira, voy en autobús. | Phrase
 🚗 | I'm going by car. | Voy en carro. | Look, I'm going by car. | Mira, voy en carro. | Phrase
 🚲 | I'm going by bike. | Voy en bicicleta. | Look, I'm going by bike. | Mira, voy en bicicleta. | Phrase
 🚶 | I'm going on foot. | Voy a pie. | Look, I'm going on foot. | Mira, voy a pie. | Phrase
-❓ | Where are they going? | ¿A dónde van ellos? | Tell me, where are they going? | Dime, ¿a dónde van ellos? | Question
+🤔 | Where are they going? | ¿A dónde van ellos? | Tell me, where are they going? | Dime, ¿a dónde van ellos? | Question
 🥖 | They're going to the bakery. | Ellos van a la panadería. | Look, they're going to the bakery. | Mira, ellos van a la panadería. | Phrase
 🏦 | They're going to the bank. | Ellos van al banco. | Look, they're going to the bank. | Mira, ellos van al banco. | Phrase
 ⛽ | They're going to the gas station. | Ellos van a la gasolinera. | Look, they're going to the gas station. | Mira, ellos van a la gasolinera. | Phrase
-❓ | How are they going there? | ¿Cómo van ellos allí? | Tell me, how are they going there? | Dime, ¿cómo van ellos allí? | Question
+🤔 | How are they going there? | ¿Cómo van ellos allí? | Tell me, how are they going there? | Dime, ¿cómo van ellos allí? | Question
 🚗 | They're going by car. | Ellos van en carro. | Look, they're going by car. | Mira, ellos van en carro. | Phrase
 🚆 | They're going by train. | Ellos van en tren. | Look, they're going by train. | Mira, ellos van en tren. | Phrase
 🚌 | They're going by bus. | Ellos van en autobús. | Look, they're going by bus. | Mira, ellos van en autobús. | Phrase
@@ -418,9 +418,9 @@ object BasicsBooklet3 {
 🍽️ | Server | Mesero / Servidor | The server brings food | El mesero trae comida | Word
 🐾 | Vet | Veterinario | The vet helps my dog | El veterinario ayuda a mi perro | Word
 🗺️ | Tour guide | Guía turístico | Follow the tour guide | Sigue al guía turístico | Word
-❓ | What does a cashier do? | ¿Qué hace un cajero? | Tell me, what does a cashier do? | Dime, ¿qué hace un cajero? | Question
+🛒 | What does a cashier do? | ¿Qué hace un cajero? | Tell me, what does a cashier do? | Dime, ¿qué hace un cajero? | Question
 🛒 | A cashier works in a store. | Un cajero trabaja en una tienda. | A cashier works in a store. | Un cajero trabaja en una tienda. | Phrase
-❓ | What does a librarian do? | ¿Qué hace un bibliotecario? | Tell me, what does a librarian do? | Dime, ¿qué hace un bibliotecario? | Question
+📚 | What does a librarian do? | ¿Qué hace un bibliotecario? | Tell me, what does a librarian do? | Dime, ¿qué hace un bibliotecario? | Question
 📚 | A librarian works in a library. | Un bibliotecario trabaja en una biblioteca. | A librarian works in a library. | Un bibliotecario trabaja en una biblioteca. | Phrase
 🤧 | Cold | Resfriado | I have a cold | Tengo un resfriado | Word
 🌡️ | Fever | Fiebre | High fever | Fiebre alta | Word
@@ -428,11 +428,11 @@ object BasicsBooklet3 {
 🤕 | Headache | Dolor de cabeza | I have a headache | Tengo dolor de cabeza | Word
 🦷 | Toothache | Dolor de muelas | Sore toothache | Fuerte dolor de muelas | Word
 😷 | Cough | Tos | Dry cough | Tos seca | Word
-❓ | What's the matter? | ¿Qué pasa? / ¿Qué tienes? | Tell me, what's the matter? | Dime, ¿qué te pasa? | Question
+🤔 | What's the matter? | ¿Qué pasa? / ¿Qué tienes? | Tell me, what's the matter? | Dime, ¿qué te pasa? | Question
 🤧 | I have a cold. | Tengo un resfriado. | Oh, I have a cold. | Oh, tengo un resfriado. | Phrase
-❓ | What's the matter with him? | ¿Qué le pasa a él? | Tell me, what's the matter with him? | Dime, ¿qué le pasa a él? | Question
+🤔 | What's the matter with him? | ¿Qué le pasa a él? | Tell me, what's the matter with him? | Dime, ¿qué le pasa a él? | Question
 🌡️ | He has a fever. | Él tiene fiebre. | Look, he has a fever. | Mira, él tiene fiebre. | Phrase
-❓ | What's the matter with her? | ¿Qué le pasa a ella? | Tell me, what's the matter with her? | Dime, ¿qué le pasa a ella? | Question
+🤔 | What's the matter with her? | ¿Qué le pasa a ella? | Tell me, what's the matter with her? | Dime, ¿qué le pasa a ella? | Question
 🤕 | She has a headache. | Ella tiene dolor de cabeza. | Look, she has a headache. | Mira, ella tiene dolor de cabeza. | Phrase
 😟 | That's too bad. | Qué lástima. | Oh, that's too bad. | Oh, qué lástima. | Phrase
 💖 | I hope you feel better. | Espero que te sientas mejor. | I hope you feel better soon. | Espero que te sientas mejor pronto. | Phrase
@@ -485,9 +485,9 @@ object BasicsBooklet3 {
 🙋‍♀️ | She | Ella (se refiere a ella - pronombre femenino) | She is my aunt | Ella es mi tía | Word
 🎒 | His | Su / Sus (se refiere a él / de él) | It is his cup | Es su taza (de él) | Word
 👜 | Her | Su / Sus (se refiere a ella / de ella) | It is her glass | Es su vaso (de ella) | Word
-❓ | Who is that? | ¿Quién es ese? | Tell me, who is that? | Dime, ¿quién es ese? | Question
+🤔 | Who is that? | ¿Quién es ese? | Tell me, who is that? | Dime, ¿quién es ese? | Question
 👩 | That's my aunt. | Esa es mi tía. | Look, that's my aunt. | Mira, esa es mi tía. | Phrase
-❓ | Who are they? | ¿Quiénes son ellos? | Tell me, who are they? | Dime, ¿quiénes son ellos? | Question
+🤔 | Who are they? | ¿Quiénes son ellos? | Tell me, who are they? | Dime, ¿quiénes son ellos? | Question
 👨‍👩‍👧 | They're my parents. | Son mis padres. | Look, they're my parents. | Mira, son mis padres. | Phrase
 ☕ | Cup | Taza | A cup of tea | Una taza de té | Word
 🥛 | Glass | Vaso | A glass of water | Un vaso de agua | Word
@@ -497,9 +497,9 @@ object BasicsBooklet3 {
 🔪 | Knife | Cuchillo | Cut with a knife | Corta con un cuchillo | Word
 🥄 | Spoon | Cuchara | Stir with a spoon | Revuelve con una cuchara | Word
 🧻 | Napkin | Servilleta | Use a napkin | Usa una servilleta | Word
-❓ | Whose glass is this? | ¿De quién es este vaso? | Tell me, whose glass is this? | Dime, ¿de quién es este vaso? | Question
+🥛 | Whose glass is this? | ¿De quién es este vaso? | Tell me, whose glass is this? | Dime, ¿de quién es este vaso? | Question
 🥛 | It's my glass. | Es mi vaso. | Look, it's my glass. | Mira, es mi vaso. | Phrase
-❓ | Whose glasses are these? | ¿De quién son estos vasos? | Tell me, whose glasses are these? | Dime, ¿de quién son estos vasos? | Question
+🥛 | Whose glasses are these? | ¿De quién son estos vasos? | Tell me, whose glasses are these? | Dime, ¿de quién son estos vasos? | Question
 🥛 | They're my glasses. | Son mis vasos. | Look, they're my glasses. | Mira, son mis vasos. | Phrase
 🏠 | Welcome to our house. | Bienvenidos a nuestra casa. | Welcome to our house, come in. | Bienvenidos a nuestra casa, pasen. | Phrase
 🛋️ | Make yourself at home. | Siéntete como en casa. | Please, make yourself at home. | Por favor, siéntete como en casa. | Phrase
@@ -508,7 +508,7 @@ object BasicsBooklet3 {
 🤝 | Be friendly. | Sé amigable. | Always be friendly. | Siempre sé amigable. | Phrase
 💖 | Treat guests well. | Trata bien a los invitados. | Always treat guests well. | Siempre trata bien a los invitados. | Phrase
 🦒 | Tall | Alto | He is tall | Él es alto | Word
-🐜 | Short | Bajo / Corto | She is short | Ella es baja | Word
+📏 | Short | Bajo / Corto | She is short | Ella es baja | Word
 👴 | Old | Viejo / Anciano | My grandfather is old | Mi abuelo es anciano | Word
 🧒 | Young | Joven | The children are young | Los niños son jóvenes | Word
 💪 | Strong | Fuerte | The man is strong | El hombre es fuerte | Word
@@ -517,18 +517,18 @@ object BasicsBooklet3 {
 👦 | That's my cousin. | Ese es mi primo. | Look, that's my cousin. | Mira, ese es mi primo. | Phrase
 👶 | That's the baby. | Ese es el bebé. | Look, that's the baby. | Mira, ese es el bebé. | Phrase
 👵👴 | They're my grandparents. | Son mis abuelos. | Look, they're my grandparents. | Mira, son mis abuelos. | Phrase
-❓ | Who is he? | ¿Quién es él? | Tell me, who is he? | Dime, ¿quién es él? | Question
+👨 | Who is he? | ¿Quién es él? | Tell me, who is he? | Dime, ¿quién es él? | Question
 👨 | He's my uncle. | Él es mi tío. | Look, he's my uncle. | Mira, él es mi tío. | Phrase
-❓ | Who is she? | ¿Quién es ella? | Tell me, who is she? | Dime, ¿quién es ella? | Question
+👩 | Who is she? | ¿Quién es ella? | Tell me, who is she? | Dime, ¿quién es ella? | Question
 👩 | She's my aunt. | Ella es mi tía. | Look, she's my aunt. | Mira, ella es mi tía. | Phrase
-❓ | Who are they? They're my cousins. | ¿Quiénes son ellos? Son mis primos. | Who are they? They're my cousins. | ¿Quiénes son ellos? Son mis primos. | Phrase
-❓ | Whose cup is this? | ¿De quién es esta taza? | Tell me, whose cup is this? | Dime, ¿de quién es esta taza? | Question
-❓ | Whose bowl is this? | ¿De quién es este tazón? | Tell me, whose bowl is this? | Dime, ¿de quién es este tazón? | Question
-❓ | Whose plate is this? | ¿De quién es este plato? | Tell me, whose plate is this? | Dime, ¿de quién es este plato? | Question
-❓ | Whose fork is this? | ¿De quién es este tenedor? | Tell me, whose fork is this? | Dime, ¿de quién es este tenedor? | Question
-❓ | Whose knife is this? | ¿De quién es este cuchillo? | Tell me, whose knife is this? | Dime, ¿de quién es este cuchillo? | Question
-❓ | Whose spoon is this? | ¿De quién es esta cuchara? | Tell me, whose spoon is this? | Dime, ¿de quién es esta cuchara? | Question
-❓ | Whose napkin is this? | ¿De quién es esta servilleta? | Tell me, whose napkin is this? | Dime, ¿de quién es esta servilleta? | Question
+🤔 | Who are they? They're my cousins. | ¿Quiénes son ellos? Son mis primos. | Who are they? They're my cousins. | ¿Quiénes son ellos? Son mis primos. | Phrase
+👤 | Whose cup is this? | ¿De quién es esta taza? | Tell me, whose cup is this? | Dime, ¿de quién es esta taza? | Question
+👤 | Whose bowl is this? | ¿De quién es este tazón? | Tell me, whose bowl is this? | Dime, ¿de quién es este tazón? | Question
+👤 | Whose plate is this? | ¿De quién es este plato? | Tell me, whose plate is this? | Dime, ¿de quién es este plato? | Question
+👤 | Whose fork is this? | ¿De quién es este tenedor? | Tell me, whose fork is this? | Dime, ¿de quién es este tenedor? | Question
+👤 | Whose knife is this? | ¿De quién es este cuchillo? | Tell me, whose knife is this? | Dime, ¿de quién es este cuchillo? | Question
+👤 | Whose spoon is this? | ¿De quién es esta cuchara? | Tell me, whose spoon is this? | Dime, ¿de quién es esta cuchara? | Question
+👤 | Whose napkin is this? | ¿De quién es esta servilleta? | Tell me, whose napkin is this? | Dime, ¿de quién es esta servilleta? | Question
 ☕ | It's his cup. | Es su taza (de él - se refiere a él). | Look, it's his cup. | Mira, es su taza (de él). | Phrase
 🥛 | It's her glass. | Es su vaso (de ella - se refiere a ella). | Look, it's her glass. | Mira, es su vaso (de ella). | Phrase
 🥣 | It's his bowl. | Es su tazón (de él - se refiere a él). | Look, it's his bowl. | Mira, es su tazón (de él). | Phrase
@@ -547,15 +547,15 @@ object BasicsBooklet3 {
 👵 | She is old. | Ella es anciana. | Look, she is old. | Mira, ella es anciana. | Phrase
 💪 | He is strong. | Él es fuerte. | Look, he is strong. | Mira, él es fuerte. | Phrase
 🍂 | He is weak. | Él es débil. | Look, he is weak. | Mira, él es débil. | Phrase
-❓ | Is he strong? | ¿Es él fuerte? | Tell me, is he strong? | Dime, ¿es él fuerte? | Question
-✅ | Yes, he is. | Sí, él es. | Yes, he is strong. | Sí, él es fuerte. | Phrase
-❌ | No, he isn't. | No, él no es. | No, he isn't strong. | No, él no es fuerte. | Phrase
-❓ | Is she tall? | ¿Es ella alta? | Tell me, is she tall? | Dime, ¿es ella alta? | Question
-✅ | Yes, she is. | Sí, ella es. | Yes, she is tall. | Sí, ella es alta. | Phrase
-❌ | No, she isn't. | No, ella no es. | No, she isn't tall. | No, ella no es alta. | Phrase
-❓ | Are they old? | ¿Son ellos ancianos? | Tell me, are they old? | Dime, ¿son ellos ancianos? | Question
-✅ | Yes, they are. | Sí, ellos son. | Yes, they are old. | Sí, ellos son ancianos. | Phrase
-❌ | No, they aren't. | No, ellos no son. | No, they aren't old. | No, ellos no son ancianos. | Phrase
+💪 | Is he strong? | ¿Es él fuerte? | Tell me, is he strong? | Dime, ¿es él fuerte? | Question
+👍 | Yes, he is. | Sí, él es. | Yes, he is strong. | Sí, él es fuerte. | Phrase
+🙅 | No, he isn't. | No, él no es. | No, he isn't strong. | No, él no es fuerte. | Phrase
+🦒 | Is she tall? | ¿Es ella alta? | Tell me, is she tall? | Dime, ¿es ella alta? | Question
+👍 | Yes, she is. | Sí, ella es. | Yes, she is tall. | Sí, ella es alta. | Phrase
+🙅 | No, she isn't. | No, ella no es. | No, she isn't tall. | No, ella no es alta. | Phrase
+🕰️ | Are they old? | ¿Son ellos ancianos? | Tell me, are they old? | Dime, ¿son ellos ancianos? | Question
+👍 | Yes, they are. | Sí, ellos son. | Yes, they are old. | Sí, ellos son ancianos. | Phrase
+🙅 | No, they aren't. | No, ellos no son. | No, they aren't old. | No, ellos no son ancianos. | Phrase
 👨‍👩‍👧 | My family is big. | Mi familia es grande. | Look, my family is big. | Mira, mi familia es grande. | Phrase
 💖 | My family is nice. | Mi familia es amable. | Look, my family is nice. | Mira, mi familia es amable. | Phrase
 ❤️ | I love my family. | Amo a mi familia. | Yes, I love my family. | Sí, amo a mi familia. | Phrase
@@ -568,11 +568,11 @@ object BasicsBooklet3 {
 🍽️ | Set the table | Poner la mesa | Help set the table | Ayuda a poner la mesa | Phrase
 🧼 | Wash the dishes | Lavar los platos | Wash the dishes after dinner | Lava los platos después de cenar | Phrase
 🗑️ | Take out the trash | Sacar la basura | Take out the trash tonight | Saca la basura esta noche | Phrase
-❓ | What do you have to do? | ¿Qué tienes que hacer? | Tell me, what do you have to do? | Dime, ¿qué tienes que hacer? | Question
+🤔 | What do you have to do? | ¿Qué tienes que hacer? | Tell me, what do you have to do? | Dime, ¿qué tienes que hacer? | Question
 🛏️ | I have to make my bed. | Tengo que hacer mi cama. | In the morning, I have to make my bed. | Por la mañana, tengo que hacer mi cama. | Phrase
-❓ | What does he have to do? | ¿Qué tiene que hacer él? | Tell me, what does he have to do? | Dime, ¿qué tiene que hacer él? | Question
+🤔 | What does he have to do? | ¿Qué tiene que hacer él? | Tell me, what does he have to do? | Dime, ¿qué tiene que hacer él? | Question
 🛏️ | He has to make his bed. | Él tiene que hacer su cama (de él - se refiere a él). | In the morning, he has to make his bed. | Por la mañana, él tiene que hacer su cama (de él). | Phrase
-❓ | What does she have to do? | ¿Qué tiene que hacer ella? | Tell me, what does she have to do? | Dime, ¿qué tiene que hacer ella? | Question
+🤔 | What does she have to do? | ¿Qué tiene que hacer ella? | Tell me, what does she have to do? | Dime, ¿qué tiene que hacer ella? | Question
 🛏️ | She has to make her bed. | Ella tiene que hacer su cama (de ella - se refiere a ella). | In the morning, she has to make her bed. | Por la mañana, ella tiene que hacer su cama (de ella). | Phrase
 🏖️ | Beach | Playa | Swim at the beach | Nada en la playa | Word
 🐠 | Aquarium | Acuario | Fishes at the aquarium | Peces en el acuario | Word
@@ -580,13 +580,13 @@ object BasicsBooklet3 {
 🏛️ | Museum | Museo | History at the museum | Historia en el museo | Word
 🦁 | Zoo | Zoológico | Animals at the zoo | Animales en el zoológico | Word
 🌊 | Water park | Parque acuático | Slides at the water park | Toboganes en el parque acuático | Word
-❓ | Where did you go yesterday? | ¿A dónde fuiste ayer? | Tell me, where did you go yesterday? | Dime, ¿a dónde fuiste ayer? | Question
+🤔 | Where did you go yesterday? | ¿A dónde fuiste ayer? | Tell me, where did you go yesterday? | Dime, ¿a dónde fuiste ayer? | Question
 🏖️ | I went to the beach. | Fui a la playa. | Yesterday, I went to the beach. | Ayer, fui a la playa. | Phrase
-❓ | Where did he go yesterday? | ¿A dónde fue él ayer? | Tell me, where did he go yesterday? | Dime, ¿a dónde fue él ayer? | Question
+🤔 | Where did he go yesterday? | ¿A dónde fue él ayer? | Tell me, where did he go yesterday? | Dime, ¿a dónde fue él ayer? | Question
 🏖️ | He went to the beach. | Él fue a la playa. | Yesterday, he went to the beach. | Ayer, él fue a la playa. | Phrase
-❓ | Where did she go yesterday? | ¿A dónde fue ella ayer? | Tell me, where did she go yesterday? | Dime, ¿a dónde fue ella ayer? | Question
+🤔 | Where did she go yesterday? | ¿A dónde fue ella ayer? | Tell me, where did she go yesterday? | Dime, ¿a dónde fue ella ayer? | Question
 🏖️ | She went to the beach. | Ella fue a la playa. | Yesterday, she went to the beach. | Ayer, ella fue a la playa. | Phrase
-❓ | Did you have fun? | ¿Te divertiste? | Tell me, did you have fun? | Dime, ¿te divertiste? | Question
+🎉 | Did you have fun? | ¿Te divertiste? | Tell me, did you have fun? | Dime, ¿te divertiste? | Question
 🎉 | Yes, I did! | ¡Sí, me divertí! | Yes, I did have fun! | ¡Sí, me divertí mucho! | Phrase
 🌟 | It was great! | ¡Fue genial! | Wow, it was great! | ¡Vaya, fue genial! | Phrase
 😊 | I'm glad you had fun. | Me alegro de que te divirtieras. | I'm glad you had fun yesterday. | Me alegro de que te divirtieras ayer. | Phrase
@@ -625,13 +625,13 @@ object BasicsBooklet3 {
 🏖️ | She went to the beach. | Ella fue a la playa. | Yesterday, she went to the beach. | Ayer, ella fue a la playa. | Phrase
 🎡 | She went to the amusement park. | Ella fue al parque de atracciones. | Yesterday, she went to the amusement park. | Ayer, ella fue al parque de atracciones. | Phrase
 🌊 | She went to the water park. | Ella fue al parque acuático. | Yesterday, she went to the water park. | Ayer, ella fue al parque acuático. | Phrase
-❓ | Did he have fun? | ¿Se divirtió él? | Tell me, did he have fun? | Dime, ¿se divirtió él? | Question
+🎉 | Did he have fun? | ¿Se divirtió él? | Tell me, did he have fun? | Dime, ¿se divirtió él? | Question
 🎉 | Yes, he did. | Sí, se divirtió. | Yes, he did have fun. | Sí, él se divirtió. | Phrase
-❌ | No, he didn't. | No, no se divirtió. | No, he didn't have fun. | No, no se divirtió. | Phrase
-❓ | Did she have fun? | ¿Se divirtió ella? | Tell me, did she have fun? | Dime, ¿se divirtió ella? | Question
+🙅 | No, he didn't. | No, no se divirtió. | No, he didn't have fun. | No, no se divirtió. | Phrase
+🎉 | Did she have fun? | ¿Se divirtió ella? | Tell me, did she have fun? | Dime, ¿se divirtió ella? | Question
 🎉 | Yes, she did. | Sí, se divirtió. | Yes, she did have fun. | Sí, ella se divirtió. | Phrase
-❌ | No, she didn't. | No, no se divirtió. | No, she didn't have fun. | No, no se divirtió. | Phrase
-❓ | What was the weather like? | ¿Cómo estuvo el clima? | Tell me, what was the weather like? | Dime, ¿cómo estuvo el clima? | Question
+🙅 | No, she didn't. | No, no se divirtió. | No, she didn't have fun. | No, no se divirtió. | Phrase
+🤔 | What was the weather like? | ¿Cómo estuvo el clima? | Tell me, what was the weather like? | Dime, ¿cómo estuvo el clima? | Question
 ☀️ | It was sunny. | Estuvo soleado. | Yesterday, it was sunny. | Ayer, estuvo soleado. | Phrase
 🌧️ | It was rainy. | Estuvo lluvioso. | Yesterday, it was rainy. | Ayer, estuvo lluvioso. | Phrase
 ☁️ | It was cloudy. | Estuvo nublado. | Yesterday, it was cloudy. | Ayer, estuvo nublado. | Phrase

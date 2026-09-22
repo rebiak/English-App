@@ -37,7 +37,7 @@ object Booklet3Part1 {
         createCardB3("🐛", "Bug", "Bicho", "There is a bug on the wall.", "Hay un bicho en la pared.", "Word", 1),
         createCardB3("✂️", "Concise", "Escueto, conciso", "Keep your story concise.", "Mantén tu historia concisa.", "Word", 1),
         createCardB3("⚙️", "Engineering", "Ingeniería", "He studies engineering.", "Él estudia ingeniería.", "Word", 1),
-        createCardB3("🚫", "Forbidden", "Prohibido", "Smoking here is forbidden.", "Fumar aquí está prohibido.", "Word", 1),
+        createCardB3("⛔", "Forbidden", "Prohibido", "Smoking here is forbidden.", "Fumar aquí está prohibido.", "Word", 1),
         createCardB3("☀️", "Heat", "Calor", "I hate the summer heat.", "Odio el calor del verano.", "Word", 1),
         createCardB3("🕵️", "Hidden", "Escondido, oculto", "The key is hidden here.", "La llave está escondida aquí.", "Word", 1),
         createCardB3("⚖️", "Impartial", "Imparcial", "A judge must be impartial.", "Un juez debe ser imparcial.", "Word", 1),
@@ -89,7 +89,7 @@ object Booklet3Part1 {
         // ==========================================
         // LIST 3
         // ==========================================
-        createCardB3("👍", "Adequately", "Adecuadamente", "She did her job adequately.", "Ella hizo su trabajo adecuadamente.", "Word", 3),
+        createCardB3("👌", "Adequately", "Adecuadamente", "She did her job adequately.", "Ella hizo su trabajo adecuadamente.", "Word", 3),
         createCardB3("😡", "Aggressive", "Agresivo", "The dog was very aggressive.", "El perro era muy agresivo.", "Word", 3),
         createCardB3("👶", "Birth", "Nacimiento", "We celebrated his birth.", "Celebramos su nacimiento.", "Word", 3),
         createCardB3("🛌", "Blanket", "Manta", "I need a warm blanket.", "Necesito una manta caliente.", "Word", 3),
@@ -107,7 +107,7 @@ object Booklet3Part1 {
         createCardB3("🤝", "To assure", "Asegurar", "I can assure you it is safe.", "Te puedo asegurar que es seguro.", "Word", 3),
         createCardB3("💳", "To charge", "Cobrar, cargar", "How much do you charge?", "¿Cuánto cobras?", "Word", 3),
         createCardB3("📦", "To contain", "Contener", "The box contains toys.", "La caja contiene juguetes.", "Word", 3),
-        createCardB3("🔍", "To discover", "Descubrir", "I want to discover new places.", "Quiero descubrir nuevos lugares.", "Word", 3),
+        createCardB3("🔭", "To discover", "Descubrir", "I want to discover new places.", "Quiero descubrir nuevos lugares.", "Word", 3),
         createCardB3("📊", "To forecast", "Prever", "They forecast rain for today.", "Prevén lluvia para hoy.", "Word", 3),
         createCardB3("💼", "To hold a meeting", "Mantener una reunión", "We need to hold a meeting.", "Necesitamos mantener una reunión.", "Phrasal Verb", 3),
         createCardB3("⏭️", "To skip", "Saltar, omitir", "Do not skip this step.", "No omitas este paso.", "Word", 3),

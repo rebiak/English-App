@@ -40,7 +40,7 @@ object Booklet3Part3 {
         createCardB3("📺", "Advertising campaign", "Campaña publicitaria", "The company started a new advertising campaign.", "La empresa empezó una nueva campaña publicitaria.", "Phrase", 20),
         createCardB3("🌳", "Branch", "Sucursal, rama", "The bird sat on the tree branch.", "El pájaro se sentó en la rama del árbol.", "Word", 20),
         createCardB3("🦁", "Brave", "Valiente", "The brave dog saved the cat.", "El perro valiente salvó al gato.", "Word", 20),
-        createCardB3("❌", "Cancellation", "Cancelación", "I got an email about the flight cancellation.", "Recibí un correo sobre la cancelación del vuelo.", "Word", 20),
+        createCardB3("🛑", "Cancellation", "Cancelación", "I got an email about the flight cancellation.", "Recibí un correo sobre la cancelación del vuelo.", "Word", 20),
         createCardB3("👍", "Decent", "Decente", "He has a decent job.", "Él tiene un trabajo decente.", "Word", 20),
         createCardB3("🌟", "Extraordinary", "Extraordinario", "She has extraordinary talent.", "Ella tiene un talento extraordinario.", "Word", 20),
         createCardB3("✨", "Fabulous", "Fabuloso", "Your dress looks fabulous.", "Tu vestido se ve fabuloso.", "Word", 20),

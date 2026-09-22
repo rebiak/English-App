@@ -88,7 +88,11 @@ class FlashcardRepository(private val dao: FlashcardDao) {
                         !existingCategories.any { it.startsWith("basics 6 - list ") } ||
                         !existingCategories.contains("basics 2 - list 5")
 
-                if (needsBasicsReseed) {
+                val hasLegacyBasicsIcons = dao.getAllCardsDirect().any {
+                    it.category.lowercase().startsWith("basics") && (it.emoji == "❓" || it.emoji == "❌" || it.emoji == "✅" || it.emoji == "▭")
+                }
+
+                if (needsBasicsReseed || hasLegacyBasicsIcons) {
                     realignBasicsOrderInternal()
                 }
                 if (!existingCategories.any { it.startsWith("list ") }) {
@@ -166,6 +170,9 @@ class FlashcardRepository(private val dao: FlashcardDao) {
 
             // Clean up any duplicate cards in database via native fast SQL
             dao.deduplicateDatabaseSql()
+
+            // Synchronize card icons with master definitions while preserving 100% of user progress and stats
+            syncAllCardIconsInternal()
 
             val profile = dao.getUserProfileDirect()
             if (profile == null) {
@@ -394,6 +401,37 @@ class FlashcardRepository(private val dao: FlashcardDao) {
         dao.insertCards(mapWithProgress(BasicsBooklet4.getAllCards()))
         dao.insertCards(mapWithProgress(BasicsBooklet5.getAllCards()))
         dao.insertCards(mapWithProgress(BasicsBooklet6.getAllCards()))
+    }
+
+    companion object {
+        @Volatile
+        private var hasSyncedIconsThisProcess = false
+    }
+
+    private suspend fun syncAllCardIconsInternal() {
+        if (hasSyncedIconsThisProcess) return
+        hasSyncedIconsThisProcess = true
+
+        val existingCards = dao.getAllCardsDirect()
+        if (existingCards.isEmpty()) return
+
+        val masterCards = InitialCards.getPreloadedCards()
+        val masterMap = masterCards.associateBy { "${it.category.lowercase().trim()}|${it.english.lowercase().trim()}" }
+
+        val cardsToUpdate = mutableListOf<Flashcard>()
+        for (card in existingCards) {
+            val key = "${card.category.lowercase().trim()}|${card.english.lowercase().trim()}"
+            val master = masterMap[key]
+            if (master != null && master.emoji.isNotBlank() && master.emoji != card.emoji) {
+                cardsToUpdate.add(card.copy(emoji = master.emoji))
+            }
+        }
+
+        if (cardsToUpdate.isNotEmpty()) {
+            cardsToUpdate.chunked(500).forEach { chunk ->
+                dao.updateCards(chunk)
+            }
+        }
     }
 
     suspend fun resetAllProgress() = withContext(Dispatchers.IO) {

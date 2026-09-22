@@ -147,7 +147,7 @@ object Booklet5Part1 {
         // ==========================================
         // LIST 5
         // ==========================================
-        createCardB5("📌", "A reminder", "Un recordatorio", "Please read the reminder.", "Por favor lee el recordatorio.", "Word", 5),
+        createCardB5("🔔", "A reminder", "Un recordatorio", "Please read the reminder.", "Por favor lee el recordatorio.", "Word", 5),
         createCardB5("📄", "An applicant", "Candidato, solicitante", "The applicant got the job.", "El solicitante consiguió el trabajo.", "Word", 5),
         createCardB5("🩺", "Blood pressure", "Tensión sanguínea", "My blood pressure is normal.", "Mi tensión sanguínea es normal.", "Phrase", 5),
         createCardB5("😟", "Concerned", "Preocupado", "She is concerned about him.", "Ella está preocupada por él.", "Word", 5),
@@ -237,7 +237,7 @@ object Booklet5Part1 {
         createCardB5("😒", "A trouble maker", "Un incordio", "He is a trouble maker at school.", "Él es un incordio en la escuela.", "Phrase", 8),
         createCardB5("🎯", "Approach", "Enfoque, planteamiento", "We need a new approach to work.", "Necesitamos un nuevo enfoque para trabajar.", "Word", 8),
         createCardB5("🌬️", "Breeze", "Brisa", "The cool breeze feels nice today.", "La brisa fresca se siente bien hoy.", "Word", 8),
-        createCardB5("💼", "Consultant", "Consultor", "She works as a business consultant.", "Ella trabaja como consultora de negocios.", "Word", 8),
+        createCardB5("🧑‍💼", "Consultant", "Consultor", "She works as a business consultant.", "Ella trabaja como consultora de negocios.", "Word", 8),
         createCardB5("💀", "Deadly", "Mortal", "Snake venom can be deadly.", "El veneno de serpiente puede ser mortal.", "Word", 8),
         createCardB5("⚡", "Effectively", "Eficazmente", "She works very effectively every day.", "Ella trabaja muy eficazmente todos los días.", "Word", 8),
         createCardB5("👤", "Flesh and blood", "Carne y hueso", "My family is made of flesh and blood.", "Mi familia es de carne y hueso.", "Phrase", 8),
